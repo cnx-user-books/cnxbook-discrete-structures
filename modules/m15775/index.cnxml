@@ -1,0 +1,519 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Discrete Structures Relation</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>43c5bebb-5488-400c-a037-1c7349b1c288</md:uuid>
+</metadata>
+  <content>
+    <section id="id-90599622882">
+      <title>Relation</title>
+      <section id="id-221138729027">
+        <title>Introduction to Relation </title>
+        <para id="id6790431">The relation we are going to study here is an abstraction of relations we see in our everyday life such as those between parent and child, between car and owner, among name, social security number, address and telephone number etc. We are going to focus our attention on one key property which all the everyday relations have in common, define everything that has that property as a relation, and study properties of those relations. One of the places where relation in that sense is used is data base management systems. Along with hierarchical and network models of data, the relational model is widely used to represent data in a database. In this model the data in a database are represented as a collection of relations. Informally, each relation is like a table or a simple file. For example, consider the following table. </para>
+        <para id="id6598756"><table id="id7449969" summary=""><tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry namest="c1" nameend="c3">Employee</entry></row><row><entry>Name </entry><entry>Address</entry><entry>Home Phone </entry></row><row><entry>Amy Angels </entry><entry>35 Mediterranean Av.</entry><entry>224-1357 </entry></row><row><entry>Barbara Braves </entry><entry>221 Atlantic Av. </entry><entry>301-1734 </entry></row><row><entry>Charles Cubs</entry><entry>312 Baltic Av.</entry><entry>223-9876 </entry></row></tbody></tgroup></table>Each row of this table represents a collection of data values such as name, address, and telephone number of a person. Each row is considered an instance of a relation and the table as the collection of the rows is considered a relation, which is the relation we are going to be studying in this chapter. Operations such as inserting or deleting entries to or from a table, merging two tables, finding the intersection of two tables, and searching for certain entries can be described simply and precisely as operations on relations, and known mathematical results on relations can be utilized without reinventing them. The relational model is flexible (easy to expand, easy to modify) and interface to query languages is simple. It is thus widely used today. </para>
+      </section>
+      <section id="id-777097066328">
+        <title>Definitions</title>
+        <section id="id-822557414916">
+          <title>Binary Relation</title>
+          <para id="id6990490">Here we are going to define relation formally, first binary relation, then general n-ary relation. A relation in everyday life shows an association of objects of a set with objects of other sets (or the same set) such as John owns a red Mustang, Jim has a green Miata etc. The essence of relation is these associations. A collection of these individual associations is a relation, such as the ownership relation between peoples and automobiles. To represent these individual associations, a set of "related" objects, such as John and a red Mustang, can be used. However, simple sets such as {John, a red Mustang} are not sufficient here. The order of the objects must also be taken into account, because John owns a red Mustang but the red Mustang does not own John, and simple sets do not deal with orders. Thus sets with an order on its members are needed to describe a relation. Here the concept of ordered pair and, more generally, that of ordered n-tuple are going to be defined first. A relation is then defined as a set of ordered pairs or ordered n-tuples.</para>
+          <para id="id6014073">Definition (ordered pair):</para>
+          <para id="id7101501">An ordered pair is a set of a pair of objects with an order associated with them. If objects are represented by x and y, then we write an ordered pair as &lt;x, y&gt; or &lt;y, x&gt;. In general &lt;x, y&gt; is different from &lt;y, x&gt;. </para>
+          <para id="id5788979">Definition (equality of ordered pairs): </para>
+          <para id="id5676986">Two ordered pairs &lt;a, b&gt; and &lt;c, d&gt; are equal if and only if a = c and b = d. For example, if the ordered pair &lt;a, b&gt; is equal to &lt;1, 2&gt;,   then a = 1, and b = 2.   &lt;1, 2&gt; is not equal to the ordered pair &lt;2, 1&gt;. </para>
+          <para id="id5676525">Definition (binary relation):</para>
+          <para id="id5676533">A binary relation from a set A to a set B is a set of ordered pairs &lt;a, b&gt; where a is an element of A and b is an element of B. </para>
+          <para id="id5223784">When an ordered pair &lt;a, b&gt; is in a relation R, we write a R b, or &lt;a, b&gt; ∈R. It means that element a is related to element b in relation R. When A = B, we call a relation from A to B a (binary) relation on A. </para>
+          <para id="id5712662">Definition (Cartesian product):</para>
+          <para id="id5888190">The set of all ordered pairs &lt;a, b&gt;, where a is an element of A and b is an element of B, is called the Cartesian product of A and B and is denoted by A × B. </para>
+          <para id="id7072168">Thus a binary relation from A to B is a subset of Cartesian product A × B. </para>
+          <para id="id6369509">Examples: </para>
+          <para id="id6948453">If A = {1, 2, 3} and B = {4, 5}, then {&lt;1, 4&gt;, &lt;2, 5&gt;, &lt;3, 5&gt;}, for example, is a binary relation from A to B. </para>
+          <para id="id5658908">However, {&lt;1, 1&gt;, &lt;1, 4&gt;, &lt;3, 5&gt;} is not a binary relation from A to B because 1 is not in B.</para>
+          <para id="id7030100">The parent-child relation is a binary relation on the set of people. &lt;John, John Jr.&gt;, for example, is an element of the parent-child relation if John is the father of John Jr. </para>
+        </section>
+        <section id="id-412708228966">
+          <title>Definition of n-ary Relation</title>
+          <para id="id7427831">Here we are going to formally define general n-ary relation using the concept of ordered n-tuple. </para>
+          <para id="id6681973">Definition (ordered n-tuple): An ordered n-tuple is a set of n objects with an order associated with them. If n objects are represented by x1, x2, ..., xn, then we write the ordered n-tuple as &lt;x1, x2, ..., xn&gt; . </para>
+          <para id="id7221216">Definition (Cartesian product): Let A1, ..., An be n sets. Then the set of all ordered n-tuples &lt;x1, ..., xn&gt; , where xi ∈Ai for all i, 1 ≤i ≤n , is called the Cartesian product of A1, ..., An, and is denoted by A1 ×... ×An . </para>
+          <para id="id6369482">Definition (equality of n-tuples): Two ordered n-tuples &lt;x1, ..., xn&gt; and &lt;y1, ..., yn&gt; are equal if and only if xi = yi for all i, 1 ≤i ≤n. </para>
+          <para id="id5951876">For example the ordered 3-tuple &lt;1, 2, 3&gt; can be equal to only &lt;1, 2, 3&gt; and nothing else. It is not equal to the ordered n-tuple &lt;2, 3, 1&gt; for example. </para>
+          <para id="id6874346"/>
+          <para id="id6874352">Definition (n-ary relation): An n-ary relation on sets A1, ..., An is a set of ordered n-tuples &lt;a1, ..., an&gt; where ai is an element of Ai for all i, 1 ≤i ≤n . Thus an n-ary relation on sets A1, ..., An is a subset of Cartesian product A1 ×... ×An . </para>
+          <para id="id7275934">Example 1: Let A1 be a set of names, A2 a set of addresses, and A3 a set of telephone numbers. Then a set of 3-tuples &lt; name, address, telephone number &gt; such as { &lt; Amy Angels, 35 Mediterranean Ave, 224-1357 &gt;, &lt; Barbara Braves, 221 Atlantic Ave, 301-1734 &gt;, &lt; Charles Cubs, 312 Baltic Ave, 223-9876 &gt; }, is a 3-ary (ternary) relation over A1, A2 and A3. </para>
+          <para id="id6592481">Example 2: Let A1 be a set of names. Then a set of 1-tuples such as {&lt; Amy &gt;, &lt; Barbara &gt;, &lt; Charles &gt;}, is a 1-ary (unary) relation over A1.</para>
+          <para id="id6683062">A unary relation represents a property/characteristic, such as tall, rich etc., shared by the members of A1 listed in the relation. </para>
+          <section id="id-0649722002822">
+            <title>Special Relations</title>
+            <para id="id7384706">The empty set is certainly a set of ordered n-tuples. Therefore it is a relation. It is called the empty relation. </para>
+            <para id="id6012666">The Cartesian product A1 ×... ×An of sets A1 , ... , An ,  is also a relation, and it is called the universal relation. </para>
+          </section>
+        </section>
+        <section id="id-608897901999">
+          <title>Equality of Relations</title>
+          <section id="id-961188137999">
+            <title>Definition (equality of binary relation): </title>
+            <para id="id5815848">Two binary relations R1 ⊆A1 ×A2 and R2⊆B1 ×B2 are equal if and only if A1 = B1, A2 = B2 , and R1 = R2 as a set. </para>
+            <para id="id5713394">For example, let R1 = {&lt;1, 2&gt; , &lt;2, 2&gt;} ⊆{1, 2} ×{1, 2} , and R2 = {&lt;a, b&gt;, &lt;b, b&gt;} ⊆{a, b} ×{a, b} . Then R1 = R2 if and only if  a = 1 and b = 2. </para>
+          </section>
+          <section id="id-0863292279522">
+            <title>Definition (equality of n-ary relation): </title>
+            <para id="id7044530">An n-ary relation R1 ⊆A1 ×... ×An and an m-ary relation R2 ⊆B1 ×... ×Bm are equal if and only if  m = n, Ai = Bi for each i, 1 ≤i ≤n , and R1 = R2 as a set of ordered n-tuples.</para>
+          </section>
+        </section>
+        <section id="id-242411498616">
+          <title>Recursive Definition of Relation</title>
+          <para id="id5845861">Certain relations can be defined recursively. Note that a relation is a set. Therefore a recursive definition of a relation follows the same format as that of sets. Here only examples are given. </para>
+          <para id="id6790376"/>
+          <para id="id6790380">Example 1: Let us define recursively the relation "less than" denoted by R&lt; on the set of natural numbers N. </para>
+          <para id="id6652689">Note that R&lt; = { &lt;a, b&gt; | a ∈N  ⋀  b ∈N  ⋀  a &lt; b } = { &lt;0, 1&gt;, &lt;0, 2&gt; , ..., &lt;1, 2&gt;, .... }. </para>
+          <para id="id5983240">Basis Clause: &lt;0, 1&gt; ∈R&lt; (or 0 R&lt; 1), meaning 0 is less than 1.</para>
+          <para id="id7221332">Inductive Clause: For all x and y in N,   if &lt;x, y&gt; ∈R&lt; ,   then &lt;x, y + 1&gt; ∈R&lt; , and &lt;x + 1, y + 1&gt; ∈R&lt; . </para>
+          <para id="id7027011">Extremal Clause: Nothing is in R&lt; , unless it is obtained from the Basis and Inductive Clauses. </para>
+          <para id="id7027034">Informally one can see that this definition is correct as follows: </para>
+          <para id="id7027040">First, &lt;0, 1&gt; is the "simplest" element in R&lt; . </para>
+          <para id="id7027078">Next by arranging the ordered pairs in R&lt; as follows, one can see that the two operations in the Inductive Clause generate them all: </para>
+          <para id="id7027099">&lt;0, 1&gt;, &lt;0, 2&gt;, &lt;0, 3&gt;, ............................. , &lt;0, n&gt;, ..... </para>
+          <para id="id5716664">            &lt;1, 2&gt;, &lt;1, 3&gt;, &lt;1, 4&gt;, ................. , &lt;1, n&gt;, ..... </para>
+          <para id="id5846214">                        &lt;2, 3&gt;, &lt;2, 4&gt;, &lt;2, 5&gt;, ..... , &lt;2, n&gt;, ..... </para>
+          <para id="id5846289">                                    ............................................ </para>
+          <para id="id5846295">                                    ............................................ </para>
+          <para id="id5846301">In each row, the first (leftmost) ordered pair gives the "smallest" ordered pair with the first number. For example &lt;2, 3&gt; is the smallest with 2 as the first component. It is obtained from the first ordered pair of the row immediately above it by using &lt;x + 1, y + 1&gt; of the Inductive Clause, apply that to &lt;1, 2&gt; to get &lt;2, 3&gt; , for example.</para>
+          <para id="id5846387"/>
+          <para id="id5846392">Within each row, the ordered pairs are obtained from the first one by using &lt;x, y + 1&gt; of the Inductive Clause successively. </para>
+          <para id="id5846412">Thus all the ordered pairs of R&lt; are generated from &lt;0, 1&gt; by following the Inductive Clause. </para>
+          <para id="id5846450">Example 2: Let Ra + b = c be the set of triples of natural numbers &lt;a, b, c&gt; which satisfy a + b = c . Then Ra + b = c on the set of natural numbers N can be defined recursively as follows. </para>
+          <para id="id5846521">Basis Clause: &lt;0, 0, 0&gt; ∈Ra + b = c. </para>
+          <para id="id5846556">Inductive Clause: For all x, y and z in N,   if &lt;x, y, z&gt; ∈Ra + b = c ,   then &lt;x + 1, y, z + 1&gt; and &lt;x, y + 1, z + 1&gt; ∈Ra + b = c. </para>
+          <para id="id5846651">Extremal Clause: Nothing is in Ra + b = c unless it is obtained from the Basis and Inductive Clauses. </para>
+        </section>
+      </section>
+      <section id="id-820254934462">
+        <title>Properties of Binary Relation, and Operations</title>
+        <section id="id-00674514130465">
+          <title>Digraph </title>
+          <para id="id5846688">A digraph is short for directed graph, and it is a diagram composed of points called vertices (nodes) and arrows called arcs going from a vertex to a vertex. </para>
+          <para id="id5660290">For example Figure 1 is a digraph with 3 vertices and 4 arcs. </para>
+          <para id="id5660296"><figure id="id5660301"><media id="idm15328224" alt=""><image src="../../media/graphics1-2504.png" mime-type="image/png" height="156" width="208"/></media></figure>                         </para>
+          <para id="id5660329">In this figure the vertices are labeled with numbers 1, 2, and 3. </para>
+          <para id="id5660346"/>
+          <para id="id5660350">Mathematically a digraph is defined as follows. </para>
+          <para id="id5660355">Definition (digraph): A digraph is an ordered pair of sets G = (V, A), where V is a set of vertices and A is a set of ordered pairs (called arcs) of vertices of V.</para>
+          <para id="id5660436">In the example, G1 , given above, V = { 1, 2, 3 } , and A = { &lt;1, 1&gt;, &lt;1, 2&gt;, &lt;1, 3&gt;, &lt;2, 3&gt; } .</para>
+        </section>
+        <section id="id-288846015363">
+          <title>Digraph representation of binary relations </title>
+          <para id="id5660526">A binary relation on a set can be represented by a digraph.</para>
+          <para id="id5660531"/>
+          <para id="id5660536">Let R be a binary relation on a set A, that is R is a subset of A×A. Then the digraph, call it G, representing R can be constructed as follows:</para>
+          <para id="id5660588"/>
+          <para id="id5660593">    1. The vertices of the digraph G are the elements of A, and </para>
+          <para id="id5660615"> </para>
+          <para id="id5660619">  2. &lt;x, y&gt; is an arc of G from vertex x to vertex y if and only if &lt;x, y&gt; is in R. </para>
+          <para id="id5660684">Example: The less than relation R on the set of integers A = {1, 2, 3, 4} is the set {&lt;1, 2&gt;, &lt;1, 3&gt;, &lt;1, 4&gt;, &lt;2, 3&gt; , &lt;2, 4&gt; , &lt;3, 4&gt; } and it can be represented by the digraph in Figure 2.</para>
+          <para id="id6979300"><figure id="id6979307"><media id="idm15889824" alt=""><image src="../../media/graphics2-1d5f.png" mime-type="image/png" height="260" width="208"/></media></figure>                   </para>
+          <para id="id6979334">Let us now define some of the basic concepts on digraphs.</para>
+          <para id="id6979341">Definition (loop): An arc from a vertex to itself such as &lt;1, 1&gt;, is called a loop (or self-loop) </para>
+          <para id="id6979378">Definition (degree of vertex): The in-degree of a vertex is the number of arcs coming to the vertex, and the out-degree is the number of arcs going out of the vertex. </para>
+          <para id="id6979413">For example, the in-degree of vertex 2 in the digraph G2 shown above is 1, and the out-degree is 2.</para>
+          <para id="id6979444">Definition (path): A path from a vertex x0 to a vertex xn in a digraph G = (V, A) is a sequence of vertices x0, x1, ....., xn that satisfies the following:</para>
+          <para id="id6979531">for each i,  0 ≤i ≤ n - 1 ,   &lt;xi , xi + 1&gt; ∈A , or   &lt;xi + 1 , xi&gt; ∈A ,   that is, between any pair of vertices there is an arc connecting them. x0 is the initial vertex and xn is the terminal vertex of the path. </para>
+          <para id="id6979684">A path is called a directed path   if   &lt;xi, xi + 1&gt; ∈A ,   for every i,   0 ≤i ≤n -1. </para>
+          <para id="id5997880">If the initial and the terminal vertices of a path are the same, that is,   x0 = xn,   then the path is called a cycle. </para>
+          <para id="id5997923">If no arcs appear more than once in a path, the path is called a simple path. A path is called elementary if no vertices appear more than once in it except for the initial and terminal vertices of a cycle. In a simple cycle one vertex appears twice in the sequence: once as the initial vertex and once as the terminal vertex. </para>
+          <para id="id5997958">Note: There are two different definitions for "simple path". Here we follow the definition of Berge[1], Liu[2], Rosen[3] and others. A "simple path" according to another group (Cormen et al[4], Stanat and McAllister[5] and others) is a path in which no vertices appear more than once. </para>
+          <para id="id5997977">Definition(connected graph): A digraph is said to be connected if there is a path between every pair of its vertices. </para>
+          <para id="id5998000">Example: In the digraph G3 given in Figure 3, </para>
+          <para id="id5998019">     </para>
+          <para id="id5998024">1, 2, 5 is a simple and elementary path but not directed, </para>
+          <para id="id5998033">     1, 2, 2, 5 is a simple path but neither directed nor elementary. </para>
+          <para id="id5998048">     1, 2, 4, 5 is a simple elementary directed path, </para>
+          <para id="id5998058">     1, 2, 4, 5, 2, 4, 5 is a directed path but not simple (hence not elementary), </para>
+          <para id="id5998069">     1, 3, 5, 2, 1 is a simple elementary cycle but not directed, and </para>
+          <para id="id5998080">     2, 4, 5, 2 is a simple elementary directed cycle. </para>
+          <para id="id5998090">This digraph is connected. </para>
+          <para id="id5998094"><figure id="id5998098"><media id="idm1312816" alt=""><image src="../../media/graphics3-df6e.png" mime-type="image/png" height="208" width="313"/></media></figure>                              </para>
+          <para id="id5998136">Sometimes we need to refer to part of a given digraph. A partial digraph of a digraph is a digraph consisting of arbitrary numbers of vertices and arcs of the given digraph, while a subdigraph is a digraph consisting of an arbitrary number of vertices and all the arcs between them of the given digraph. Formally they are defined as follows: Definition (subdigraph, partial digraph): Let G = (V, A ) be a digraph. Then a digraph ( V', A' ) is a partial digraph of G ,  if   V' ⊆V ,  and  A' ⊆A ∩( V' ×V' ) .  It is a subdigraph of G ,  if   V' ⊆V ,  and  A'  =  A ∩ ( V'×V' ) </para>
+          <para id="id7339750">A partial digraph and a subdigraph of G3 given above are shown in Figure 4. </para>
+          <para id="id7339764">
+            <figure id="id7339768">
+              <media id="idm8064336" alt=""><image src="../../media/graphics4-20b9.png" mime-type="image/png" height="210" width="370"/></media>
+            </figure>
+          </para>
+        </section>
+        <section id="id-741538434295">
+          <title>Properties of Binary Relation</title>
+          <para id="id7339801">Certain important types of binary relation can be characterized by properties they have. Here we are going to learn some of those properties binary relations may have. The relations we are interested in here are binary relations on a set. </para>
+          <para id="id7339809">Definition(reflexive relation): A relation R on a set A is called reflexive if and only if &lt; a, a &gt; ∈R for every element a of A. </para>
+          <para id="id7339873">Example 1: The relation ≤ on the set of integers {1, 2, 3} is {&lt;1, 1&gt;, &lt;1, 2&gt;, &lt;1, 3&gt;, &lt;2, 2&gt;, &lt;2, 3&gt;, &lt;3, 3&gt;} and it is reflexive because &lt;1, 1&gt;, &lt;2, 2&gt;, &lt;3, 3&gt; are in this relation. As a matter of fact ≤ on any set of numbers is also reflexive. Similarly ≥ and = on any set of numbers are reflexive. However, &lt; (or &gt;) on any set of numbers is not reflexive.</para>
+          <para id="id7340012">Example 2: The relation ⊆on the set of subsets of {1, 2} is { &lt; ∅, ∅&gt; , &lt; ∅, {1} &gt; , &lt; ∅, {2} &gt; , &lt; ∅, {1, 2} &gt; , &lt; {1} , {1} &gt; , &lt; {1} , {1, 2} &gt; , &lt; {2} , {2} &gt; , &lt; {2} , {1, 2} &gt; , &lt; {1, 2} , {1, 2} &gt; } and it is reflexive. In fact relation ⊆ on any collection of sets is reflexive.</para>
+          <para id="id7340208">Definition(irreflexive relation): A relation R on a set A is called irreflexive if and only if &lt;a, a&gt; ∉ R for every element a of A. </para>
+          <para id="id7006707">Example 3: The relation &gt; (or &lt;) on the set of integers {1, 2, 3} is irreflexive. In fact it is irreflexive for any set of numbers. </para>
+          <para id="id7006733">Example 4: The relation {&lt; 1, 1 &gt;, &lt; 1, 2 &gt;, &lt; 1, 3 &gt;, &lt; 2, 3&gt;, &lt; 3, 3 &gt;} on the set of integers {1, 2, 3} is neither reflexive nor irreflexive. </para>
+          <para id="id7006807">Definition(symmetric relation): A relation R on a set A is called symmetric if and only if for any a, and b in A, whenever &lt;a, b&gt; ∈R , &lt;b, a&gt; ∈R . </para>
+          <para id="id7006906">Example 5: The relation = on the set of integers {1, 2, 3} is {&lt;1, 1&gt; , &lt;2, 2&gt; &lt;3, 3&gt; } and it is symmetric. Similarly = on any set of numbers is symmetric. However, &lt; (or &gt;), ≤ (or ≥ on any set of numbers is not symmetric. </para>
+          <para id="id7006989">Example 6: The relation "being acquainted with" on a set of people is symmetric. </para>
+          <para id="id7007000">Definition (antisymmetric relation): A relation R on a set A is called antisymmetric if and only if for any a, and b in A, whenever &lt;a, b&gt; ∈R , and &lt;b, a&gt; ∈R , a = b must hold. Equivalently, R is antisymmetric if and only if whenever &lt;a, b&gt; ∈R , and a ≠ b , &lt;b, a&gt; ∉ R . Thus in an antisymmetric relation no pair of elements are related to each other. </para>
+          <para id="id7007183">Example 7: The relation &lt; (or &gt;) on any set of numbers is antisymmetric. So is the equality relation on any set of numbers. </para>
+          <para id="id6775871">Definition (transitive relation): A relation R on a set A is called transitive if and only if for any a, b, and c in A, whenever &lt;a, b&gt; ∈R , and &lt;b, c&gt; ∈R , &lt;a, c&gt; ∈R . </para>
+          <para id="id6776002">Example 8: The relation ≤ on the set of integers {1, 2, 3} is transitive, because for &lt;1, 2&gt; and &lt;2, 3&gt; in ≤, &lt;1, 3&gt; is also in ≤, for &lt;1, 1&gt; and &lt;1, 2&gt; in ≤, &lt;1, 2&gt; is also in ≤, and similarly for the others. As a matter of fact ≤ on any set of numbers is also transitive. Similarly ≥ and = on any set of numbers are transitive. </para>
+          <para id="id6776159">Figure 5 show the digraph of relations with different properties. </para>
+          <para id="id6776166">(a) is reflexive, antisymmetric, symmetric and transitive, but not irreflexive. </para>
+          <para id="id6776171">(b) is neither reflexive nor irreflexive, and it is antisymmetric, symmetric and transitive.</para>
+          <para id="id6776177">(c) is irreflexive but has none of the other four properties.</para>
+          <para id="id6776183">(d) is irreflexive, and symmetric, but none of the other three.</para>
+          <para id="id6776188">(e) is irreflexive, antisymmetric and transitive but neither reflexive nor symmetric. </para>
+          <para id="id6776195">
+            <figure id="id6776199">
+              <media id="idm15644208" alt=""><image src="../../media/graphics5-ba8b.png" mime-type="image/png" height="309" width="378"/></media>
+            </figure>
+          </para>
+        </section>
+        <section id="id-696884863856">
+          <title>Operations on Binary Relations</title>
+          <section id="id-18340553053">
+            <title>Set Operations</title>
+            <para id="id6776238">A relation is a set. It is a set of ordered pairs if it is a binary relation, and it is a set of ordered n-tuples if it is an n-ary relation. Thus all the set operations apply to relations such as ∪, ∩, and complementing. </para>
+            <para id="id6776266">For example, the union of the "less than" and "equality" relations on the set of integers is the "less than or equal to" relation on the set of integers. The intersection of the "less than" and "less than or equal to" relations on the set of integers is the "less than" relation on the same set. The complement of the "less than" relation on the set of integers is the "greater than or equal to" relation on the same set. </para>
+          </section>
+          <section id="id-0219608320121">
+            <title>Composite Relations </title>
+            <para id="id6776286">If the elements of a set A are related to those of a set B, and those of B are in turn related to the elements of a set C, then one can expect a relation between A and C. For example, if Tom is my father (parent-child relation) and Sarah is a sister of Tom (sister relation), then Sarah is my aunt (aunt-nephew/niece relation). Composite relations give that kind of relations. </para>
+            <para id="id6776326">Definition(composite relation): Let R1 be a binary relation from a set A to a set B, R2 a binary relation from B to a set C. Then the composite relation from A to C denoted by R1R2 (also denoted by R1 ∘ R2 is defined as </para>
+            <para id="id7043372">R1R2 = {&lt;a, c&gt; | a ∈A ⋀c ∈C ⋀∃b [b ∈B ⋀&lt;a, b&gt; ∈R1 ⋀&lt;b, c&gt; ∈R2 ] } . </para>
+            <para id="id7043549">In English, this means that an element a in A is related to an element c in C if there is an element b in B such that a is related to b by R1 and b is related to c by R2. Thus R1R2 is a relation from A to C via B in a sense. If R1 is a parent-child relation and R2 is a sister relation, then R1R2 is an aunt-nephew/niece relation. </para>
+            <para id="id7043698">Example 1: Let A = {a1 , a2} , B = {b1 , b2 , b3} , and C = {c1 , c2} . Also let R1 = {&lt;a1 , b1&gt; , &lt;a1 , b2&gt; , &lt;a2 , b3&gt; } , and R2 = {&lt;b1 , c1&gt; , &lt;b2 , c1&gt; , &lt;b2 , c2&gt; , &lt;b3 , c1&gt; } . Then R1R2 = {&lt;a1 , c1&gt; , &lt;a1 , c2&gt; , &lt;a2 , c1&gt; } . </para>
+            <para id="id7325247">This is illustrated in Figure 6. The dashed lines in the figure of R1R2 indicate the ordered pairs in R1R2, and dotted lines show ordered pairs that produce the dashed lines. (The lines in the left figure are all supposed to be solid lines.) </para>
+            <para id="id7325290"><figure id="id7325294"><media id="idp96576" alt=""><image src="../../media/graphics6-9c35.png" mime-type="image/png" height="169" width="457"/></media></figure>Example 2: If R is the parent-child relation on a set of people A, then RR, also denoted by R2, is the grandparent-grandchild relation on A. </para>
+            <para id="id7325362"/>
+            <para id="id7325366">More examples: </para>
+            <para id="id7325375">The digraphs of R2 for several simple relations R are shown in Figure 7:</para>
+            <para id="id7325394">
+              <figure id="id7325397">
+                <media id="idm2006560" alt=""><image src="../../media/graphics7-ee8e.png" mime-type="image/png" height="381" width="367"/></media>
+              </figure>
+            </para>
+          </section>
+          <section id="id-805799897948">
+            <title>Properties of Composite Relations</title>
+            <para id="id7325472">Composite relations defined above have the following properties. Let R1 be a relation from A to B, and R2 and R3 be relations from B to C. Then </para>
+            <para id="id7325528">1. R1(R2R3) = (R1R2)R3 </para>
+            <para id="id7325593">2. R1(R2 ∪R3) = R1R2 ∪R1R3 </para>
+            <para id="id6928187">3. R1(R2 ∩R3) ⊆R1R2 ∩R1R3 Proofs for these properties are omitted. </para>
+          </section>
+          <section id="id-737806463537">
+            <title>Powers of Relation</title>
+            <para id="id6928293">Let R be a binary relation on A. Then Rn for all positive integers n is defined recursively as follows: </para>
+            <para id="id6928322"/>
+            <para id="id6928326">Definition (power of relation): </para>
+            <para id="id6928335">Basis Clause: R0 = E, where E is the equality relation on A. </para>
+            <para id="id6928376">Inductive Clause: For an arbitrary natural number n, Rn+1 = RnR.</para>
+            <para id="id6928423">Note that there is no need for extremal clause here. </para>
+            <para id="id6928428">Thus for example R1 = R, R2 = RR, and R3 = R2R = (RR)R = R(RR) = RRR. </para>
+            <para id="id6928550">The powers of binary relation R on a set A defined above have the following properties. </para>
+            <para id="id6928567">1. Rm+n = RmRn, </para>
+            <para id="id6928606">2. (Rm)n = Rmn.</para>
+            <para id="id6928648"/>
+          </section>
+        </section>
+      </section>
+      <section id="id-242612904226">
+        <title>Special Relations </title>
+        <section id="id-614114149861">
+          <title>Closure of Binary Relation</title>
+          <para id="id6928680">In our everyday life we often talk about parent-child relationship. This is a binary relation on the set of people in the world, dead or alive. Also we are often interested in ancestor-descendant relations. Although the latter relation can be obtained from the former, hence it is redundant in that sense, we do use ancestor-descendant relations which give us necessary information more directly. This ancestor-descendant relation relates two people if there is a sequence of parent-child relations from one to the other. It includes the parent-child relation as a subset. The ancestor-descendant relation is an example of the closure of a relation, in particular the transitive closure of the parent-child relation. In general, the closure of a relation is the smallest extension of the relation that has a certain specific property such as the reflexivity, symmetry or transitivity. Formally they are defined as follows: </para>
+          <para id="id6928684">Definition (reflexive closure): A relation R' is the reflexive closure of a relation R if and only if </para>
+          <para id="id5222480">(1) R' is reflexive, </para>
+          <para id="id5222489">(2) R ⊆R', and </para>
+          <para id="id5222509">(3) for any relation R'', if R ⊆R'' and R'' is reflexive, then R' ⊆R'' , that is, R' is the smallest relation that satisfies (1) and (2). </para>
+          <para id="id5222561"/>
+          <para id="id5222565">Example: Let R be the less-than relation on the set of integers I, that is R = { &lt; a, b&gt; | a ∈I ⋀b ∈I ⋀a &lt; b }. </para>
+          <para id="id5222664">Then the reflexive closure r(R) of R is the union of R and the equality relation on I, that is r(R) = {&lt;a, b&gt; | a ∈I ⋀b ∈I ⋀a ≤b } </para>
+          <para id="id5222792"/>
+          <para id="id5222796">The digraph of the reflexive closure of a relation is obtained from the digraph of the relation by adding a self-loop at each vertex if one is already not there. </para>
+          <para id="id5222808">Symmetric and transitive closures can be defined similarly. </para>
+          <para id="id5222814">Definition (symmetric closure): A relation R' is the symmetric closure of a relation R if and only if </para>
+          <para id="id5222841">(1) R' is symmetric, </para>
+          <para id="id5222850">(2) R ⊆R', and</para>
+          <para id="id5222869">(3) for any relation R'', if R ⊆R'', and R'' is symmetric, then R' ⊆R'' , that is, R' is the smallest relation that satisfies (1) and (2). </para>
+          <para id="id5222921">Example: Let R be the less-than relation on the set of integers I. Then the symmetric closure of R, denoted by s(R) is s(R) = { &lt;a, b&gt; | a ∈I ⋀ b ∈I ⋀[ a &lt; b ∨ a &gt; b ] } that is { &lt;a, b&gt; | a ∈I ⋀b ∈I ⋀a ≠b } </para>
+          <para id="id6681433"/>
+          <para id="id6681437">The digraph of the symmetric closure of a relation is obtained from the digraph of the relation by adding for each arc the arc in the reverse direction if one is already not there. </para>
+          <para id="id6681449"/>
+          <para id="id6681454">Definition (transitive closure): A relation R' is the transitive closure of a relation R if and only if </para>
+          <para id="id6681479">(1) R' is transitive, </para>
+          <para id="id6681488">(2) R ⊆R', and </para>
+          <para id="id6681508">(3) for any relation R'',   if R ⊆R''   and  R''   is transitive,  then  R' ⊆R'' , that is, R' is the smallest relation that satisfies (1) and (2). </para>
+          <para id="id6681560">Examples: The transitive closure of a parent-child relation is the ancestor-descendant relation as mentioned above, and that of the less-than relation on I is the less-than relation itself. </para>
+          <para id="id6681577">The digraph of the transitive closure of a relation is obtained from the digraph of the relation by adding for each directed path the arc that shunts the path if one is already not there. </para>
+          <para id="id6681590">Two more examples of closures are given in Figure 8 in terms of digraphs. </para>
+          <para id="id6681598">The arrows with two heads represent arrows going in opposite directions.</para>
+          <section id="id-582946318118">
+            <title>Properties of Closure</title>
+            <para id="id6681611">
+              <figure id="id6681614">
+                <media id="idm15767104" alt=""><image src="../../media/graphics8-8bd1.png" mime-type="image/png" height="288" width="468"/></media>
+              </figure>
+            </para>
+            <para id="id6681639">The closures have the following properties. They are stated here as theorems without proof. </para>
+            <para id="id6681646">Theorem: Let E denote the equality relation, and Rc the inverse relation of binary relation R, all on a set A, where Rc = {&lt; a, b &gt; | &lt; b, a &gt; ∈R}. Then</para>
+            <para id="id6681708">1. r(R) = R ∪ E</para>
+            <para id="id6681740">2. s(R) = R ∪Rc </para>
+            <para id="id6681774">3. t(R) = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mo stretchy="false">∞</m:mo></m:mrow></m:mstyle></m:msubsup></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{ infinity } } } {}</m:annotation></m:semantics></m:math>Ri   =  
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n} } } {}</m:annotation></m:semantics></m:math> Ri,   if |A| = n. </para>
+            <para id="id7434736">4. R is reflexive if and only if   r(R) = R. </para>
+            <para id="id7434768">5. R is symmetric if and only if   s(R) = R.</para>
+            <para id="id7434800">6. R is transitive if and only if   t(R) = R. </para>
+          </section>
+        </section>
+        <section id="id-189233032937">
+          <title>Equivalence Relation</title>
+          <para id="id7434840">On the face of most clocks, hours are represented by integers between 1 and 12. However, since a day has 24 hours after 12 hours, a clock goes back to hour 1, and starts all over again from there. Thus each pair of hours such as 1 and 13, 2 and 14, etc. share one number 1, 2, ...etc., respectively. The same applies when we are interested in more than 24 hours. 25th hour is 1, so are 37th, 49th etc. What we are doing here essentially is that we consider the numbers in each group such as 1, 13, 25, ..., equivalent in the sense that they all are represented by one number (they are congruent modulo 12). Being representable by one number such as we see on clocks is a binary relation on the set of natural numbers and it is an example of equivalence relation we are going to study here. </para>
+          <para id="id7434858">The concept of equivalence relation is characterized by three properties as follows:</para>
+          <para id="id7434865">Definition (equivalence relation): A binary relation R on a set A is an equivalence relation if and only if </para>
+          <para id="id7434898">(1) R is reflexive </para>
+          <para id="id7434907">(2) R is symmetric, and</para>
+          <para id="id7434917">(3) R is transitive.</para>
+          <para id="id7434927"/>
+          <para id="id7434931">Example 1: The equality relation (=) on a set of numbers such as {1, 2, 3} is an equivalence relation. </para>
+          <para id="id7434958">Example 2: The congruent modulo m relation on the set of integers i.e. {&lt;a, b&gt;| a ≡ b (mod m)}, where m is a positive integer greater than 1, is an equivalence relation. </para>
+          <para id="id7435041">Note that the equivalence relation on hours on a clock is the congruent mod 12, and that when m = 2, i.e. the congruent mod 2, all even numbers are equivalent and all odd numbers are equivalent. Thus the set of integers are divided into two subsets: evens and odds. </para>
+          <para id="id7435085">Example 3: Taking this discrete structures course together this semester is another equivalence relation. </para>
+          <para id="id7435097">Equivalence relations can also be represented by a digraph since they are a binary relation on a set. For example the digraph of the equivalence relation congruent mod 3 on {0, 1, 2, 3, 4, 5 , 6} is as shown in Figure 9. It consists of three connected components.</para>
+          <para id="id7435129"><figure id="id7435135"><media id="idm14518368" alt=""><image src="../../media/graphics9-05d8.png" mime-type="image/png" height="122" width="376"/></media></figure>The set of even numbers and that of odd numbers in the equivalence relation of congruent mod 2, and the set of integers equivalent to a number between 1 and 12 in the equivalence relation on hours in the clock example are called an equivalence class. Formally it is defined as follows: </para>
+          <para id="id7435178">Definition (equivalence class): For an equivalence relation R on a set A, the set of the elements of A that are related to an element, say a, of A is called the equivalence class of element a and it is denoted by [a]. </para>
+          <para id="id7435246">Example 4: For the equivalence relation of hours on a clock, equivalence classes are </para>
+          <para id="id7435257">[1] = {1, 13, 25, ... } = {1+ 12n: n ∈N} , </para>
+          <para id="id6689592">[2] = {2, 14, 26, ... } = {2+ 12n: n ∈N} , </para>
+          <para id="id6689654">........, </para>
+          <para id="id6689664">where N is the set of natural numbers. There are altogether twelve of them.</para>
+          <para id="id6689675">For an equivalence relation R on a set A, every element of A is in an equivalence class. For if an element, say b, does not belong to the equivalence class of any other element in A, then the set consisting of the element b itself is an equivalence class. Thus the set A is in a sense <emphasis>covered</emphasis> by the equivalence classes. Another property of equivalence class is that equivalence classes of two elements of a set A are either disjoint or identical, that is either [a] = [b] or [a] ∩ [b] = ∅ for arbitrary elements a and b of A. Thus the set A is partitioned into equivalence classes by an equivalence relation on A. This is formally stated as a theorem below after the definition of partition. </para>
+          <para id="id6689833"/>
+          <para id="id6689837">Definition (partition): Let A be a set and let A1, A2, ..., An be subsets of A. Then {A1, A2, ..., An} is a partition of A, if and only if </para>
+          <para id="id6689952">(1) 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n} } } {}</m:annotation></m:semantics></m:math>Ai = A, and</para>
+          <para id="id6690037">(2) Ai ∩Aj = ∅, if Ai ≠ Aj , 1 ≤ i, j ≤ n . </para>
+          <para id="id7114444">(3) Example 5: Let A = {1, 2, 3, 4, 5}, A1 = {1, 5}, A2 = {3}, and A3 = {2, 4}. Then {A1, A2, A3} is a partition of A. However, B1 = {1, 2, 5}, B2 = {2, 3}, and B3 = {4} do not form a partition for A because B1 ∩B2 ≠∅, though B1 ≠B2. </para>
+          <para id="id7114721"/>
+          <para id="id7114726">Theorem 1: The set of equivalence classes of an equivalence relation on a set A is a partition of A. </para>
+          <para id="id7114746">Conversely, a partition of a set A determines an equivalence relation on A. </para>
+          <para id="id7114762">Theorem 2: Let {A1, ..., An} be a partition of a set A. Define a binary relation R on A as follows: &lt;a, b&gt; ∈R if and only if a ∈Ai and b ∈Ai for some i, 1 ≤i ≤n . Then R is an equivalence relation. </para>
+          <para id="id7114935">Theorem 3: Let R1 and R2 be equivalence relations. Then R1 ∩R2 is an equivalence relation, but R1 ∪R2 is not necessarily an equivalence relation.</para>
+        </section>
+        <section id="id-187317861004">
+          <title>Order Relation</title>
+          <para id="id7115019">Shoppers in a grocery store are served at a cashier on the first-come-first-served basis. When there are many people at cashiers, lines are formed. People in these lines are ordered for service: Those at the head of a line are served sooner than those at the end. Cars waiting for the signal to change at an intersection are also ordered similarly. Natural numbers can also be ordered in the increasing order of their magnitude. Those are just a few examples of order we encounter in our daily lives. The order relations we are going to study here are an abstraction of those relations. The properties common to orders we see in our daily lives have been extracted and are used to characterize the concepts of order. Here we are going to learn three types of order: partial order, total order, and quasi order.</para>
+          <para id="id7115037">Definition(partial order): A binary relation R on a set A is a partial order if and only if it is</para>
+          <para id="id7115071">(1) reflexive, </para>
+          <para id="id7414530">(2) antisymmetric, and</para>
+          <para id="id7414537">(3) transitive. </para>
+          <para id="id7414541">The ordered pair &lt;A, R&gt; is called a poset (partially ordered set) when R is a partial order. </para>
+          <para id="id7414586">Example 1: The less-than-or-equal-to relation on the set of integers I is a partial order, and the set I with this relation is a poset. </para>
+          <para id="id7414606">Example 2: The subset relation on the power set of a set, say {1, 2}, is also a partial order, and the set {1, 2} with the subset relation is a poset. </para>
+          <para id="id7414626">Definition(total order): A binary relation R on a set A is a total order if and only if it is </para>
+          <para id="id7414659">(1) a partial order, and</para>
+          <para id="id7414663">(2) for any pair of elements  a and b of A,   &lt; a, b &gt; ∈R or &lt; b, a &gt; ∈R. </para>
+          <para id="id7414716">That is, every element is related with every element one way or the other. A total order is also called a linear order. </para>
+          <para id="id7414729">Example 3: The less-than-or-equal-to relation on the set of integers I is a total order. </para>
+          <para id="id7414745">The strictly-less-than and proper-subset relations are not partial order because they are not reflexive. They are examples of some relation called quasi order. </para>
+          <para id="id7414753">Definition(quasi order): A binary relation R on a set A is a quasi order if and only if it is </para>
+          <para id="id7414786">(1) irreflexive, and </para>
+          <para id="id7414790">(2) transitive. </para>
+          <para id="id7414795">A quasi order is necessarily antisymmetric as one can easily verify. </para>
+          <para id="id7414801">Caution Like many other definitions there is another fairly widely used definition of quasi order in the literature. According to that definition a quasi order is a relation that is reflexive and transitive. That is something quite different from "quasi order" we have defined here.</para>
+          <para id="id7414821">Example 4: The less-than relation on the set of integers I is a quasi order. </para>
+          <para id="id7414837">Example 5: The proper subset relation on the power set of a set, say {1, 2}, is also a quasi order. </para>
+          <para id="id7414852">The concept of least/greatest number in a set of integers can be generalized for a general poset. We start with the concepts of minimal/maximal elements. </para>
+          <para id="id7414865">Definition(minimal/maximal element): Let &lt; A, ≾&gt; be a poset, where ≾ represents an arbitrary partial order. Then an element   b ∈A is a minimal element of A if there is no element  a ∈A that satisfies a ≾b. Similarly an element b ∈A is a maximal element of A if there is no element a ∈A that satisfies b ≾a. </para>
+          <para id="id7415028">Example 6: The set of {{1}, {2}, {1, 2}} with ⊆ has two minimal elements {1} and {2}. Note that {1}, and {2} are not related to each other in ⊆. Hence we can not say which is "smaller than" which, that is, they are not comparable. </para>
+          <para id="id7415077">Definition(least/greatest element): Let &lt; A, ≾&gt; be a poset. Then an element b∈A is the least element of A if for every element a ∈A, b ≾a. </para>
+          <para id="id7415166">Note that the least element of a poset is unique if one exists because of the antisymmetry of ≾.</para>
+          <para id="id7415178">Example 7: The poset of the set of natural numbers with the less-than-or-equal-to relation has the least element 0. </para>
+          <para id="id7415188">Example 8: The poset of the powerset of {1, 2} with ⊆ has the least element ∅. </para>
+          <para id="id6912426">Definition(well order): A total order R on a set A is a well order if every non-empty subset of A has the least element. </para>
+          <para id="id6912467">Example 9: The poset of the set of natural numbers with the less-than-or-equal-to relation is a well order, because every set of natural numbers has the least element. </para>
+          <para id="id6912478">The poset of the set of positive real numbers with the less-than-or-equal-to relation is not a well order, because the set itself does not have any least element (0 is not in the set). </para>
+          <para id="id6912485">A digraph of a binary relation on a set can be simplified if the relation is a partial order. Hasse diagrams defined as follows are such graphs. </para>
+          <para id="id6912492">Definition(Hasse diagram): A Hasse diagram is a graph for a poset which does not have loops and arcs implied by the transitivity. Further, it is drawn so that all arcs point upward eliminating arrowheads. </para>
+          <para id="id6912515">To obtain the Hassse diagram of a poset, first remove the loops, then remove arcs &lt; a, b &gt; if and only if there is an element c that &lt; a, c &gt; and &lt; c, b &gt; exist in the given relation. </para>
+          <para id="id6912526">Example 10: For the relation {&lt; a, a &gt;, &lt; a, b &gt;, &lt; a, c &gt;, &lt; b, b &gt;, &lt; b, c &gt;, &lt; c, c &gt;} on set {a, b,c}, the Hasse diagram has the arcs {&lt; a, b &gt;, &lt; b, c &gt;} as shown in Figure 10.</para>
+          <section id="id-751877874979">
+            <title>Topological Sorting </title>
+            <figure id="id6912588">
+              <media id="idm2003696" alt=""><image src="../../media/graphics10-6377.png" mime-type="image/png" height="163" width="355"/></media>
+            </figure>
+            <para id="id6912612">The elements in a finite poset can be ordered linearly in a number of ways while preserving the partial order. For example {∅, {1}, {2}, {1, 2}} with the partial order ⊆, can be ordered linearly as ∅, {1}, {2}, {1, 2}, or ∅, {2}, {1}, {1, 2}. In these orders a set appears before (to the left of) another set if it is a subset of the other. In real life, tasks for manufacturing goods in general can be partially ordered based on the prerequisite relation, that is certain tasks must be completed before certain other tasks can be started. For example the arms of a chair must be carved before the chair is assembled. Scheduling those tasks is essentially the same as arranging them with a linear order (ignoring here some possible concurrent processing for simplicity's sake). </para>
+            <para id="id6912667">The topological sorting is a procedure to find from a partial order on a finite set a linear order that does not violate the partial order. It is based on the fact that a finite poset has at least one minimal element. The basic idea of the topological sorting is to first remove a minimal element from the given poset, and then repeat that for the resulting set until no more elements are left. The order of removal of the minimal elements gives a linear order. The following algorithm formally describes the topological sorting. </para>
+            <para id="id6912686">Algorithm Topological Sort </para>
+            <para id="id6912694">Input: A finite poset &lt;A, R&gt;. </para>
+            <para id="id6912725">Output: A sequence of the elements of A preserving the order R. </para>
+            <para id="id6912744">integer i; </para>
+            <para id="id6912760">i := 1; </para>
+            <para id="id6912774">while ( A ≠∅) {</para>
+            <para id="id6912813">    pick a minimal element b from A; </para>
+            <para id="id6912833">    A := A - {b}; </para>
+            <para id="id6912866">    i := i + 1; </para>
+            <para id="id6912877">    output b </para>
+            <para id="id6912888">} Example: Let A = {{1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}} with the partial order ⊆. This given A has three minimal elements {1}, {2}, and {3}. </para>
+            <para id="id6912940">Select {2} and remove it from A. Let A denote the resultant set i.e. A := A - {2}. The new A has two minimal elements {1}, and {3}. </para>
+            <para id="id6912996">Select {1} and remove it from A. Denote by A the resultant set, that is A = {{3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}. </para>
+            <para id="id6913027">This new A has two minimal elements {3} and {1, 2}. </para>
+            <para id="id6913049">Select {1, 2} and remove it from A. </para>
+            <para id="id6913066">Proceeding in like manner, we can obtain the following linear order: {{2}, {1}, {1, 2}, {3}, {1, 3}, {2, 3}, {1, 2, 3}}. </para>
+          </section>
+        </section>
+      </section>
+      <section id="id-39486804912">
+        <title>Questions and Exercises</title>
+        <para id="id6687536">1. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687542">a. &lt;&lt;1,2&gt;,&lt;1,3&gt;&gt; is an ordered pair.</para>
+        <para id="id6687547">b. Any set of ordered pair is a binary relation.</para>
+        <para id="id6687552">c. {&lt;1,2&gt;,&lt;1,3&gt;,&lt;2,3&gt;} is less than relation on {1,2,3}</para>
+        <para id="id6687559">d. {1,2} × {3} = {&lt;1,3&gt;,&lt;2,3&gt;,&lt;3,1&gt;,&lt;3,2&gt;}</para>
+        <para id="id6687570">2. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687575">a. Any set of quadruplets is a 4-ary relation.</para>
+        <para id="id6687580">b. {&lt;1,2,1&gt;} is a ternary relation on the set of natural numbers.</para>
+        <para id="id6687587">c. {1,2} × {3} × {4,5} = {1,2} × {4,5} × {3}</para>
+        <para id="id6687614">d. {&lt;1,2,{1,2}&gt;, &lt;2,3,{2,3}&gt;, &lt;3,1,{1,3}&gt;} is a ternary relation.</para>
+        <para id="id6687620">3. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687626">a. {&lt;1,2&gt;,&lt;2,3&gt;} is equal to {&lt;1,2&gt;,&lt;2,3&gt;} as a relation.</para>
+        <para id="id6687632">b. The relation {&lt;1,1&gt;,&lt;2,2&gt;} over {1,2} is equal to the relation {&lt;1,1,1&gt;,&lt;2,2,2&gt;} over {1,2}.</para>
+        <para id="id6687639">c. The relation {&lt;1,2&gt;,&lt;2,1&gt;} over {1,2} is equal to the relation {&lt;1,2&gt;,&lt;2,1&gt;} over {1,2,3}.</para>
+        <para id="id6687645">d. The relation {&lt;1,2&gt;,&lt;2,1&gt;} over {1,2} is equal to the relation {&lt;1,2&gt;,&lt;2,1&gt;,&lt;1,2&gt;} over {1,2}.</para>
+        <para id="id6687652">4. For the graph in Figure 11, indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687658">
+          <figure id="id6687661">
+            <media id="idm1623360" alt=""><image src="../../media/graphics11.png" mime-type="image/png" height="208" width="313"/></media>
+          </figure>
+        </para>
+        <para id="id6687697">a. The in-degree of vertex 2 is 3.</para>
+        <para id="id6687701">b. Every partial digraph with vertices 2,4 and 5 is connected.</para>
+        <para id="id6687706">c. 22 is a loop.</para>
+        <para id="id6687711">d. 213 is a simple directed path.</para>
+        <para id="id6687715">5. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687721">a. A binary relation on a set can be neither symmetric nor anti-symmetric.</para>
+        <para id="id6687726">b. For a transitive relation, only vertices connected by a directed path are connected by an arc.</para>
+        <para id="id6687732">c. If a relation R is symmetric, then for every &lt;a,b&gt; in R &lt;b,a&gt; must be in R.</para>
+        <para id="id6687738">d. A symmetric relation cannot be transitive an irreflexive at the same time.</para>
+        <para id="id6687744">6. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687749">a. The intersection of less-than-or-equal-to and greater-than-or-equal-to relations is quality relation.</para>
+        <para id="id6687755">b. If B is a binary relation on a set A and T is a ternary relation on A, union of B and T is a relation.</para>
+        <para id="id6687761">c. If &lt;a,b&gt; is in RR, then b can reached from a in 2 or less hops in the digraph of R.</para>
+        <para id="id6687768">d. The square of less-than-or-equal-to relation is equal to less-than-or-equal-to relation.</para>
+        <para id="id6687774">7. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687780">a. The symmetric closure of a relation is a relation, and it is symmetric.</para>
+        <para id="id6687785">b. The transitive closure of a relation contains all the ordered pairs of the relation, and possibly more.</para>
+        <para id="id6687791">c. If a relation is symmetric, then it is its own symmetric closure.</para>
+        <para id="id6687797">d. If the digraph of a relation is a simple cycle, then its transitive closure is the universal relation. </para>
+        <para id="id6687803">8. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687808">a. An equivalence relation must be symmetric.</para>
+        <para id="id6687813">b. An equivalence relation can be antisymmetric.</para>
+        <para id="id6687818">c. Objects in different equivalence classes may be related to each other.</para>
+        <para id="id6687824">d. An equivalence relation is the universal relation on each of its equivalence classes.</para>
+        <para id="id6687830">9. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id6687835">a. A total order is a partial order.</para>
+        <para id="id6687839">b. The partial order can be reconstructed from a Hasse diagram.</para>
+        <para id="id6687845">c. The reflexive closure of a quasi order is a partial order.</para>
+        <para id="id6687850">d. Every finite poset has a minimal element and a maximal element</para>
+        <para id="id6687857">10. List the ordered pairs in the relation <emphasis>R</emphasis> from <emphasis>A = </emphasis>{0,1, 2, 3} to <emphasis>B </emphasis>= {0, 1, 2, 3, 4} where <emphasis>(a, b) </emphasis>∈ <emphasis>R</emphasis> if and only if </para>
+        <para id="id6687894">
+          <emphasis/>
+        </para>
+        <para id="id6687900">
+          <emphasis>a. a &gt; b.</emphasis>
+        </para>
+        <para id="id6687909">
+          <emphasis/>
+        </para>
+        <para id="id6687916">
+          <emphasis>b. a + b = 3.</emphasis>
+        </para>
+        <para id="id6687925">
+          <emphasis/>
+        </para>
+        <para id="id6687931"><emphasis>c. a</emphasis> divides <emphasis>b.</emphasis></para>
+        <para id="id6687946">
+          <emphasis/>
+        </para>
+        <para id="id6687952">
+          <emphasis>d. a - b = 0.</emphasis>
+        </para>
+        <para id="id6687963">e. gcd(<emphasis>a</emphasis>, <emphasis>b</emphasis>) = <emphasis>1.</emphasis></para>
+        <para id="id6687984">f. lcm(<emphasis>a</emphasis>, <emphasis>b</emphasis>) = <emphasis>6.</emphasis></para>
+        <para id="id6688004">11. Recursively define the relation { (<emphasis>a</emphasis>, <emphasis>b</emphasis>) | <emphasis>a=2b</emphasis> }, where <emphasis>a</emphasis> and <emphasis>b</emphasis> are natural numbers.</para>
+        <para id="id6688037">12. List unary relation on {1, 2, 3}.</para>
+        <para id="id6688041">13. Prove that there are <emphasis>2</emphasis>n2 binary relations on a set of cardinality <emphasis>n</emphasis>.</para>
+        <para id="id6688060">14. For each of the following relations on the set {1, 2, 3, 4}, decide whether it is reflexive, symmetric, antisymmetric and/or transitive.</para>
+        <para id="id6688067">a. {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (4, 4)}</para>
+        <para id="id6688072">b. {(1, 3), (1, 4), (2, 3), (3, 4)}</para>
+        <para id="id6688076">c. {(1, 1), (1, 3), (1, 4), (2, 1), (2, 3), (2, 4), (3, 1), (3, 3), (3, 4)}</para>
+        <para id="id6688081">15. Determine whether the relation <emphasis>R</emphasis> on the set of all integers is reflexive, symmetric, antisymmetric, and/or transitive, where (<emphasis>x</emphasis>, <emphasis>y</emphasis>) ∈ <emphasis>R</emphasis> if and only if</para>
+        <para id="id6688115">
+          <emphasis/>
+        </para>
+        <para id="id6688122"><emphasis>a. x</emphasis> is divisible by <emphasis>y</emphasis>.</para>
+        <para id="id6688136">
+          <emphasis/>
+        </para>
+        <para id="id6688143"><emphasis>b. x </emphasis>≠ <emphasis>y.</emphasis></para>
+        <para id="id6688160">
+          <emphasis/>
+        </para>
+        <para id="id6688167"><emphasis>c. y = x + 2 </emphasis>or <emphasis>y = x - 2.</emphasis></para>
+        <para id="id6688180">
+          <emphasis/>
+        </para>
+        <para id="id6688187"><emphasis>d. x</emphasis> = <emphasis>y</emphasis>² + <emphasis>1</emphasis>.</para>
+        <para id="id6980133">16. Let <emphasis>A</emphasis> be the set of people in your town. Let <emphasis>R</emphasis>1 be the unary relation representing the people in your town who were registered in the last election  and <emphasis>R</emphasis>2 be the unary relation representing the people in your town who voted in the last election.  Describe the 1-tuples in each of the following relations.</para>
+        <para id="id6980163"><emphasis>a. R</emphasis>1 ∪<emphasis>R</emphasis>2.</para>
+        <para id="id6980182">
+          <emphasis/>
+        </para>
+        <para id="id6980188"><emphasis>b. R</emphasis>1 ∩<emphasis>R</emphasis>2.</para>
+        <para id="id6980207">17. Draw the directed graph that represents the relation {(<emphasis>a</emphasis>,<emphasis>b</emphasis>), (<emphasis>a</emphasis>, <emphasis>c</emphasis>), (<emphasis>b</emphasis>, <emphasis>c</emphasis>), (<emphasis>c</emphasis>, <emphasis>b</emphasis>), (<emphasis>c</emphasis>, <emphasis>c</emphasis>), (<emphasis>c</emphasis>, <emphasis>d</emphasis>), (<emphasis>d</emphasis>, <emphasis>a</emphasis>), (<emphasis>d</emphasis>, <emphasis>b</emphasis>)}.</para>
+        <para id="id6980302">18. Let <emphasis>R</emphasis> be the parent-child relation on the set of people that is, <emphasis>R</emphasis> = { (<emphasis>a, b</emphasis>) | <emphasis>a</emphasis> is a parent of <emphasis>b</emphasis> }.  Let <emphasis>S</emphasis> be the sibling relation on the set of people that is, <emphasis>R</emphasis> = { (<emphasis>a</emphasis>, <emphasis>b</emphasis>) | <emphasis>a</emphasis> and <emphasis>b</emphasis> are siblings (brothers or sisters) }.  What are <emphasis>S </emphasis>o<emphasis>R</emphasis> and <emphasis>R </emphasis>o<emphasis>S</emphasis>?</para>
+        <para id="id6980403">19. Let <emphasis>R</emphasis> be a reflexive relation on a set <emphasis>A</emphasis>.  Show that <emphasis>R </emphasis>n is reflexive for all positive integers <emphasis>n</emphasis>.</para>
+        <para id="id6980434">20. Let <emphasis>R</emphasis> be the relation on the set { 1, 2, 3, 4} containing the ordered pairs (1, 1), (1, 2), (2, 2), (2, 4), (3, 4), and (4, 1).  Find </para>
+        <para id="id6980449">a. the reflexive closure of <emphasis>R</emphasis></para>
+        <para id="id6980458">b. symmetric closure of <emphasis>R</emphasis>  and </para>
+        <para id="id6980467">c. transitive closure of <emphasis>R</emphasis>.</para>
+        <para id="id6980477">21. Let <emphasis>R</emphasis> be the relation { (<emphasis>a, b</emphasis>) | <emphasis>a</emphasis> is a (integer) multiple of <emphasis>b</emphasis> } on the set of integers.  What is the symmetric closure of <emphasis>R</emphasis>?</para>
+        <para id="id6980512">22. Suppose that a binary relation <emphasis>R</emphasis> on a set <emphasis>A</emphasis> is reflexive.  Show that   <emphasis>R*</emphasis>   is reflexive, where   <emphasis>R*</emphasis> = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msup><m:mi>R</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msup></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union rSub { size 8{i=1} }  rSup { size 8{n} }  {R}  rSup { size 8{i} } } {}</m:annotation></m:semantics></m:math>.</para>
+        <para id="id6980619">23. Which of the following relations on {1, 2, 3, 4} are equivalence relations?  Determine the properties of an equivalence relation that the others lack.</para>
+        <para id="id6980629">a. {(1, 1), (2, 2), (3, 3), (4, 4)}</para>
+        <para id="id6980633">b. {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (4, 4)}</para>
+        <para id="id6980638">c. {(1, 1), (1, 2), (1, 4), (2, 2), (2, 4), (3, 3), (4, 1), (4, 2), (4, 4)}</para>
+        <para id="id6980644">24. Suppose that <emphasis>A</emphasis> is a nonempty set, and <emphasis>f</emphasis> is a function that has <emphasis>A</emphasis> as its domain.  Let <emphasis>R</emphasis> be the relation on <emphasis>A</emphasis> consisting of all ordered pairs (<emphasis>x</emphasis>, <emphasis>y</emphasis>) where <emphasis>f(x) = f(y)</emphasis>. </para>
+        <para id="id6980694">a. Show that <emphasis>R</emphasis> is an equivalence relation on <emphasis>A</emphasis>. </para>
+        <para id="id6980710">b. What are the equivalence classes of <emphasis>R</emphasis>?</para>
+        <para id="id6980719">25. Show that propositional equivalence is an equivalence relation on the set of all compound propositions.</para>
+        <para id="id6980725">26. Give a description of each of the congruence classes modulo 6.</para>
+        <para id="id6980731">27. Which of the following collections of subsets are partitions of {1, 2, 3, 4, 5, 6}? </para>
+        <para id="id6980736">a. {1, 2, 3}, {3, 4}, {4, 5, 6} </para>
+        <para id="id6980740">b. {1, 2, 6}, {3, 5}, {4} </para>
+        <para id="id6980745">c. {2, 4, 6}, {1, 5} </para>
+        <para id="id6980749">d. {1, 4, 5}, {2, 3, 6}</para>
+        <para id="id6980753">28. Consider the equivalence relation on the set of integers <emphasis>R = </emphasis>{ (<emphasis>x, y</emphasis>) | <emphasis>x - y</emphasis> is an integer}. </para>
+        <para id="id6980776">a. What is the equivalence class of 1 for this equivalence relation? </para>
+        <para id="id6980782">b. What is the equivalence class of 0.3 for this equivalence relation?</para>
+        <para id="id6980787">29. Which of the following are posets? </para>
+        <para id="id6369840">a. ( Z,  =  ) </para>
+        <para id="id6369851">b. ( Z, ≠) </para>
+        <para id="id6369866">c. ( A collection of sets, ⊆).</para>
+        <para id="id6369876">30. Draw the Hasse diagram for the divisibility relation on the following sets</para>
+        <para id="id6369882">a. {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}</para>
+        <para id="id6369886">b. {1, 2, 5, 8, 16, 32}</para>
+        <para id="id6369890">31. Answer the following questions concerning the poset ({{1}, {2}, {3}, {4}, {1, 3}, {1, 4}, {2, 4}, {3, 4}, {1, 2, 4}, {2, 3, 4}},⊆). </para>
+        <para id="id6369902">a. Find the maximal elements. </para>
+        <para id="id6369906">b. Find the minimal elements. </para>
+        <para id="id6369910">c. Is there a greatest element? </para>
+        <para id="id6369914">d Is there a least element? </para>
+        <para id="id6369918">e. Find all upper bounds of {{2}, {4}}. </para>
+        <para id="id6369923">f. Find the least upper bound of {{2}, {4}}, if it exists. </para>
+        <para id="id6369928">g. Find all lower bounds of {{1, 2, 4}, {2, 3, 4}} </para>
+        <para id="id6369933">h. Find the greatest lower bound of {{1, 2, 4}, {2, 3, 4}}, if it exists.</para>
+      </section>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,509 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Discrete Structures Recursion</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>f02b6fcb-b064-4271-8b85-815b8f6e305d</md:uuid>
+</metadata>
+  <content>
+    <section id="id-946739643357">
+      <title>Recursion</title>
+      <section id="id-0675583490176">
+        <title>Recursive Definition </title>
+        <section id="id-402879684619">
+          <title>Recursive Definition</title>
+          <para id="id5051546">Sets which have too many elements to list them up, and for which there are no convenient or obvious predicates to specify their elements can often be defined using a recursive definition (also called inductive definition). It essentially gives a procedure to generate the members of the set one by one starting with some subset of its elements. In this type of definition, first a collection of elements to be included initially in the set is specified. These elements can be viewed as the seeds of the set being defined. Next, the rules to be used to generate elements of the set from elements already known to be in the set (initially the seeds) are given. These rules provide a method to construct the set element by element starting with the seeds. These rules can also be used to test elements for the membership in the set.</para>
+          <para id="id5051569">A recursive definition of a set always consists of three distinct clauses: </para>
+          <para id="id5051587">1. The basis clause (or simply basis) of the definition establishes that certain objects are in the set. This part of the definition specifies the "seeds" of the set from which the elements of the set are generated using the methods given in the inductive clause. The set of elements specified here is called basis of the set being defined. </para>
+          <para id="id5051620">2. The inductive clause (or simply induction) of the definition establishes the ways in which elements of the set can be combined to produce new elements of the set. The inductive clause always asserts that if objects are elements of the set, then they can be combined in certain specified ways to create other objects. Let us call the objects used to create a new object the parents of the new object, and the new object is their child. </para>
+          <para id="id5051655">3. The extremal clause asserts that unless an object can be shown to be a member of the set by applying the basis and inductive clauses a finite number of times, the object is not a member of the set. </para>
+          <para id="id5051674">The set you are trying to define recursively is the set that satisfies those three clauses. </para>
+          <para id="id5051684">There are a number of other ways of expressing the extremal clause that are equivalent to the extremal clause given above.</para>
+          <para id="id5051690">Examples of Recursive Definition of Set</para>
+          <para id="id5051695">Example 1. Definition of the Set of Natural Numbers N</para>
+          <para id="id5051707">The set N is the set that satisfies the following three clauses: </para>
+          <para id="id5051718">Basis Clause: 0 ∈ N</para>
+          <para id="id5051739">Inductive Clause: For any element x in N, x + 1 is in N. </para>
+          <para id="id5051777">Extremal Clause: Nothing is in N unless it is obtained from the Basis and Inductive Clauses.</para>
+          <para id="id5051791">The basis for this set N is { 0 } . The x + 1 in the Inductive Clause is the parent of x, and x is the child of x + 1. Following this definition, the set of natural numbers N can be obtained as follows:</para>
+          <para id="id5051862">First by the Basis Clause,   0 is put into N. Then by the Inductive Clause, since 0 is in N,  0 + 1 (= 1) is in N. 0 is the parent of 1, and 1 is the child of 0. Then by the Inductive Clause again,   1 + 1 (= 2) is in N. 1 is the parent of 2, and 2 is the child of 1. Proceeding in this manner all the "natural numbers" are put into N. </para>
+          <para id="id5051963"/>
+          <para id="id5051967">Note that if we don't have the Extremal Clause,  0.5, 1.5, 2.5, ... can be included in N, which is not what we want as the set of natural numbers. </para>
+          <para id="id5051984"/>
+          <para id="id5051992">Example 2. Definition of the Set of Nonnegative Even Numbers NE</para>
+          <para id="id5052009"/>
+          <para id="id5052013">The set NE is the set that satisfies the following three clauses: </para>
+          <para id="id5052024">Basis Clause: 0 ∈ NE</para>
+          <para id="id5052044">Inductive Clause: For any element x in NE, x + 2 is in NE. </para>
+          <para id="id5052082">Extremal Clause: Nothing is in NE unless it is obtained from the Basis and Inductive Clauses. </para>
+          <para id="id5052097"/>
+          <para id="id5052101">Example 3. Definition of the Set of Even Integers EI</para>
+          <para id="id5052114">The set EI is the set that satisfies the following three clauses: </para>
+          <para id="id8011490">Basis Clause: 0 ∈ EI</para>
+          <para id="id8011510">Inductive Clause: For any element x in EI, x + 2, and x - 2 are in EI.</para>
+          <para id="id8011562">Extremal Clause: Nothing is in EI unless it is obtained from the Basis and Inductive Clauses. </para>
+          <para id="id8011577"/>
+          <para id="id8011581">Example 4. Definition of the Set of Strings S over the alphabet {a,b} excepting empty string. This is the set of strings consisting of a's and b's such as abbab, bbabaa, etc.</para>
+          <para id="id8011627">The set S is the set that satisfies the following three clauses: </para>
+          <para id="id8011638">Basis Clause: a ∈ S, and b ∈ S. </para>
+          <para id="id8011674">Inductive Clause: For any element x in S, ax ∈ S, and bx ∈ S. </para>
+          <para id="id8011721">Here ax means the concatenation of a with x. </para>
+          <para id="id8011741">Extremal Clause: Nothing is in S unless it is obtained from the Basis and Inductive Clauses.</para>
+          <para id="id8011755">Tips for recursively defining a set: </para>
+          <para id="id8011772">For the "Basis Clause", try simplest elements in the set such as smallest numbers (0, or 1), simplest expressions, or shortest strings. Then see how other elements can be obtained from them, and generalize that generation process for the "Inductive Clause". </para>
+          <para id="id8011804">The set of propositions (propositional forms) can also be defined recursively.</para>
+        </section>
+        <section id="id-571100733517">
+          <title>Generalized Set Operations</title>
+          <para id="id8011822">As we saw earlier, union, intersection and Cartesian product of sets are associative. For example (A ∪ B) ∪ C = A ∪ (B ∪ C)</para>
+          <para id="id8011897">To denote either of these we often use A ∪ B ∪ C. </para>
+          <para id="id8011927">This can be generalized for the union of any finite number of sets as A1 ∪ A2 ∪.... ∪ An. </para>
+          <para id="id8011987">which we write as </para>
+          <para id="id8011992">      
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math></para>
+          <para id="id8012077"/>
+          <para id="id8012081">This generalized union of sets can be rigorously defined as follows: </para>
+          <para id="id8012092">Definition (
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math>): </para>
+          <para id="id7388304">Basis Clause: For n = 1, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:mrow><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } =A rSub { size 8{1} } } {}</m:annotation></m:semantics></m:math>. </para>
+          <para id="id7388411">Inductive Clause:   
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>n</m:mi><m:mo stretchy="false">+</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n+1} } A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math> = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math>∪ An+1 </para>
+          <para id="id7388592">Similarly the generalized intersection 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ intersection  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math>and generalized Cartesian product 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ times  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math> can be defined. </para>
+          <para id="id7388755">Based on these definitions, De Morgan's law on set union and intersection can also be generalized as follows: </para>
+          <para id="id7388761"/>
+          <para id="id7388765">Theorem (Generalized De Morgan) </para>
+          <para id="id7388774"/>
+          <para id="id7388778"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mover accent="true"><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup></m:mrow><m:mover accent="true"><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub><m:mo>¯</m:mo></m:mover></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  { union  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } }} = intersection  rSub { size 8{i=1} }  rSup { size 8{n} }  {overline  {A rSub { size 8{i} } }} } {}</m:annotation></m:semantics></m:math>,     and </para>
+          <para id="id7388916">
+            <m:math>
+              <m:semantics>
+                <m:mrow>
+                  <m:mstyle fontsize="12pt">
+                    <m:mrow>
+                      <m:mrow>
+                        <m:mrow>
+                          <m:mover accent="true">
+                            <m:mrow>
+                              <m:msubsup>
+                                <m:mrow/>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mrow>
+                                      <m:mi>i</m:mi>
+                                      <m:mo stretchy="false">=</m:mo>
+                                      <m:mn>1</m:mn>
+                                    </m:mrow>
+                                  </m:mrow>
+                                </m:mstyle>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>n</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msubsup>
+                              <m:msub>
+                                <m:mi>A</m:mi>
+                                <m:mstyle fontsize="8pt">
+                                  <m:mrow>
+                                    <m:mi>i</m:mi>
+                                  </m:mrow>
+                                </m:mstyle>
+                              </m:msub>
+                            </m:mrow>
+                            <m:mo>¯</m:mo>
+                          </m:mover>
+                          <m:mo stretchy="false">=</m:mo>
+                          <m:msubsup>
+                            <m:mrow/>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mrow>
+                                  <m:mi>i</m:mi>
+                                  <m:mo stretchy="false">=</m:mo>
+                                  <m:mn>1</m:mn>
+                                </m:mrow>
+                              </m:mrow>
+                            </m:mstyle>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>n</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msubsup>
+                        </m:mrow>
+                        <m:mover accent="true">
+                          <m:msub>
+                            <m:mi>A</m:mi>
+                            <m:mstyle fontsize="8pt">
+                              <m:mrow>
+                                <m:mi>i</m:mi>
+                              </m:mrow>
+                            </m:mstyle>
+                          </m:msub>
+                          <m:mo>¯</m:mo>
+                        </m:mover>
+                      </m:mrow>
+                    </m:mrow>
+                  </m:mstyle>
+                  <m:mrow/>
+                </m:mrow>
+                <m:annotation encoding="StarMath 5.0"> size 12{ {overline  { intersection  rSub { size 8{i=1} }  rSup { size 8{n} } A rSub { size 8{i} } }} = union  rSub { size 8{i=1} }  rSup { size 8{n} }  {overline  {A rSub { size 8{i} } }} } {}</m:annotation>
+              </m:semantics>
+            </m:math>
+          </para>
+          <para id="id7291032"/>
+          <para id="id7291036">Proof: These can be proven by induction on n and are left as an exercise.</para>
+        </section>
+        <section id="id-193580089001">
+          <title>Recursive Definition of Function</title>
+          <para id="id7291057">Some functions can also be defined recursively. </para>
+          <para id="id7291062"/>
+          <para id="id7291066">Condition: The domain of the function you wish to define recursively must be a set defined recursively. </para>
+          <para id="id7291076">How to define function recursively: First the values of the function for the basis elements of the domain are specified. Then the value of the function at an element, say x, of the domain is defined using its value at the parent(s) of the element x. </para>
+          <para id="id7291099">A few examples are given below. </para>
+          <para id="id7291104">They are all on functions from integer to integer except the last one. </para>
+          <para id="id7291109">Example 5: The function f(n) = n! for natural numbers n can be defined recursively as follows: </para>
+          <para id="id7291138">The function f is the function that satisfies the following two clauses: </para>
+          <para id="id7291151"/>
+          <para id="id7291155">Basis Clause: f(0) = 0! = 1 </para>
+          <para id="id7291170">Inductive Clause: For all natural number n,  f(n+1) = (n+1) f(n). </para>
+          <para id="id7291196"/>
+          <para id="id7291201">Note that here Extremal Clause is not necessary, because the set of natural numbers can be defined recursively and that has the extremal clause in it. So there is no chance of other elements to come into the function being defined. </para>
+          <para id="id7291209"/>
+          <para id="id7291213">Using this definition, 3! can be found as follows: </para>
+          <para id="id7291223">Since 0 ! = 1,   1 ! = 1 * 0 ! = 1 * 1 = 1 , </para>
+          <para id="id7291241">Hence 2 ! = 2 * 1 ! = 2 * 1 = 2 . </para>
+          <para id="id7291255">Hence 3 ! = 3 * 2 ! = 3 * 2 * 1 = 6 . </para>
+          <para id="id7291268">Example 6: The function f(n) = 2n + 1 for natural numbers n can be defined recursively as follows: </para>
+          <para id="id7291288"/>
+          <para id="id7291292">The function f is the function that satisfies the following two clauses: </para>
+          <para id="id7291303"/>
+          <para id="id7291307">Basis Clause: f(0) = 1 </para>
+          <para id="id7291321">Inductive Clause: For all natural number n,  f(n+1) = f(n) + 2 . </para>
+          <para id="id7291348">See above for the extremal clause. </para>
+          <para id="id7291352"/>
+          <para id="id7291357">Example 7: The function f(n) = 2n for natural numbers n can be defined recursively as follows: </para>
+          <para id="id7291389">The function f is the function that satisfies the following two clauses: </para>
+          <para id="id7291402">Basis Clause: f(0) = 1 </para>
+          <para id="id7291416">Inductive Clause: For all natural number n,  f(n+1) = 2 f(n) . </para>
+          <para id="id7291443">See Example 5 for the extremal clause. </para>
+          <para id="id7291447"/>
+          <para id="id7291451">Example 8: The function L from the set S of strings over {a, b} to the set of natural numbers that gives the length of a string can be defined recursively as follows: </para>
+          <para id="id7291489">The function L is the function that satisfies the following two clauses: </para>
+          <para id="id7291500">Basis Clause: For symbols a and b of the alphabet,   L(a) = 1 and L(b) = 1. </para>
+          <para id="id7291537">Inductive Clause: For any string x and y of S,  L(xy) = L(x) + L(y) ,  where xy is the concatenation of strings x and y. </para>
+          <para id="id7291596">See Example 5 for the extremal clause. </para>
+          <para id="id7291600"/>
+          <para id="id7291604">This function L gives the number of a's and b's.</para>
+        </section>
+      </section>
+      <section id="id-480364202886">
+        <title>Recursive Algorithm</title>
+        <para id="id7291633">A recursive algorithm is an algorithm which calls itself with "smaller (or simpler)" input values, and which obtains the result for the current input by applying simple operations to the returned value for the smaller (or simpler) input. More generally if a problem can be solved utilizing solutions to smaller versions of the same problem, and the smaller versions reduce to easily solvable cases, then one can use a recursive algorithm to solve that problem. For example, the elements of a recursively defined set, or the value of a recursively defined function can be obtained by a recursive algorithm. </para>
+        <para id="id7291654">If a set or a function is defined recursively, then a recursive algorithm to compute its members or values mirrors the definition. Initial steps of the recursive algorithm correspond to the basis clause of the recursive definition and they identify the basis elements. They are then followed by steps corresponding to the inductive clause, which reduce the computation for an element of one generation to that of elements of the immediately preceding generation. </para>
+        <para id="id7291667">In general, recursive computer programs require more memory and computation compared with iterative algorithms, but they are simpler and for many cases a natural way of thinking about the problem. </para>
+        <para id="id7291676">Example 1: Algorithm for finding the k-th even natural number Note here that this can be solved very easily by simply outputting 2*(k - 1) for a given k . The purpose here, however, is to illustrate the basic idea of recursion rather than solving the problem. </para>
+        <para id="id7068582">Algorithm 1:   Even(positive integer k) </para>
+        <para id="id7068602">Input: k , a positive integer </para>
+        <para id="id7068614">Output: k-th even natural number (the first even being 0) </para>
+        <para id="id7068633">Algorithm: </para>
+        <para id="id7068644">if k = 1, then return 0; </para>
+        <para id="id7068684">else return Even(k-1) + 2 . </para>
+        <para id="id7068715"/>
+        <para id="id7068720">Here the computation of Even(k) is reduced to that of Even for a smaller input value, that is Even(k-1). Even(k) eventually becomes Even(1) which is 0 by the first line. For example, to compute Even(3), Algorithm Even(k) is called with k = 2. In the computation of Even(2), Algorithm Even(k) is called with k = 1. Since Even(1) = 0, 0 is returned for the computation of Even(2), and Even(2) = Even(1) + 2 = 2 is obtained. This value 2 for Even(2) is now returned to the computation of Even(3), and Even(3) = Even(2) + 2 = 4 is obtained. </para>
+        <para id="id7069024">As can be seen by comparing this algorithm with the recursive definition of the set of nonnegative even numbers, the first line of the algorithm corresponds to the basis clause of the definition, and the second line corresponds to the inductive clause. </para>
+        <para id="id7069033">By way of comparison, let us see how the same problem can be solved by an iterative algorithm. </para>
+        <para id="id7069040">Algorithm 1-a:   Even(positive integer k) </para>
+        <para id="id7069061">Input: k, a positive integer </para>
+        <para id="id7069074">Output: k-th even natural number (the first even being 0) </para>
+        <para id="id7069092">Algorithm: </para>
+        <para id="id7069103">int   i, even; </para>
+        <para id="id7069128">i := 1;</para>
+        <para id="id7069148">even := 0;</para>
+        <para id="id7069168">while( i &lt; k ) { </para>
+        <para id="id7069185">          even := even + 2; </para>
+        <para id="id7069215">          i := i + 1; </para>
+        <para id="id7069245">} </para>
+        <para id="id7069254">return even . </para>
+        <para id="id7069268">Example 2: Algorithm for computing the k-th power of 2 </para>
+        <para id="id5050295">Algorithm 2   Power_of_2(natural number k) </para>
+        <para id="id5050311">Input: k , a natural number </para>
+        <para id="id5050324">Output: k-th power of 2 </para>
+        <para id="id5050342">Algorithm: </para>
+        <para id="id5050353">if k = 0, then return 1; </para>
+        <para id="id5050385">else return 2*Power_of_2(k - 1) . </para>
+        <para id="id5050408">By way of comparison, let us see how the same problem can be solved by an iterative algorithm. </para>
+        <para id="id5050415">Algorithm 2-a   Power_of_2(natural number k) </para>
+        <para id="id5050432">Input: k , a natural number </para>
+        <para id="id5050445">Output: k-th power of 2 </para>
+        <para id="id5050463">Algorithm: </para>
+        <para id="id5050474">int   i, power; </para>
+        <para id="id5050498">i := 0;</para>
+        <para id="id5050518">power := 1;</para>
+        <para id="id5050538">while( i &lt; k ) { </para>
+        <para id="id5050556">          power := power * 2; </para>
+        <para id="id5050586">          i := i + 1; </para>
+        <para id="id5050615">} </para>
+        <para id="id5050625">return power . </para>
+        <para id="id5050639">The next example does not have any corresponding recursive definition. It shows a recursive way of solving a problem. </para>
+        <para id="id5050647">Example 3: Recursive Algorithm for Sequential Search </para>
+        <para id="id5050657">Algorithm 3   SeqSearch(L, i, j, x) </para>
+        <para id="id5050674">Input: L is an array, i and j are positive integers, i ≤j, and x is the key to be searched for in L. </para>
+        <para id="id5050726">Output: If x is in L between indexes i and j, then output its index, else output 0. </para>
+        <para id="id5050762">Algorithm: </para>
+        <para id="id5050773">if i ≤j , then </para>
+        <para id="id5050805">{ </para>
+        <para id="id5050810">   if L(i) = x, then return i ; </para>
+        <para id="id5050857">   else return SeqSearch(L, i+1, j, x) </para>
+        <para id="id5050881">} </para>
+        <para id="id5050887">else return 0. </para>
+        <para id="id5050904">Recursive algorithms can also be used to test objects for membership in a set. </para>
+        <para id="id5050910">Example 4: Algorithm for testing whether or not a number x is a natural number </para>
+        <para id="id5050926">Algorithm 4   Natural(a number x) </para>
+        <para id="id5050946">Input: A number x </para>
+        <para id="id5050960">Output: "Yes" if x is a natural number, else "No" </para>
+        <para id="id5050985">Algorithm: </para>
+        <para id="id5050996">if x &lt; 0,   then return "No" </para>
+        <para id="id7643088">else </para>
+        <para id="id7643097">    if x = 0,   then return "Yes" </para>
+        <para id="id7643135">    else return Natural( x - 1 ) </para>
+        <para id="id7643159">Example 5: Algorithm for testing whether or not an expression w is a proposition (propositional form) </para>
+        <para id="id7643174"/>
+        <para id="id7643178">Algorithm 5   Proposition( a string w ) </para>
+        <para id="id7643197">Input: A string w </para>
+        <para id="id7643212">Output: "Yes" if w is a proposition, else "No" </para>
+        <para id="id7643236">Algorithm: </para>
+        <para id="id7643247">if w is 1(true), 0(false), or a propositional variable, then return "Yes" </para>
+        <para id="id7643287">else if w = ~w1, then return Proposition(w1) </para>
+        <para id="id7643334">   else </para>
+        <para id="id7643344">     if ( w = w1 ∨w2 or w1 ⋀w2 or w1 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mo stretchy="false">→</m:mo></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ rightarrow } {}</m:annotation></m:semantics></m:math>w2 or w1 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mi>↔</m:mi></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{↔} {}</m:annotation></m:semantics></m:math>w2 ) and </para>
+        <para id="id7643562">       Proposition(w1) = Yes and   Proposition(w2) = Yes</para>
+        <para id="id7643601">     then return Yes </para>
+        <para id="id7643617">     else return No </para>
+        <para id="id7643632">end </para>
+      </section>
+      <section id="id-083442393635">
+        <title>Proof by Induction </title>
+        <section id="id-584645624333">
+          <title>Mathematical Induction -- First Principle</title>
+          <para id="id7643655">As we have seen in recursion, the set of natural numbers can be defined recursively, and its elements can be generated one by one starting with 0 by adding 1. Thus the set of natural numbers can be described completely by specifying the basis element (0), and the process of generating an element from a known element in the set. </para>
+          <para id="id7643702"/>
+          <para id="id7643706">Taking advantage of this, natural numbers can be proven to have certain properties as follows: </para>
+          <para id="id7643723">First it is proven that the basis element, that is 0, has the property in question (basis step). You prove that the seeds (the first generation elements) have the property. Then it is proven that if an arbitrary natural number, denote it by n, has the property in question, then the next element, that is n + 1, has that property (inductive step). Here you prove that the property is inherited from one generation (n) to the next generation (n + 1). </para>
+          <para id="id6968491"/>
+          <para id="id6968495">When these two are proven, then it follows that all the natural numbers have that property. For since 0 has the property by the basis step, the element next to it, which is 1, has the same property by the inductive step. Then since 1 has the property, the element next to it, which is 2, has the same property again by the inductive step. Proceeding likewise, any natural number can be shown to have the property. This process is somewhat analogous to the knocking over a row of dominos with knocking over the first domino corresponding to the basis step. </para>
+          <para id="id6968545"/>
+          <para id="id6968550">More generally mathematical statements involving a natural number n such as 1 + 2 + ... + n = n( n + 1 )/2 can be proven by mathematical induction by the same token. </para>
+          <para id="id6968601">To prove that a statement P(n) is true for all natural number n≥n0, where n0 is a natural number, we proceed as follows: </para>
+          <para id="id6968668"/>
+          <para id="id6968675">Basis Step: Prove that P(n0) is true. </para>
+          <para id="id6968711"/>
+          <para id="id6968718">Induction: Prove that for any integer k≥n0, if P(k) is true (called induction hypothesis), then P(k+1) is true.</para>
+          <para id="id6968815">The first principle of mathematical induction states that if the basis step and the inductive step are proven, then P(n) is true for all natural number n≥n0. </para>
+          <para id="id6968876"/>
+          <para id="id6968880">As a first step for proof by induction,   it is often a good idea to restate P(k+1) in terms of P(k) so that P(k), which is assumed to be true, can be used. </para>
+          <para id="id6968962">Example: </para>
+          <para id="id6968974">      Prove that for any natural number n,   0 + 1 + ... + n = n( n + 1 )/2 . </para>
+          <para id="id6969028">Proof: </para>
+          <para id="id6969041">Basis Step: If n = 0, then LHS = 0, and RHS = 0 * (0 + 1) = 0 . </para>
+          <para id="id6969108">Hence LHS = RHS. </para>
+          <para id="id6969132">Induction: Assume that for an arbitrary natural number n, 0 + 1 + ... + n = n( n + 1 )/2 . </para>
+          <para id="id6969191">-------- Induction Hypothesis</para>
+          <para id="id6969202">To prove this for n+1,   first try to express LHS for n+1   in terms of LHS for n,   and somehow use the induction hypothesis. </para>
+          <para id="id4923702">Here let us try </para>
+          <para id="id4923707">      LHS for n + 1 = 0 + 1 + ... + n + (n + 1) = (0 + 1 + ... + n) + (n + 1).</para>
+          <para id="id4923800">Using the induction hypothesis, the last expression can be rewritten as </para>
+          <para id="id4923806">      n( n + 1 )/2 + (n + 1) .</para>
+          <para id="id4923831">Factoring (n + 1) out, we get </para>
+          <para id="id4923856">      (n + 1)(n + 2) / 2, </para>
+          <para id="id4923889">which is equal to the RHS for n+1. </para>
+          <para id="id4923925">Thus LHS = RHS for n+1. </para>
+          <para id="id4923970">End of Proof. </para>
+        </section>
+        <section id="id-190385303018">
+          <title>Example of Use of Mathematical Induction --- Program Correctness</title>
+          <para id="id4923991">Loops in an algorithm/program can be proven correct using mathematical induction. In general it involves something called "loop invariant" and it is very difficult to prove the correctness of a loop. Here we are going to give a few examples to convey the basic idea of correctness proof of loop algorithms. </para>
+          <para id="id4924000"/>
+          <para id="id4924004">First consider the following piece of code that computes the square of a natural number:</para>
+          <para id="id4924010"/>
+          <para id="id4924015">(We do not compute the square this way but this is just to illustrate the concept of loop invariant and its proof by induction.) </para>
+          <para id="id4924022"/>
+          <para id="id4924026">SQUARE Function: SQ(n) </para>
+          <para id="id4924030"/>
+          <para id="id4924034">S &lt;- 0 </para>
+          <para id="id4924039">i &lt;- 0 </para>
+          <para id="id4924043">while i &lt; n </para>
+          <para id="id4924048">    S &lt;- S + n </para>
+          <para id="id4924052">    i &lt;- i + 1 </para>
+          <para id="id4924057">return S </para>
+          <para id="id4924061">Let us first see how this code computes the square of a natural number. For example let us compute 3 2 using it. </para>
+          <para id="id4924083"/>
+          <para id="id4924087">First S &lt;- 0 and i &lt;- 0 give S = 0 and i = 0 initially. </para>
+          <para id="id4924094">Since i &lt; 3, the while loop is entered. </para>
+          <para id="id4924100">    S &lt;- 0 + 3 </para>
+          <para id="id4924104">    i &lt;- 0 + 1 </para>
+          <para id="id4924109">producing S = 3 and i = 1. </para>
+          <para id="id4924113">Since i &lt; 3, the while loop is entered the second time. </para>
+          <para id="id4924120">    S &lt;- 3 + 3 </para>
+          <para id="id4924125">    i &lt;- 1 + 1 </para>
+          <para id="id4924130">producing S = 6 and i = 2. </para>
+          <para id="id4924134">Since i &lt; 3, the while loop is entered the third time. </para>
+          <para id="id4924141">    S &lt;- 6 + 3 </para>
+          <para id="id4924146">    i &lt;- 2 + 1 </para>
+          <para id="id4924150">producing S = 9 and i = 3. </para>
+          <para id="id4924154">Since i = 3, the while loop is not entered any longer, S = 9 is returned and the algorithm is terminated.</para>
+          <para id="id4924160">In general to compute n2 by this algorithm, n is added n times. </para>
+          <para id="id4924178">To prove that the algorithm is correct, let us first note that the algorithm stops after a finite number of steps. For i increases one by one from 0 and n is a natural number. Thus i eventually becomes equal to n. </para>
+          <para id="id4924189"/>
+          <para id="id4924193">Next, to prove that it computes n2, we show that after going through the loop k times, S = k*n and i = k hold. This statement is called a loop invariant and mathematical induction can be used to prove it. </para>
+          <para id="id4924211"/>
+          <para id="id4924216">Proof by induction. </para>
+          <para id="id4924220">Basis Step: k = 0. When k = 0, that is when the loop is not entered, S = 0 and i = 0. Hence S = k*n and i = k hold. </para>
+          <para id="id4924226">Induction Hypothesis: For an arbitrary value m of k, S = m * n and i = m hold after going through the loop m times. </para>
+          <para id="id4924232">Inductive Step: When the loop is entered (m + 1)-st time, S = m*n and i = m at the beginning of the loop. Inside the loop, </para>
+          <para id="id4924238">    S &lt;- m*n + n </para>
+          <para id="id4924243">    i &lt;- i + 1 </para>
+          <para id="id4924248">producing S = (m + 1)*n and i = m + 1. </para>
+          <para id="id4924252">Thus S = k*n and i = k hold for any natural number k. </para>
+          <para id="id4924258">Now, when the algorithm stops, i = n. Hence the loop will have been entered n times. </para>
+          <para id="id4924265">Thus S = n*n = n2. Hence the algorithm is correct. </para>
+          <para id="id4924281">The next example is an algorithm to compute the factorial of a positive integer. </para>
+          <para id="id4924289">FACTORIAL Function: FAC(n) </para>
+          <para id="id4924294">i &lt;- 1 </para>
+          <para id="id4924299">F &lt;- 1 </para>
+          <para id="id4924303">while i &lt; = n </para>
+          <para id="id4924308">    F &lt;- F * i </para>
+          <para id="id4924312">    i &lt;- i + 1 </para>
+          <para id="id4924317">return F </para>
+          <para id="id4924321">Let us first see how this code computes the factorial of a positive integer. For example let us compute 3!. </para>
+          <para id="id4924335">First i &lt;- 1 and F &lt;- 1 give i = 1 and F = 1 initially.</para>
+          <para id="id4924343">Since i &lt; 3, the while loop is entered. </para>
+          <para id="id4924349">    F &lt;- 1 * 1 </para>
+          <para id="id4924353">    i &lt;- 1 + 1 </para>
+          <para id="id4924358">producing F = 1 and i = 2. </para>
+          <para id="id4924362">Since i &lt; 3, the while loop is entered the second time. </para>
+          <para id="id7590911">    F &lt;- 1 * 2 </para>
+          <para id="id7590916">    i &lt;- 2 + 1 </para>
+          <para id="id7590920">producing F = 2 and i = 3. </para>
+          <para id="id7590925">Since i = 3, the while loop is entered the third time. </para>
+          <para id="id7590931">    F &lt;- 2 * 3 </para>
+          <para id="id7590935">    i &lt;- 3 + 1 </para>
+          <para id="id7590940">producing F = 6 and i = 4. </para>
+          <para id="id7590945">Since i = 4, the while loop is not entered any longer, F = 6 is returned and the algorithm is terminated. </para>
+          <para id="id7590951">To prove that the algorithm is correct, let us first note that the algorithm stops after a finite number of steps. For i increases one by one from 1 and n is a positive integer. Thus i eventually becomes equal to n. </para>
+          <para id="id7590960">Next, to prove that it computes n!, we show that after going through the loop k times, F = k ! and i = k + 1 hold. This is a loop invariant and again we are going to use mathematical induction to prove it. </para>
+          <para id="id7590968">Proof by induction. </para>
+          <para id="id7590974">Basis Step: k = 1. When k = 1, that is when the loop is entered the first time, F = 1 * 1 = 1 and i = 1 + 1 = 2. Since 1! = 1, F = k! and i = k + 1 hold. </para>
+          <para id="id7590982">Induction Hypothesis: For an arbitrary value m of k, F = m! and i = m + 1 hold after going through the loop m times. </para>
+          <para id="id7590988">Inductive Step: When the loop is entered (m + 1)-st time, F = m! and i = (m+1) at the beginning of the loop. Inside the loop, </para>
+          <para id="id7590995">    F &lt;- m!* (m + 1) </para>
+          <para id="id7591000">    i &lt;- (m + 1) + 1 </para>
+          <para id="id7591005">producing F = (m + 1)! and i = (m + 1) + 1. </para>
+          <para id="id7591010">Thus F = k! and i = k + 1 hold for any positive integer k. </para>
+          <para id="id7591017">Now, when the algorithm stops, i = n + 1. Hence the loop will have been entered n times. Thus F = n! is returned. Hence the algorithm is correct. </para>
+        </section>
+        <section id="id-782480828248">
+          <title>Mathematical Induction -- Second Principle</title>
+          <para id="id7591032">There is another form of induction over the natural numbers based on the second principle of induction to prove assertions of the form ∀x P(x). This form of induction does not require the basis step, and in the inductive step P(n) is proved assuming P(k)   holds for all k &lt; n . Certain problems can be proven more easily by using the second principle than the first principle because P(k) for all k &lt; n can be used rather than just P(n - 1) to prove P(n). </para>
+          <para id="id7591176">Formally the second principle of induction states that </para>
+          <para id="id7591200">      if ∀n [ ∀k [ k &lt; n 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mo stretchy="false">→</m:mo></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ rightarrow } {}</m:annotation></m:semantics></m:math>P(k) ] 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mo stretchy="false">→</m:mo></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ rightarrow } {}</m:annotation></m:semantics></m:math>P(n) ] , then ∀n P(n) can be concluded. </para>
+          <para id="id7591380">Here ∀k [ k &lt; n 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mo stretchy="false">→</m:mo></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ rightarrow } {}</m:annotation></m:semantics></m:math>P(k) ] is the induction hypothesis. </para>
+          <para id="id7591474">The reason that this principle holds is going to be explained later after a few examples of proof. Example 1: Let us prove the following equality using the second principle: </para>
+          <para id="id7591504">For any natural number n , 1 + 3 + ... + ( 2n + 1 ) = ( n + 1 )2.</para>
+          <para id="id7591559">Proof: Assume that 1 + 3 + ... + ( 2k + 1 ) = ( k + 1 )2   holds for all k,   k &lt; n. </para>
+          <para id="id7591635">Then 1 + 3 + ... + ( 2n + 1 ) = ( 1 + 3 + ... + ( 2n - 1 ) ) + ( 2n + 1 ) </para>
+          <para id="id7593776">= n2 + ( 2n + 1 ) = ( n + 1 )2 by the induction hypothesis. </para>
+          <para id="id7593822">Hence by the second principle of induction 1 + 3 + ... + ( 2n + 1 ) = ( n + 1 )2   holds for all natural numbers. </para>
+          <para id="id7593869">Example 2: Prove that for all positive integer n, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mo stretchy="false">∑</m:mo><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ Sum rSub { size 8{i=1} }  rSup { size 8{n} }  {} } {}</m:annotation></m:semantics></m:math>i ( i! ) = ( n + 1 )! - 1 </para>
+          <para id="id7593973">Proof: Assume that </para>
+          <para id="id7593985">1 * 1! + 2 * 2! + ... + k * k! = ( k + 1 )! - 1   for all k,   k &lt; n. </para>
+          <para id="id7594048">Then 1 * 1! + 2 * 2! + ... + ( n - 1 ) * ( n - 1 )! + n * n! </para>
+          <para id="id7594091">= n! - 1 + n * n!    by the induction hypothesis. </para>
+          <para id="id7594119">= ( n + 1 )n! - 1 </para>
+          <para id="id7594131">Hence by the second principle of induction 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mo stretchy="false">∑</m:mo><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ Sum rSub { size 8{i=1} }  rSup { size 8{n} }  {} } {}</m:annotation></m:semantics></m:math>i ( i! ) = ( n + 1 )! - 1   holds for all positive integers. </para>
+          <para id="id7594226"/>
+          <para id="id7594230">Example 3: Prove that any positive integer n, n &gt; 1, can be written as the product of prime numbers. </para>
+          <para id="id7594260"/>
+          <para id="id7594264">Proof: Assume that for all positive integers k, n &gt; k &gt; 1, k can be written as the product of prime numbers. </para>
+          <para id="id7594302">We are going to prove that n can be written as the product of prime numbers. </para>
+          <para id="id7594319">Since n is an integer, it is either a prime number or not a prime number. If n is a prime number, then it is the product of 1, which is a prime number, and itself. Therefore the statement holds true. </para>
+          <para id="id7594356">If n is not a prime number, then it is a product of two positive integers, say p and q. Since both p and q are smaller than n, by the induction hypothesis they can be written as the product of prime numbers (Note that this is not possible, or at least very hard, if the First Principle is being used). Hence n can also be written as the product of prime numbers. </para>
+        </section>
+      </section>
+      <section id="id-979896121852">
+        <title>Questions and Exercises</title>
+        <para id="id7594438">1. Indicate which of the following statements are correct and which are not. </para>
+        <para id="id7594444">a. The number 23 can be generated for EI in Example 3 in Section Recursive Definition.</para>
+        <para id="id7594449">b. Basis and Inductive Clauses are sufficiency for membership for the set.</para>
+        <para id="id7594455">c. The set {4} can replace the basis for NE of Example 2 in Section Recursive Definition.</para>
+        <para id="id7594461">d. If empty set is the basis of S in Example 4 in Section Recursive Definition, then the string ab is in S.</para>
+        <para id="id7594467">2. Indicate which of the following statements are correct and which are not. </para>
+        <para id="id7594472">a. Algorithm 2 in Section Recursive Algorithm produces 0, 2, 6 and 8 when computing the third power of 2.</para>
+        <para id="id7594478">b. Recursive algorithms are good because they run more efficiently than iterative ones.</para>
+        <para id="id7594484">c. In Algorithm 3 in Section Recursive Algorithm, x is first compared with the key at the middle of L.</para>
+        <para id="id7594490">d. If the input to Algorithm 1 in Section Recursive Algorithm is not a natural number, then 0 is returned.</para>
+        <para id="id7618211">3. Look at the Section Mathematics Induction; indicate which of the following statements are correct and which are not. </para>
+        <para id="id7618217">a. In the Inductive Step, P(n) is proven assuming that P holds for the parent of n.</para>
+        <para id="id7618223">b. In the Inductive Step, since we assume P(k) for an arbitrary k, P(k+1) holds.</para>
+        <para id="id7618228">c. The Induction Hypothesis does NOT assume P(k) for all k.</para>
+        <para id="id7618234">d. In the Induction, since k is arbitrary, we can prove P(6) assuming P(5) holds.</para>
+        <para id="id7618239">e. The Basis Step proves the statement for the elements of the basis.</para>
+        <para id="id7618245">4. Look at the Section Mathematics Induction; indicate which of the following statements are correct and which are not. </para>
+        <para id="id7618252">a. In the Second Principle, P(k) is assumed true for one arbitrary value of k.</para>
+        <para id="id7618258">b. The Second Principle does not make a proof any easier.</para>
+        <para id="id7618263">c. The Basis Step of the First Principle is implicitly proven by the Second Principle.</para>
+        <para id="id7618268">d. The Second Principle can be applied when n starts at some integer larger than 0.</para>
+        <para id="id7618274">e. The Second Principle gives you more assumptions to use, making a proof easier.</para>
+        <para id="id7618280">5. Let <emphasis>A</emphasis>i = { 1, 2, 3, ..., i } for <emphasis>i</emphasis> = 1, 2, 3, ... . Find 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:mrow/><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ union rSub { size 8{i=1} }  rSup { size 8{n} }  {} A rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math></para>
+        <para id="id7618377">6. Let <emphasis>A</emphasis>i<emphasis> =</emphasis> { i, i+1, i+2, ... } for <emphasis>i</emphasis> = 1, 2, 3, ... . Find 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mi fontstyle="italic">intersect</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mi>A</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ intersect rSub { size 8{i=1} }  rSup { size 8{n} }  {A rSub { size 8{i} } } } {}</m:annotation></m:semantics></m:math></para>
+        <para id="id7618482">7. Give a recursive definition of the set of positive integers that are multiples of 5.</para>
+        <para id="id7618489">8. Give a recursive definition of </para>
+        <para id="id7618493">a. the set of even integers. </para>
+        <para id="id7618497">b. the set of positive integers congruent to 2 modulo 3. </para>
+        <para id="id7618502">c. the set of positive integers not divisible by 5.</para>
+        <para id="id7618508">9. When does a string belong to the set <emphasis>A</emphasis> of bit strings (i.e. strings of 0's and 1's) defined recursively by </para>
+        <para id="id7618518">Basis Clause: ∅ ∈ <emphasis>A</emphasis></para>
+        <para id="id7618532">Inductive Clause: 0<emphasis>x</emphasis>1 ∈<emphasis>A</emphasis>   if <emphasis>x</emphasis> ∈<emphasis>A</emphasis></para>
+        <para id="id7618567">where ∅ is the empty string (An empty string is a string with no symbols in it.)</para>
+        <para id="id7618578">Extremal Clause: Nothing is in <emphasis>A</emphasis> unless it is obtained from the Basis and Inductive Clauses. </para>
+        <para id="id7618589">10. Find   <emphasis>f(1)</emphasis>,  <emphasis>f(2)</emphasis>,  and   <emphasis>f(3)</emphasis>,   if   <emphasis>f(n)</emphasis> is defined recursively by   <emphasis>f(0) = 2</emphasis>   and   for <emphasis>n = 0, 1, 2, ...</emphasis></para>
+        <para id="id7618632">
+          <emphasis>a. f(n + 1) = f(n) + 2.</emphasis>
+        </para>
+        <para id="id7618640">
+          <emphasis>b. f(n + 1) = 3f(n).</emphasis>
+        </para>
+        <para id="id7618648"><emphasis>c. f(n + 1) = 2</emphasis>f(n)<emphasis>.</emphasis></para>
+        <para id="id7618665">11. Find  <emphasis>f(2)</emphasis>,  <emphasis>f(3)</emphasis>,  and   <emphasis>f(4)</emphasis>,   if   <emphasis>f(n)</emphasis> is defined recursively by   <emphasis>f(0) = 1</emphasis>,   <emphasis>f(1) = -2</emphasis>  and  for <emphasis>n= 1, 2,...</emphasis></para>
+        <para id="id7618712">
+          <emphasis>a. f(n + 1) = f(n) + 3f(n - 1).</emphasis>
+        </para>
+        <para id="id7618720"><emphasis>b. f(n + 1) = f(n)</emphasis>2<emphasis> f(n - 1).</emphasis></para>
+        <para id="id7618736">12. Let <emphasis>F</emphasis> be the function such that <emphasis>F(n)</emphasis> is the sum of the first <emphasis>n</emphasis> positive integers.  Give a recursive definition of <emphasis>F(n)</emphasis>.</para>
+        <para id="id7618767">13. Give a recursive algorithm for computing <emphasis>nx</emphasis> whenever <emphasis>n</emphasis> is a positive integer and <emphasis>x</emphasis> is an integer.</para>
+        <para id="id7618790">14. Give a recursive algorithm for finding the sum of the first <emphasis>n</emphasis> odd positive integers.</para>
+        <para id="id7618801">15. Use mathematical induction to prove that 3 + 3 * 5 + 3 * 52+ ... + 3 * 5n = 3 (5n+1 - 1)/4 whenever <emphasis>n</emphasis> is a nonnegative integer.</para>
+        <para id="id7618830">16. Prove that 12 + 32 + 52+ ... + (2<emphasis>n</emphasis> + 1)2 = (<emphasis>n</emphasis> + 1)(2<emphasis>n</emphasis> + 1)(2<emphasis>n</emphasis>+ 3)/3 whenever <emphasis>n</emphasis> is a nonnegative integer.</para>
+        <para id="id7618886">17. Show that 2n &gt; <emphasis>n</emphasis>2whenever <emphasis>n</emphasis> is an integer greater than 4.</para>
+        <para id="id7618911">18. Show that any postage that is a positive integer number of cents greater than 7 cents can be formed using just 3-cent stamps and 5-cent stamps.</para>
+        <para id="id7618918">19. Use mathematical induction to show that 5 divides <emphasis>n</emphasis>5- <emphasis>n</emphasis> whenever <emphasis>n</emphasis> is a nonnegative integer.</para>
+        <para id="id7618945">20. Use mathematical induction to prove that if <emphasis>A</emphasis>1, <emphasis>A</emphasis>2, ...<emphasis>A</emphasis>n are subsets of a universal set <emphasis>U</emphasis>, then 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mover accent="true"><m:mrow><m:msubsup><m:mrow/><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:mi>A</m:mi></m:mrow><m:mo>¯</m:mo></m:mover><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  { union rSub { size 8{i=1} }  rSup { size 8{n} }  {A} }}  rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math><emphasis>  =  </emphasis><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mi fontstyle="italic">intersect</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>i</m:mi><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle></m:msubsup><m:msub><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mstyle fontsize="8pt"><m:mrow><m:mi>i</m:mi></m:mrow></m:mstyle></m:msub></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ intersect rSub { size 8{i=1} }  rSup { size 8{n} }  { {overline  {A}} }  rSub { size 8{i} } } {}</m:annotation></m:semantics></m:math></para>
+        <para id="id7998412">21. Find a formula for </para>
+        <para id="id7998417">1/2 + 1/4 + 1/8 + ... + 1/2n </para>
+        <para id="id7998427">by examining the values of this expression for small values of <emphasis>n</emphasis>. Use mathematical induction to prove your result.</para>
+        <para id="id7998439">22. Show that if  <emphasis>a</emphasis>1, <emphasis>a</emphasis>2, ..., <emphasis>a</emphasis>n   are <emphasis>n</emphasis> distinct real numbers, exactly <emphasis>n - 1</emphasis> multiplications are used to compute the product of these <emphasis>n</emphasis> numbers no matter how parentheses are inserted into their product.  (<emphasis>Hint</emphasis>: Use the second principle of mathematical induction and consider the last multiplication).</para>
+      </section>
+    </section>
+  </content>
+</document>

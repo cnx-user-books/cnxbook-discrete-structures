@@ -1,0 +1,342 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Discrete Structures Set Theory</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>9bca375c-d377-448f-991a-e6c0cca516fb</md:uuid>
+</metadata>
+  <content>
+    <section id="id-563237064623">
+      <title>Set Theory</title>
+      <section id="id-148353413806">
+        <title>Basics </title>
+        <section id="id-269527139646">
+          <title>Introduction to Set Theory</title>
+          <para id="id15214673">The concept of set is fundamental to mathematics and computer science. Everything mathematical starts with sets. For example, relationships between two objects are represented as a set of ordered pairs of objects, the concept of ordered pair is defined using sets, natural numbers, which are the basis of other numbers, are also defined using sets, the concept of function, being a special type of relation, is based on sets, and graphs and digraphs consisting of lines and points are described as an ordered pair of sets. Though the concept of set is fundamental to mathematics, it is not defined rigorously here. Instead we rely on everyone's notion of "set" as a collection of objects or a container of objects. In that sense "set" is an undefined concept here. Similarly we say an object "belongs to" or "is a member of" a set without rigorously defining what it means. "An object (element) x belongs to a set A" is symbolically represented by "x ∈ A". It is also assumed that sets have certain (obvious) properties usually associated with a collection of objects such as the union of sets exists, for any pair of sets there is a set that contains them etc. </para>
+          <para id="id15362372">This approach to set theory is called "naive set theory" as opposed to more rigorous "axiomatic set theory".  It was first developed by the German mathematician Georg Cantor at the end of the 19th century. Though the naive set theory is not rigorous, it is simpler and practically all the results we need can be derived within the naive set theory. Thus we shall be following this naive set theory in this course. </para>
+        </section>
+        <section id="id-464015004326">
+          <title>Representation of Set</title>
+          <para id="id15362408">A set can be described in a number of different ways. The simplest is to list up all of its members if that is possible. For example {1, 2, 3} is the set of three numbers 1, 2, and 3. { indicates the beginning of the set, and } its end. Every object between them separated by commas is a member of the set. Thus {{1, 2}, {{3}, 2}, 2}, {1 } } is the set of the elements {1, 2}, {{3}, 2} and {1}.</para>
+          <para id="id15343117">A set can also be described by listing the properties that its members must satisfy. For example, { x| 1 ≤x ≤2 and x is a real number. } represents the set of real numbers between 1 and 2, and { x| x is the square of an integer and x ≤100 } represents the set { 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100 }.</para>
+          <para id="id15362706">A third way to describe a set is to give a procedure to generate the members of the set. The recursive/inductive definition is an example and it is going to be studied later. In this representation, first, basic elements of the set are presented. Then a method is given to generate elements of the set from known elements of the set. Thirdly a statement is given that excludes undesirable elements (which may be included in the set otherwise) from the set. For example the set of natural numbers N can be defined recursively as the set that satisfies the following (1), (2), and (3):</para>
+          <para id="id15362733">(1) 0 ∈ N </para>
+          <para id="id15362755">(2) For any number x if x ∈N, then x + 1 ∈N. </para>
+          <para id="id14923703">(3) Nothing is in N unless it is obtained from (1) and (2). </para>
+          <para id="id14923712">Following this definition, the set of natural numbers N can be obtained as follows: First by (1),   0 is put into N. </para>
+          <para id="id14923736">Then by (2), since 0 is in N,  0 + 1 (= 1) is in N. </para>
+          <para id="id14923763">Then by (2) again, 1 + 1 (= 2) is in N. </para>
+          <para id="id14923778">Proceeding in this manner all the natural numbers are put into N. Note that if we don't have (3),  0.5, 1.5, 2.5, ... can be included in N, which is not what we want as the set of natural numbers.</para>
+        </section>
+        <section id="id-756858693186">
+          <title>Basics of Set</title>
+          <para id="id13133027">Definition (Equality of sets): Two sets are equal if and only if they have the same elements. </para>
+          <para id="id13133059">More formally,   for any sets A and B,  A = B   if and only if   ∀x [ x ∈A  ↔ x ∈B ] . </para>
+          <para id="id15409528">Thus for example {1, 2, 3} = {3, 2, 1}, that is the order of elements does not matter, and {1, 2, 3} = {3, 2, 1, 1}, that is duplications do not make any difference for sets.</para>
+          <para id="id15409581">Definition (Subset): A set A is a subset of a set B if and only if   everything in A is also in B. </para>
+          <para id="id15248920">More formally,   for any sets A and B,  A is a subset of B, and denoted by A ⊆B,   if and only if   ∀x [ x∈A   →   x ∈B ] .</para>
+          <para id="id15249035">If A ⊆B, and A ≠B, then A is said to be a proper subset of B and it is denoted by A⊂B. </para>
+          <para id="id15226774">For example {1, 2} ⊆ {3, 2, 1}. </para>
+          <para id="id15226810">Also {1, 2} ⊂ {3, 2, 1}. </para>
+          <para id="id15152326">Definition (Cardinality): If a set S has n distinct elements for some natural number n, n is the cardinality (size) of S and S is a finite set. The cardinality of S is denoted by |S|. For example the cardinality of the set {3, 1, 2} is 3. </para>
+          <para id="id15152437">Definition (Empty set): A set which has no elements is called an empty set. More formally, an empty set, denoted by ∅, is a set that satisfies the following: </para>
+          <para id="id14737755">  ∀x x ∉ ∅, where ∉ means "is not in" or "is not a member of". </para>
+          <para id="id14737787">Note that ∅ and {∅} are different sets. {∅} has one element namely ∅ in it. So {∅} is not empty. But ∅ has nothing in it. </para>
+          <para id="id14737827">Definition (Universal set): A set which has all the elements in the universe of discourse is called a universal set. </para>
+          <para id="id14485191">More formally, a universal set, denoted by U, is a set that satisfies the following:   ∀x   x ∈U. </para>
+          <para id="id14485244">Three subset relationships involving empty set and universal set are listed below as theorems without proof. </para>
+          <para id="id14485250">Note that the set A in the next four theorems are arbitrary. So A can be an empty set or universal set. </para>
+          <para id="id14485272">Theorem 1: For an arbitrary set A   A ⊆U. </para>
+          <para id="id14485304">Theorem 2: For an arbitrary set A   ∅ ⊆A. </para>
+          <para id="id13496932">Theorem 3: For an arbitrary set A   A ⊆A. </para>
+          <para id="id13496965">Definition (Power set): The set of all subsets of a set A is called the power set of A and denoted by   2A or   P(A) . </para>
+          <para id="id14014702">For example for A = {1, 2}, P(A) = {∅, {1}, {2}, {1, 2} } . </para>
+          <para id="id14014776">For B = {{1, 2}, {{1}, 2}, ∅} , P(B) = {∅, {{1, 2}}, {{{1}, 2}}, {∅}, { {1, 2}, {{1}, 2 }}, { {1, 2}, ∅}, { {{1}, 2}, ∅}, {{1, 2}, {{1}, 2}, ∅} } . </para>
+          <para id="id15137552">Also P(∅) = {∅}   and P({∅}) = {∅, {∅}} . </para>
+          <para id="id14498605">Theorem 4: For an arbitrary set A, the number of subsets of A is 2|A|.</para>
+        </section>
+      </section>
+      <section id="id-171129878018">
+        <title>Mathematical Reasoning</title>
+        <para id="id14498645">Mathematical theories are constructed starting with some fundamental assumptions, called axioms, such as "sets exist" and "objects belong to a set" in the case of naive set theory, then proceeding to defining concepts(definitions) such as "equality of sets", and "subset", and establishing their properties and relationships between them in the form of theorems such as "Two sets are equal if and only if each is a subset of the other", which in turn causes introduction of new concepts and establishment of their properties and relationships. Proofs are the arguments for establishing those properties and relationships. At the bottom level these arguments follow the inference rules of propositional and predicate logic, that is the conclusion of the theorem being proved must be derived from its hypotheses, axioms, definitions, and proven theorems using inference rules. However, at the bottom level they become tedious and inefficient as one can easily imagine. Thus in actual proofs short-cuts are taken using already proven theorems, using multiple inference rules in one step without explicitly mentioning them individually, omitting "obvious" proofs, and so on.</para>
+        <para id="id14498721">Finding a proof is in general an art. There is no single method that works for all cases. However, at this level the most important thing to remember is to know and understand definitions of concepts involved. The next important thing to keep in mind is to look up relevant facts and try to use them. Even if you don't see the entire path to the goal, if you move one step forward from where you are, you get a new perspective and it often gives you some good ideas to pursue. Needless to say that you must not forget the inference rules. It is not a bad idea to review "Problem Solving" we studied earlier here.</para>
+        <para id="id15227788">There are also some well used and often very useful proof techniques such as trivial proof, vacuous proof, direct proof, proof by contradiction, proving the contrapositive, and proof by induction. These are explained below with proofs of the theorems on subset relation as examples.</para>
+        <para id="id15227797">Theorem 1:  A ⊆ U. </para>
+        <para id="id15227825">Proof: By the definition of  ⊆ ,  we need to show that  ∀x [x ∈ A →   x ∈ U]. </para>
+        <para id="id15001928">For that, what we need is to show that for an arbitrary x,  x ∈ A → x ∈ U holds according to the inference rule "universal generalization". </para>
+        <para id="id15001980">Since x is an object of the universe of discourse,   x ∈ U is true for any arbitrary object by the Universal Instantiation. Hence   x ∈ A → x ∈ U is true for any arbitrary object x (p→ q is always true if q is true regardless of what p is). Thus by the Universal Generalization  ∀x [x ∈ A →   x ∈ U], that is,  A ⊆ U by the definition of subset. </para>
+        <para id="id15214502">We say p→ q is trivially true if q is true, and this kind of proof (i.e. showing q is true for p→ q without referring to p) is called a trivial proof. </para>
+        <para id="id15432889">Theorem 2:  ∅ ⊆ A. </para>
+        <para id="id15432917">Proof: By the definition of  ⊆ ,  we need to show that  ∀x [x ∈ ∅ →   x ∈ A]. For that, what we need is to show that for an arbitrary x,  x ∈ ∅ →   x ∈ A holds. Then apply the Universal Generalization. </para>
+        <para id="id14592900">Since ∀x x ∉ ∅,   for any arbitrary x, x ∈ ∅  is false by the Universal Instantiation.</para>
+        <para id="id14592942">Hence x ∈ ∅ →   x ∈ A is true for any arbitrary x (p→ q is always true if p is false regardless of what q is). Hence by the Universal Generalization ∀x [x ∈ ∅ →   x ∈ A]. Thus   ∅ ⊆ A by the definition of subset. </para>
+        <para id="id13363706">We say p→ q is  vacuously true  if p is false, and this kind of proof (i.e. showing p is false for p → q) is called a vacuous proof. </para>
+        <para id="id14960078">Proof Variations for Theorem 2 </para>
+        <para id="id14960087">Theorem 2, like most others, can be proven in a number of other ways. Here we try to prove it in two other ways. </para>
+        <para id="id14960093">(1) Proof by Contrapositive: </para>
+        <para id="id14960109">In this method, to prove p → q  we prove its contrapositive, ¬q → ¬p,   instead. So to prove x ∈ ∅ →   x ∈ A for an arbitrary x,   try to prove x ∉ A →   x ∉ ∅. In this case since x ∉ ∅ is true for any arbitrary x,   x ∉ A →   x ∉ ∅ is trivially true. Hence its contrapositive   x ∈ ∅ →   x ∈ A is also true. </para>
+        <para id="id15343068">(2) Proof by Contradiction: </para>
+        <para id="id15343084">In this method, to prove p we assume ¬p and derive a contradiction from that. Then since ¬p implies a contradiction, it can not hold true. Hence p must be true.So to prove ∀x [x ∈ ∅ →   x ∈ A] we assume that ¬∀x [x ∈ ∅ →   x ∈ A]. ¬∀x [x ∈ ∅ →   x ∈ A] is equivalent to ∃x ¬[x ∈ ∅ →   x ∈ A]. This in turn is equivalent to ∃x [x ∈ ∅ ⋀  x ∉ A]. </para>
+        <para id="id15030500">However, ∃x [x ∈ ∅ ⋀  x ∉ A] implies ∃x [x ∈ ∅] by formula 4 of the relationships between the connectives and quantifiers from predicate logic and "simplification" from the implications of propositional logic.  But x ∉ ∅ for any x, which contradicts ∃x [x ∈ ∅]. Hence, ¬∀x [x ∈ ∅ →   x ∈ A] can not be true. Hence,  ∅ ⊆ A. </para>
+        <para id="id15319549">More Proofs</para>
+        <para id="id15319554">Theorem 3: A = B iff A⊆ B and B⊆ A </para>
+        <para id="id13466791">Proof: By the definition of A = B, </para>
+        <para id="id13466813">A = B ⇔∀x [x ∈ A ↔   x ∈ B]</para>
+        <para id="id13466892">⇔∀x [(x ∈ A  → x ∈ B) ⋀ (x ∈ B  →  x ∈ A) ]</para>
+        <para id="id14411127">⇔∀x [x ∈ A  → x ∈ B] ⋀ ∀x [ (x ∈ B  →  x ∈ A) ]</para>
+        <para id="id14737410">Since A⊆ B ⇔∀x [ (x ∈A  →  x ∈B) ], this means that A⊆ B and B⊆ A. </para>
+        <para id="id14737519">Hence, A = B iff A⊆ B and B⊆ A. </para>
+        <para id="id14737213">Theorem 4: A⊆B ⋀ B⊆C → A⊆ CProof: A⊆B ⋀ B⊆C</para>
+        <para id="id14737307">⇔∀x [x ∈ A  → x ∈ B] ⋀ ∀x [ (x ∈ B  →  x ∈ C) ]</para>
+        <para id="id14015287">⇔∀x [(x ∈ A  → x ∈ B) ⋀ (x ∈ B  →  x ∈ C) ]</para>
+        <para id="id15219985">Thus for an arbitrary x in the universe, Z, and x ∈ B → x ∈ C holds.Hence, by hypothetical syllogism x ∈ A → x ∈ C,Hence, A⊆ C. </para>
+      </section>
+      <section id="id-0234378087625">
+        <title>Set Operations</title>
+        <section id="id-135046174974">
+          <title>Set Operations</title>
+          <para id="id15220129">Sets can be combined in a number of different ways to produce another set. Here four basic operations are introduced and their properties are discussed.</para>
+          <para id="id15220135">Definition (Union): The union of sets A and B, denoted by A ∪B, is the set defined as </para>
+          <para id="id15249661">             A ∪B = {x | x ∈A ∨ x ∈B} </para>
+          <para id="id15249742">Example 1: If A = {1, 2, 3} and B = {4, 5}, then A ∪B = {1, 2, 3, 4, 5}. </para>
+          <para id="id15139005">Example 2: If A = {1, 2, 3} and B = {1, 2, 4, 5}, then A ∪B = {1, 2, 3, 4, 5}. </para>
+          <para id="id15139078">Note that elements are not repeated in a set. </para>
+          <para id="id15139083">Definition (Intersection): The intersection of sets A and B, denoted by A ∩B, is the set defined as </para>
+          <para id="id15139144">             A ∩B = {x | x ∈A ⋀ x ∈B} </para>
+          <para id="id14959141">Example 3: If A = {1, 2, 3} and B = {1, 2, 4, 5}, then A ∩B = {1, 2}. </para>
+          <para id="id14959214">Example 4: If A = {1, 2, 3} and B = {4, 5}, then A ∩B = ∅. </para>
+          <para id="id15406898">Definition (Difference): The difference of sets A from B, denoted by A - B, is the set defined as </para>
+          <para id="id15406957">             A - B = {x | x ∈A ⋀ x ∉ B} </para>
+          <para id="id15407033">Example 5: If A = {1, 2, 3} and B = {1, 2, 4, 5}, then A - B = {3}. </para>
+          <para id="id14930478">Example 6: If A = {1, 2, 3} and B = {4, 5}, then A - B = {1, 2, 3}. </para>
+          <para id="id14930551">Note that in general A - B≠ B - A </para>
+          <para id="id14930588">Definition (Complement): For a set A, the difference U - A, where U is the universe, is called the complement of A and it is denoted by
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>. </para>
+          <para id="id15153868">Thus
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> is the set of everything that is not in A. </para>
+          <para id="id15153929">The fourth set operation is the Cartesian product. We first define an ordered pair and Cartesian product of two sets using it. Then the Cartesian product of multiple sets is defined using the concept of n-tuple. </para>
+          <para id="id15153953">Definition (ordered pair): </para>
+          <para id="id15153977">An ordered pair is a pair of objects with an order associated with them. If objects are represented by x and y, then we write the ordered pair as &lt;x, y&gt;. </para>
+          <para id="id13268348">Two ordered pairs &lt;a, b&gt; and &lt;c, d&gt; are equal if and only if a = c and b = d. For example the ordered pair &lt;1, 2&gt; is not equal to the ordered pair &lt;2, 1&gt;. </para>
+          <para id="id13268444">Definition (Cartesian product): </para>
+          <para id="id13268468">The set of all ordered pairs &lt;a, b&gt;, where a is an element of A and b is an element of B, is called the Cartesian product of A and B and is denoted by A×B. </para>
+          <para id="id13268540">Example 1: Let A = {1, 2, 3} and B = {a, b}. Then A × B = {&lt;1, a&gt;, &lt;1, b&gt;, &lt;2, a&gt;, &lt;2, b&gt;, &lt;3, a&gt;, &lt;3, b&gt;}. </para>
+          <para id="id14523981">Example 2: For the same A and B as in Example 1, </para>
+          <para id="id14524001">B ×A = {&lt;a, 1&gt;, &lt;a, 2&gt;, &lt;a, 3&gt;, &lt;b, 1&gt;, &lt;b, 2&gt;, &lt;b, 3&gt;}. </para>
+          <para id="id15036991">As you can see in these examples, in general, A ×B ≠B ×A unless A = ∅, B = ∅ or A = B. </para>
+          <para id="id15037062">Note that A × ∅= ∅ × A = ∅ because there is no element in ∅ to form ordered pairs with elements of A. </para>
+          <para id="id15037112">The concept of Cartesian product can be extended to that of more than two sets. First we are going to define the concept of <emphasis>ordered n-tuple</emphasis>. </para>
+          <para id="id15037125">Definition (ordered n-tuple): An ordered n-tuple is a set of n objects with an order associated with them (rigorous definition to be filled in). If n objects are represented by x1, x2, ..., xn, then we write the ordered n-tuple as &lt;x1, x2, ..., xn&gt; . </para>
+          <para id="id14324614">Definition (Cartesian product): Let A1, ..., An be n sets. Then the set of all ordered n-tuples &lt;x1, ..., xn&gt; , where xi∈Ai for all i, 1 ≤ i ≤ n , is called the Cartesian product of A1, ..., An, and is denoted by A1 ×... ×An . </para>
+          <para id="id14506565">Example 3: </para>
+          <para id="id14506573">Let A = {1, 2}, B = {a, b} and C = {5, 6}. Then A ×B ×C = {&lt;1, a, 5&gt;, &lt;1, a, 6&gt;, &lt;1, b, 5&gt;, &lt;1, b, 6&gt;, &lt;2, a, 5&gt;, &lt;2, a, 6&gt;, &lt;2, b, 5&gt;, &lt;2, b, 6&gt;}. </para>
+          <para id="id15228025">Definition (equality of n-tuples): Two ordered n-tuples &lt;x1, ..., xn&gt; and &lt;y1, ..., yn&gt; are equal if and only if xi = yi for all i, 1 ≤i ≤n. </para>
+          <para id="id15125977">For example the ordered 3-tuple &lt;1, 2, 3&gt; is not equal to the ordered n-tuple &lt;2, 3, 1&gt;. </para>
+        </section>
+        <section id="id-0864003239409">
+          <title>Properties of Set Operation </title>
+          <para id="id15126028">Basic properties of set operations are discussed here. 1 - 6 directly correspond to identities and implications of propositional logic, and 7 - 11 also follow immediately from them as illustrated below. </para>
+          <para id="id15126057">1. A ∪ ∅ = A</para>
+          <para id="id15126075">A ∩ U = A</para>
+          <para id="id15126092">            -------     Identity Laws </para>
+          <para id="id15126100">2. A ∪ U = U</para>
+          <para id="id15126119">A ∩ ∅ = ∅</para>
+          <para id="id15126141">            -------     Domination Laws </para>
+          <para id="id15126147">3. A ∪ A = A</para>
+          <para id="id15001684">A ∩ A = A</para>
+          <para id="id15001701">            -------     Idempotent Laws </para>
+          <para id="id15001708">4. A ∪ B = B ∪ A</para>
+          <para id="id15001737">A ∩ B = B ∩A</para>
+          <para id="id15001763">            -------     Commutative Laws </para>
+          <para id="id15001770">5. (A ∪ B) ∪ C = A ∪ (B ∪ C)</para>
+          <para id="id15001832">(A ∩ B) ∩ C = A ∩ (B ∩ C) </para>
+          <para id="id13630217">            -------     Associative Laws </para>
+          <para id="id13630225">6. A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</para>
+          <para id="id13630316">A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)</para>
+          <para id="id13630407">            -------     Distributive Laws </para>
+          <para id="id13630413">7. If A⊆B and C⊆D, then A ∪ C ⊆ B ∪ D, and A ∩ C ⊆ B ∩ D</para>
+          <para id="id14753292">8. If A⊆B, then A ∪ B = B and A ∩ B = A </para>
+          <para id="id14753340">9. A ∪ (B - A) = A ∪ B</para>
+          <para id="id14753376">10. A ∩ (B - A) = ∅</para>
+          <para id="id14753409">11. A - (B ∪ C) = (A – B) ∩ (A - C) (cf.
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mrow><m:mi>A</m:mi><m:mo stretchy="false">∪</m:mo><m:mi>B</m:mi></m:mrow><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">∩</m:mo><m:mover accent="true"><m:mi>B</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A union B}} = {overline  {A}}  intersection  {overline  {B}} } {}</m:annotation></m:semantics></m:math>) </para>
+          <para id="id15319711">     A - (B ∩ C) = (A - B) ∪ (A - C) (cf.
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mrow><m:mi>A</m:mi><m:mo stretchy="false">∩</m:mo><m:mi>B</m:mi></m:mrow><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">∪</m:mo><m:mover accent="true"><m:mi>B</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A intersection B}} = {overline  {A}}  union  {overline  {B}} } {}</m:annotation></m:semantics></m:math>) </para>
+          <para id="id15398233">            -------     De Morgan's Laws </para>
+          <para id="id15398239">12.
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>B</m:mi><m:mo stretchy="false">=</m:mo><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{B= {overline  {A}} } {}</m:annotation></m:semantics></m:math> if and only if A ∪ B = U and A ∩ B = ∅</para>
+          <para id="id15398336">13.
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mi>A</m:mi></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} =A} {}</m:annotation></m:semantics></m:math></para>
+          <para id="id15398405">Additional properties:</para>
+          <para id="id15398412">14. A ⊆A ∪B </para>
+          <para id="id15219722">15. A∩B ⊆A </para>
+          <para id="id15219752">The properties 1~6, and 11 can be proven using equivalences of propositional logic. The others can also be proven similarly by going to logic, though they can be proven also using some of these properties (after those properties are proven, needless to say). Let us prove some of these properties.</para>
+          <para id="id15219762">Proof for 4: A ∪ B = B ∪ A</para>
+          <para id="id15219793">We are going to prove this by showing that every element that is in A∪B is also in B∪A and vice versa. </para>
+          <para id="id15219827">Consider an arbitrary element x. Then by the definition of set union x ∈ A ∪ B ⇔ x ∈A ∨ x ∈ B </para>
+          <para id="id15219924">⇔ x ∈A ∨ x ∈ B   by the commutativity of ∨</para>
+          <para id="id12385544">⇔ x ∈ B ∪ A   by the definition of set union. </para>
+          <para id="id12385584">Hence by Universal Generalization, every element is in A ∪B is also in B ∪A. </para>
+          <para id="id12385619">Hence A ∪ B = B ∪ A. </para>
+          <para id="id12385647">Note here the correspondence of the commutativity of ∪ and that of ∨. This correspondence holds not just for the commutativity but also for others. </para>
+          <para id="id12385665">Furthermore a similar correspondence exists between ∩ and ⋀, and between ⊆ and →. </para>
+          <para id="id12385693">Proof for 6: By the definition of the equality of sets, we need to prove that ∀x [x ∈ A ∪ (B ∩ C)] if and only if x ∈ (A ∪ B) ∩ (A ∪ C).</para>
+          <para id="id14642312">For that, considering the Universal Generalization rule, we need to show that for an arbitrary element in the universe x, x ∈ A ∪ (B ∩ C) if and only if x ∈ (A ∪ B) ∩ (A ∪ C).</para>
+          <para id="id14642417">Here the only if part is going to be proven. The if part can be proven similarly.</para>
+          <para id="id14642432">x ∈ A ∪ (B ∩ C) ⇔ x ∈ A ∨ x ∈ (B ∩ C) by the definition of ∪ </para>
+          <para id="id14981560">⇔ x ∈ A ∨ (x ∈ B ⋀ x ∈ C) by the definition of ∩</para>
+          <para id="id14981645">⇔ (x ∈ A ∨ x ∈ B) ⋀ (x ∈ A ∨ x ∈ C) by the distribution from the equivalences of propositional logic</para>
+          <para id="id13132595">⇔ x ∈ (A ∪ B) ⋀ x ∈ (A ∪ C) by the definition of ∪. </para>
+          <para id="id13132695">⇔ x ∈ (A ∪ B) ∩ (A ∪ C) by the definition of ∩. </para>
+          <para id="id13363401">Proof for 8: (a) If A⊆B then A ∪ B = B. </para>
+          <para id="id13363438">Let x be an arbitrary element in the universe. </para>
+          <para id="id13363448">Then x ∈ A ∪ B ⇔ x ∈ A ∨ x ∈ B. </para>
+          <para id="id13363530">Since A⊆B, x ∈ A → x ∈ B</para>
+          <para id="id13363594">Also x ∈ B → x ∈ B </para>
+          <para id="id14413762">Hence x ∈ A ∪ B → x ∈ B. </para>
+          <para id="id14413822">Hence A ∪ B ⊆ B </para>
+          <para id="id14413851">Since B ⊆ A ∪ B (use "addition" rule), A ∪ B = B follows. </para>
+          <para id="id14413894">(b) Similarly for A ∩ B = A. </para>
+          <para id="id14413913">Alternative proof: </para>
+          <para id="id14413925">These can also be proven using 8, 14, and 15. For example, (b) can be proven as follows: </para>
+          <para id="id14413932">First by 15, A ∩B ⊆A. </para>
+          <para id="id14413965">Then since A ⊆A, and A ⊆B, by 7 A ∩A ⊆A ∩B. </para>
+          <para id="id15125747">Since A ∩A = A by 3, A ⊆A ∩B. </para>
+          <para id="id15125809">Proof for 9: Let x be an arbitrary element in the universe.</para>
+          <para id="id15125823">Then [x ∈ A ∪ (B - A)] ⇔ [x ∈ A ∨ (x ∈ B ⋀ x ∉ A)] </para>
+          <para id="id13132783">⇔ [(x ∈ A ∨ x ∈ B) ⋀ (x ∈ A ∨ x ∉ A)]</para>
+          <para id="id13132900">⇔ [(x ∈ A ∨ x ∈ B) ⋀ True]</para>
+          <para id="id13132972">⇔ [x ∈ A ∨ x ∈ B]</para>
+          <para id="id14905873">Hence A ∪ (B - A) = A ∪ B. </para>
+          <para id="id14905910">Alternative proof </para>
+          <para id="id14905922">This can also proven using set properties as follows. </para>
+          <para id="id14905929">A ∪( B - A ) = A ∪( B ∩
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>) by the definition of ( B - A ) . </para>
+          <para id="id14906070">= ( A ∪B ) ∩( A ∪
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>) by the distribution. </para>
+          <para id="id15332211">= (A ∪B ) ∩U </para>
+          <para id="id15332237">= ( A ∪B ) by 1. </para>
+          <para id="id15332254">Proof for 10: Suppose A ∩ (B - A) ≠ ∅. </para>
+          <para id="id15332301">Then there is an element x that is in A ∩ (B - A), i.e.</para>
+          <para id="id15332331">x ∈ A ∩ (B - A) ⇔ x ∈ A ⋀ x ∈ B – A</para>
+          <para id="id15332416">⇔ x ∈ A ⋀ (x ∈ B ⋀ x ∉ A)</para>
+          <para id="id15250979">⇔ (x ∈ A ⋀ x ∉ A) ⋀ x ∈ B </para>
+          <para id="id15251065">⇔ False</para>
+          <para id="id15251078">Hence A ∩ (B - A) ≠ ∅ does not hold.</para>
+          <para id="id15251120">Hence A ∩ (B - A) = ∅. </para>
+          <para id="id15251162">This can also be proven in the similar manner to 9 above. </para>
+          <para id="id13497038">Proof for 11: Let x be an arbitrary element in the universe. </para>
+          <para id="id13497052">Then x ∈ A - (B ∪ C) ⇔ x ∈ A ⋀ x ∉ B ∪ C </para>
+          <para id="id13497150">⇔ x ∈ A ⋀ ¬(x ∈ B ⋁ x ∈C)</para>
+          <para id="id13497238">⇔ x ∈ A ⋀ (x ∉ B ⋀ x ∉C)</para>
+          <para id="id15016023">⇔ (x ∈ A ⋀ x ∉ B) ⋀ x ∉C</para>
+          <para id="id15016111">⇔ (x ∈ A ⋀ x ∉ B) ⋀ (x ∈ A ⋀ x ∉C)</para>
+          <para id="id15016226">⇔ x ∈ A - B ⋀ x ∈ A - C</para>
+          <para id="id14906632">⇔ x ∈ (A - B) ∩ (A - C)</para>
+          <para id="id14906697">Hence A - (B ∪ C) = (A – B) ∩ (A - C) </para>
+          <para id="id14906747">Proof for 12: </para>
+          <para id="id14906755">(a) A ∪ B = U ⋀ A ∩ B = ∅ ⇒ B =
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>? </para>
+          <para id="id14906861">(b) Try to prove B ⊆
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> and
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ⊆ B. </para>
+          <para id="id15213915">Let x be an arbitrary element in the universe. </para>
+          <para id="id15213926">Then if x ∈ B, then x ∉A since A ∩ B = ∅. Hence x ∈
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>.</para>
+          <para id="id14923805">Hence B ⊆
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>. </para>
+          <para id="id14923875">If x ∈
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>, then x ∉A. Since x ∈ A ∨ x ∈ B (from A ∪ B = U ), x ∈ B </para>
+          <para id="id14924038">must hold. Hence
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ⊆ B. </para>
+          <para id="id14414031">Hence B =
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>. (c) B =
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ⇒ A ∪ B = U ⋀ A ∩ B = ∅ ? </para>
+          <para id="id14414205">Since B =
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>, A ∪ B = A ∪ (U-A) = A ∪ U = U since A ⊆ U </para>
+          <para id="id12386064">Also A ∩ B = A ∩ (U - A) = ∅ by 10 above. </para>
+          <para id="id12386105">Proof for 13: Since
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math> ∪
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> =
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ∪
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math>,
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ∪
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math>= U</para>
+          <para id="id14658343">Also since
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math> ∩
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> =
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ∩
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math> ,
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ∩
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math> = ∅. </para>
+          <para id="id15319152">Hence
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} } {}</m:annotation></m:semantics></m:math> satisfies the conditions for the complement of
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>. </para>
+          <para id="id15319262">Hence
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover><m:mo>¯</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mi>A</m:mi></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline overline  {A}} =A} {}</m:annotation></m:semantics></m:math>. </para>
+        </section>
+      </section>
+      <section id="id-706594067686">
+        <title>Questions and Exercises</title>
+        <list list-type="enumerated" id="id15319339">
+          <item>Determine whether each of the following pairs of sets is equal. <list list-type="bulleted" id="id15319349"><item>∅ and {∅}</item><item>{a,b,c} and {a,b,c,c}</item><item>{1,2,3} and {{1},{2},{3}}</item></list></item>
+          <item>Let S1={a,b,c}, S2={a,b}, S3={b,c} and S4={b,c,d}. Which of the followings is correct?<list list-type="bulleted" id="id15319386"><item>S2 ⊆ S1</item><item>S3 ⊂S1</item><item>S4 ⊆ S1</item></list></item>
+          <item>Let A={a,b,c,d} and B={a,b,c,d,e,f}. Which of the followings is correct?<list list-type="bulleted" id="id15367669"><item>A ∪ B = {a,b,c,d,e,f}</item><item>A ∩ B = {a,b,c,d}</item><item>A – B = {e,f}</item><item>B – A = {e,f}</item></list></item>
+          <item>List the members of the following sets.<list list-type="bulleted" id="id15367709"><item>    {<emphasis>x</emphasis> | <emphasis>x</emphasis> is a real number such that <emphasis>x</emphasis>²= 4}</item><item>{<emphasis>x</emphasis> | <emphasis>x</emphasis> is an integer such that <emphasis>x</emphasis>² =2}</item></list></item>
+          <item>Determine whether each of the following pairs of sets is equal. </item>
+        </list>
+        <list list-type="enumerated" id="id15367760">
+          <item>{1, 2, 1, 3, 1, 2}, {2, 3, 1} </item>
+          <item>{{1}}, {1, {1}} </item>
+          <item> ∅, {∅}</item>
+          <item>For each of the following sets, determine whether 1 is an element of that set. </item>
+        </list>
+        <list list-type="enumerated" id="id15367803">
+          <item>{<emphasis>x</emphasis> ∈R | <emphasis>x</emphasis> is an integer greater than 1} </item>
+          <item>{<emphasis>x</emphasis> ∈R | <emphasis>x</emphasis> is the square of an integer} </item>
+          <item>{1, 2, {1}} </item>
+          <item>{{1}, {{1}}} </item>
+          <item>{{1, 2}, {1, {1}}} </item>
+          <item>{{{1}}}</item>
+          <item>Suppose that <emphasis>A</emphasis>, <emphasis>B</emphasis>, and <emphasis>C</emphasis> are sets such that <emphasis>A</emphasis> ⊆<emphasis>B</emphasis> and <emphasis>B</emphasis> ⊆<emphasis>C</emphasis>. Show that <emphasis>A</emphasis> ⊆<emphasis>C</emphasis>.</item>
+          <item>Find the power set of each of the following sets. </item>
+        </list>
+        <list list-type="enumerated" id="id15367963">
+          <item>{a} </item>
+          <item>{a, {a}} </item>
+          <item>{∅, {∅}}</item>
+          <item>Let <emphasis>A</emphasis> be a set.  Show that ∅x <emphasis>A</emphasis> = <emphasis>A</emphasis> x ∅= ∅.</item>
+          <item>How many different elements does <emphasis>A</emphasis> x <emphasis>B</emphasis> have if <emphasis>A</emphasis> has <emphasis>m</emphasis> elements and <emphasis>B</emphasis> has <emphasis>n</emphasis> elements?</item>
+          <item>Let <emphasis>A</emphasis> = {1, 2, 3, 4} and <emphasis>b</emphasis> = {0, 3, 5}.  Find </item>
+        </list>
+        <list list-type="enumerated" id="id14523598">
+          <item><emphasis>A </emphasis>∪<emphasis>B</emphasis></item>
+          <item><emphasis>A </emphasis>∩<emphasis>B</emphasis></item>
+          <item>
+            <emphasis>A - B</emphasis>
+          </item>
+          <item>
+            <emphasis>B - A</emphasis>
+          </item>
+          <item>What can you say about the sets <emphasis>A</emphasis> and <emphasis>B</emphasis> if the following are true?</item>
+        </list>
+        <list list-type="enumerated" id="id14523679">
+          <item><emphasis> A </emphasis>∪<emphasis>B</emphasis></item>
+          <item><emphasis>A </emphasis>∪<emphasis>B = A</emphasis></item>
+          <item>
+            <emphasis>A - B = A</emphasis>
+          </item>
+          <item>Let <emphasis>A</emphasis> and <emphasis>B</emphasis> be subsets of a universal set <emphasis>U</emphasis>.  Show that <emphasis>A </emphasis>⊆<emphasis>B</emphasis> if and only if
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>B</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {B}} } {}</m:annotation></m:semantics></m:math>⊆
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math>.</item>
+          <item>Let <emphasis>A </emphasis>and <emphasis>B </emphasis>be sets.  Show that </item>
+        </list>
+        <list list-type="enumerated" id="id12385226">
+          <item><emphasis>A </emphasis>∪<emphasis>B = B </emphasis>∪<emphasis>A.</emphasis></item>
+          <item><emphasis>A </emphasis>∩<emphasis>B = B </emphasis>∩<emphasis>A</emphasis>.</item>
+          <item>Show that if <emphasis>A</emphasis> and <emphasis>B</emphasis> are sets, then
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mrow><m:mo stretchy="false">(</m:mo><m:mrow><m:mi>A</m:mi><m:mo stretchy="false">∪</m:mo><m:mi>B</m:mi></m:mrow><m:mo stretchy="false">)</m:mo></m:mrow><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  { \( A union B \) }} } {}</m:annotation></m:semantics></m:math><emphasis>=</emphasis><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {A}} } {}</m:annotation></m:semantics></m:math> ∩
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mover accent="true"><m:mi>B</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {overline  {B}} } {}</m:annotation></m:semantics></m:math> by showing each side is a subset of the other side.</item>
+          <item>Let <emphasis>A</emphasis>, <emphasis>B</emphasis>, and <emphasis>C</emphasis> be sets.  Show that   <emphasis>A </emphasis>∪( <emphasis>B </emphasis>∪<emphasis>C</emphasis> ) = ( <emphasis>A </emphasis>∪<emphasis>B </emphasis>) ∪<emphasis>C.</emphasis></item>
+        </list>
+      </section>
+    </section>
+  </content>
+</document>

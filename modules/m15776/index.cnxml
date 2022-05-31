@@ -1,0 +1,355 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Discrete Structures Function</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b94242f4-cc90-45ae-98b6-e811156ad373</md:uuid>
+</metadata>
+  <content>
+    <section id="id-164178933407">
+      <title>Function</title>
+      <section id="id-354042938469">
+        <title>Definitions on Function</title>
+        <para id="id47342310">A function is something that associates each element of a set with an element of another set (which may or may not be the same as the first set). The concept of function appears quite often even in non-technical contexts. For example, a social security number uniquely identifies the person, the income tax rate varies depending on the income, and the final letter grade for a course is often determined by test and exam scores, homeworks and projects, and so on.</para>
+        <para id="id47311992">In all these cases to each member of a set (social security number, income, tuple of test and exam scores, homeworks and projects) some member of another set (person, tax rate, letter grade, respectively) is assigned. </para>
+        <para id="id47342148">As you might have noticed, a function is quite like a relation. In fact, formally, we define a function as a special type of binary relation. </para>
+        <para id="id47342155">Definition (function): A function, denote it by f, from a set A to a set B is a relation from A to B that satisfies </para>
+        <para id="id47342807">1. for each element a in A, there is an element b in B such that &lt;a, b&gt; is in the relation, and </para>
+        <para id="id47342207">2. if &lt;a, b&gt; and &lt;a, c&gt; are in the relation, then b = c . </para>
+        <para id="id47338437">The set A in the above definition is called the domain of the function and B its codomain. </para>
+        <para id="id47451379">Thus, f is a function if it covers the domain (maps every element of the domain) and it is single valued. </para>
+        <para id="id47458223"/>
+        <para id="id47312040">The relation given by f between a and b represented by the ordered pair  &lt;a, b&gt;  is denoted as  f(a) = b , and b is called the image of a under f . </para>
+        <para id="id47318366">The set of images of the elements of a set S under a function f is called the image of the set S under f, and is denoted by  f(S) , that is,</para>
+        <para id="id47341995">f(S) = { f(a) | a ∈ S }, where S is a subset of the domain A of  f . </para>
+        <para id="id47342387">The image of the domain under f is called the range of f. </para>
+        <para id="id47317428">Example: Let f be the function from the set of natural numbers N to N that maps each natural number x to x2. Then the domain and co-domain of this f are N, the image of, say 3, under this function is 9, and its range is the set of squares, i.e. { 0, 1, 4, 9, 16, ....} . </para>
+        <para id="id47310025">Definition (sum and product): Let f and g be functions from a set A to the set of real numbers R. </para>
+        <para id="id47339306">Then the sum and the product of f and g are defined as follows: </para>
+        <para id="id47340979">For all x, ( f + g )(x) = f(x) + g(x) , and </para>
+        <para id="id47309662">for all x, ( f*g )(x) = f(x)*g(x) , </para>
+        <para id="id47338834">where f(x)*g(x) is the product of two real numbers f(x) and g(x). </para>
+        <para id="id47331889">Example: Let f(x) = 3x + 1 and g(x) = x2 . Then ( f + g )(x) = x2 + 3x + 1 , and ( f*g )(x) = 3x3 + x2 </para>
+        <para id="id47312903">Definition (one-to-one): A function f is said to be one-to-one (injective) , if and only if whenever f(x) = f(y) , x = y . </para>
+        <para id="id47335810">Example: The function f(x) = x2 from the set of natural numbers N to N is a one-to-one function. Note that f(x) = x2 is not one-to-one if it is from the set of integers (negative as well as non-negative) to N, because for example f(1) = f(-1) = 1 . </para>
+        <para id="id46536880">Definition (onto): A function f from a set A to a set B is said to be onto(surjective) , if and only if for every element y of B , there is an element x in A such that  f(x) = y ,  that is,  f is onto if and only if  f( A ) = B . </para>
+        <para id="id47331826">Example: The function f(x) = 2x from the set of natural numbers N to the set of non-negative even numbers E is an onto function. However, f(x) = 2x from the set of natural numbers N to N is not onto, because, for example, nothing in N can be mapped to 3 by this function. </para>
+        <para id="id47331384">Definition (bijection): A function is called a bijection , if it is onto and one-to-one. </para>
+        <para id="id47327001">Example: The function f(x) = 2x from the set of natural numbers N to the set of non-negative even numbers E is one-to-one and onto. Thus it is a bijection. </para>
+        <para id="id47331152">Every bijection has a function called the inverse function. </para>
+        <para id="id47341787">These concepts are illustrated in Figure 1. In each figure below, the points on the left are in the domain and the ones on the right are in the co-domain, and arrows show &lt; x, f(x) &gt; relation. </para>
+        <para id="id47340068"><figure id="id46529135"><media id="idm157184" alt=""><image src="../../media/graphics1-584a.png" mime-type="image/png" height="172" width="506"/></media></figure>Definition (inverse): Let f be a bijection from a set A to a set B. Then the function g is called the inverse function of f, and it is denoted by f -1 ,  if for every element y of B,  g(y) = x , where f(x) = y . Note that such an x is unique for each y because f is a bijection. </para>
+        <para id="id47329871">For example, the rightmost function in the above figure is a bijection and its inverse is obtained by reversing the direction of each arrow. </para>
+        <para id="id47330652">Example: The inverse function of f(x) = 2x from the set of natural numbers N to the set of non-negative even numbers E is f -1(x) = 1/2 x from E to N. It is also a bijection. </para>
+        <para id="id47330261">A function is a relation. Therefore one can also talk about composition of functions. </para>
+        <para id="id47330268">Definition (composite function): Let g be a function from a set A to a set B, and let f be a function from B to a set C . Then the composition of functions f and g, denoted by fg, is the function from A to C that satisfies </para>
+        <para id="id47330210">      fg(x) = f( g(x) )   for all x in A . </para>
+        <para id="id47310995">Example: Let  f(x) = x2 , and  g(x) = x + 1 . Then  f( g(x) ) = ( x + 1 )2 . </para>
+      </section>
+      <section id="id-886910500366">
+        <title>Growth of Functions </title>
+        <section id="id-341716560807">
+          <title>Introduction</title>
+          <para id="id46532902">One of the important criteria in evaluating algorithms is the time it takes to complete a job. To have a meaningful comparison of algorithms, the estimate of computation time must be independent of the programming language, compiler, and computer used; must reflect on the size of the problem being solved; and must not depend on specific instances of the problem being solved. The quantities often used for the estimate are the worst case execution time, and average execution time of an algorithm, and they are represented by the number of some key operations executed to perform the required computation. </para>
+          <para id="id47313563">As an example for an estimate of computation time, let us consider the sequential search algorithm.</para>
+          <para id="id47314861">Example: Algorithm for Sequential Search </para>
+          <para id="id47314870">Algorithm   SeqSearch(L, n, x)</para>
+          <para id="id47341681">L is an array with n entries indexed 1, .., n, and x is the key to be searched for in L. </para>
+          <para id="id47341556">Output: if x is in L , then output its index, else output 0. </para>
+          <para id="id47341454">   index := 1; </para>
+          <para id="id47341373">   while ( index ≤ n  and  L[ index ] ≠ x ) </para>
+          <para id="id47341079">         index := index + 1 ; </para>
+          <para id="id47341087">   if ( index &gt; n ) , then index := 0 </para>
+          <para id="id47316350">   return index . </para>
+          <para id="id47320380">The worst case time of this algorithm, for example, can be estimated as follows: First the key operation is comparison of keys comparing L[ index ] with x . Most search algorithms (if not all) need "comparison of keys". The largest number of execution of this comparison is n , which occurs when x is not in L or when x is at L[n] , and the while loop is executed n times. This quantity n thus obtained is used as an estimate of the worst case time of this sequential search algorithm. </para>
+          <para id="id47331984">Note that in the while loop two comparisons and one addition are performed. Thus one could use 3n as an estimate just as well. Also note that the very first line and the last two lines are not counted in. The reasons for those are firstly that differences in implementation details such as languages, commands, compilers and machines make differences in constant factors meaningless, and secondly that for large values of n, the highest degree term in n dominates the estimate. Since we are mostly interested in the behavior of algorithms for large values of n , lower terms can be ignored compared with the highest term. The concept that is used to address these issues is something called big-oh, and that is what we are going to study here. </para>
+        </section>
+        <section id="id-090369547655">
+          <title>Big - Oh</title>
+          <para id="id47330162">The following example gives the idea of one function growing more rapidly than another. We will use this example to introduce the concept the big-Oh.</para>
+          <para id="id47330052">Example: f(n) = 100 n2, g(n) = n4, the following table and Figure 2 show that g(n) grows faster than f(n) when n &gt; 10. We say f is big-Oh of g. </para>
+          <para id="id47334079">
+            <table id="id47333942" summary="">
+              <tgroup cols="3">
+                <colspec colnum="1" colname="c1"/>
+                <colspec colnum="2" colname="c2"/>
+                <colspec colnum="3" colname="c3"/>
+                <tbody>
+                  <row>
+                    <entry>n</entry>
+                    <entry>f(n)</entry>
+                    <entry>g(n)</entry>
+                  </row>
+                  <row>
+                    <entry>10</entry>
+                    <entry>10,000</entry>
+                    <entry>10,000</entry>
+                  </row>
+                  <row>
+                    <entry>50</entry>
+                    <entry>250,000</entry>
+                    <entry>6,250,000</entry>
+                  </row>
+                  <row>
+                    <entry>100</entry>
+                    <entry>1,000,000</entry>
+                    <entry>100,000,000</entry>
+                  </row>
+                  <row>
+                    <entry>150</entry>
+                    <entry>2,250,000</entry>
+                    <entry>506,250,000</entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </para>
+          <para id="id47315075">
+            <figure id="id47315016">
+              <media id="idm11168656" alt=""><image src="../../media/graphics2-9640.png" mime-type="image/png" height="250" width="219"/></media>
+            </figure>
+          </para>
+          <para id="id47314974">Definition (big-oh): Let f and g be functions from the set of integers (or the set of real numbers) to the set of real numbers. Then f(x) is said to be O( g(x) ) , which is read as f(x) is big-oh of g(x) , if and only if there are constants C and n0 such that</para>
+          <para id="id46957855">     | f(x) | ≤ C | g(x) | </para>
+          <para id="id47463073">whenever x &gt; n0 . </para>
+          <para id="id46531773">Note that big-oh is a binary relation on a set of functions (What kinds of properties does it have ? reflexive ? symmetric ? transitive ?). </para>
+          <para id="id46531779">The relationship between f and g can be illustrated as follows when f is big-oh of g. </para>
+          <para id="id46537632">For example, 5 x + 10  is big-oh of  x2,   because 5 x + 10 &lt; 5 x2 + 10 x2 = 15 x2   for   x &gt; 1 .   </para>
+          <para id="id46526316">Hence for C = 15 and n0 = 1 ,   | 5x + 10 | ≤ C | x2 | . Similarly it can be seen that  3 x2 + 2 x + 4 &lt; 9 x2  for   x &gt; 1 .   Hence 3 x2 + 2 x + 4 is O( x2 ) . In general, we have the following theorem: </para>
+          <para id="id46719442">Theorem 1: an xn + ... + a1 x + a0   is   O( xn )   for any real numbers an , ..., a0 and any nonnegative number n . </para>
+          <para id="id47116306"/>
+          <para id="id47116669">Note: Let f(x) = 3 x2 + 2 x + 4, g(x) = x2, from the above illustration, we have that f(x) is O(g(x)). Also, since x2 &lt; 3 x2 + 2 x + 4, we can also get g(x) is O(f(x)). In this case, we say these two functions are of the same order. </para>
+        </section>
+        <section id="id-0520034916077">
+          <title>Growth of Combinations of Functions</title>
+          <para id="id47217082">Big-oh has some useful properties. Some of them are listed as theorems here. Let use start with the definition of max function. </para>
+          <para id="id47216978">Definition (max function): Let f1(x) and f2(x) be functions from a set A to a set of real numbers B. Then max( f1(x) , f2(x) ) is the function from A to B that takes as its value at each point x the larger of f1(x) and f2(x).</para>
+          <para id="id47186862">Theorem 2: If  f1(x) is O( g1(x) ) , and   f2(x) is O( g2(x) ) , then  (f1 + f2)( x )  is   O( max( g1(x) , g2(x) ) ) . </para>
+          <para id="id46631494">From this theorem it follows that if  f1(x)  and  f2(x) are O( g(x) ) , then  (f1 + f2)( x )  is O( g(x) ) , and </para>
+          <para id="id46141707">(f1 + f2)( x )  is  O( max( f1(x) , f2(x) ) ) . </para>
+          <para id="id46540303">Theorem 3: If  f1(x) is O( g1(x) ) , and   f2(x) is O( g2(x) ) , then  (f1 * f2)( x )  is   O( g1(x) * g2(x) ) . </para>
+        </section>
+        <section id="id-57592580493">
+          <title>Big - Omega and Big - Theta</title>
+          <para id="id46696042">Big-oh concerns with the "less than or equal to" relation between functions for large values of the variable. It is also possible to consider the "greater than or equal to" relation and "equal to" relation in a similar way. Big-Omega is for the former and big-theta is for the latter. </para>
+          <para id="id46696051">Definition (big-omega): Let f and g be functions from the set of integers (or the set of real numbers) to the set of real numbers. Then f(x) is said to be Ω(g(x)) , which is read as f(x) is big-omega of g(x) , if there are constants C and n0 such that </para>
+          <para id="id46824297">     | f(x) | ≥C | g(x) | </para>
+          <para id="id46824623">whenever x &gt; n0 . </para>
+          <para id="id47219579"/>
+          <para id="id47219586">Definition (big-theta): Let f and g be functions from the set of integers (or the set of real numbers) to the set of real numbers. Then f(x) is said to be θ( g(x) ) , which is read as f(x) is big-theta of g(x) , if f(x) is O( g(x) ), and Ω( g(x) ) . We also say that f(x) is of order g(x) .</para>
+          <para id="id47058550">For example,   3x2 - 3x - 5  is Ω( x2 ) , because   3x2 - 3x - 5 ≥x2   for integers x &gt; 2   (C = 1 , n0 = 2 ) . </para>
+          <para id="id47059233">Hence by Theorem 1 it is θ( x2) . </para>
+          <para id="id47059258">In general, we have the following theorem: </para>
+          <para id="id47059380">Theorem 4: an xn + ... + a1 x + a0   is   θ( xn )   for any real numbers an , ..., a0 and any nonnegative number n . </para>
+        </section>
+        <section id="id-4936822934">
+          <title>Little - Oh and Little - Omega</title>
+          <para id="id47059624">If f(x) is O( g(x) ), but not θ( g(x) ) , then f(x) is said to be o( g(x) ) , and it is read as f(x) is little-oh of g(x) . Similarly for little-omega (ω). </para>
+          <para id="id47188990">For example   x is   o(x2 ) ,   x2 is   o(2x ) ,   2x is   o(x ! ) , etc. </para>
+        </section>
+      </section>
+      <section id="id-880069811272">
+        <title>Calculation of Big – Oh</title>
+        <para id="id47060235">Basic knowledge of limits and derivatives of functions from calculus is necessary here. Big-oh relationships between functions can be tested using limit of function as follows: </para>
+        <para id="id47060242">Let f(x) and g(x) be functions from a set of real numbers to a set of real numbers. </para>
+        <para id="id47551913">Then</para>
+        <para id="id47060523">1.     If   
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">/</m:mo><m:mi>g</m:mi></m:mrow><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">=</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } f \( x \) /g \( x \) =0} {}</m:annotation></m:semantics></m:math>, then  f(x) is o( g(x) ) . Note that if  f(x) is o( g(x) ), then f(x) is O( g(x) ).</para>
+        <para id="id46820441">2.     If  
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">/</m:mo><m:mi>g</m:mi></m:mrow><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">=</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } f \( x \) /g \( x \) = infinity } {}</m:annotation></m:semantics></m:math>, then   g(x) is o( f(x) ) . </para>
+        <para id="id46719650">3.     If  
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mrow><m:mn>0</m:mn><m:mo stretchy="false">&lt;</m:mo><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">/</m:mo><m:mi>g</m:mi></m:mrow><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">&lt;</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{0&lt; {"lim"}  cSub { size 8{x rightarrow  infinity } } f \( x \) /g \( x \) &lt; infinity } {}</m:annotation></m:semantics></m:math>, then   f(x) is θ( g(x) ) .</para>
+        <para id="id47786142">4.     If  
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">/</m:mo><m:mi>g</m:mi></m:mrow><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">&lt;</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } f \( x \) /g \( x \) &lt; infinity } {}</m:annotation></m:semantics></m:math>, then   f(x) is O( g(x) ) . </para>
+        <para id="id47786830">For example,</para>
+        <para id="id47786834"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>(4x3 + 3x2 + 5)/(x4 – 3x3 – 5x -4) </para>
+        <para id="id47218668">=
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>( 4/x + 3/x2 + 5/x4 )/(1 - 3/x - 5/x3 - 4/x4 ) = 0 . </para>
+        <para id="id46729410">Hence</para>
+        <para id="id46729415">( 4x3 + 3x2 + 5 )   is   o(x4 - 3x3 - 5x - 4 ),   </para>
+        <para id="id46729913">or equivalently,   (x4 - 3x3 - 5x - 4 ) is   ω(4x3 + 3x2 + 5 ) . </para>
+        <para id="id46884231">Let us see why these rules hold. Here we give a proof for 4. Others can be proven similarly.</para>
+        <para id="id46884236">Proof: Suppose  
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">/</m:mo><m:mi>g</m:mi></m:mrow><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mrow><m:mrow><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">=</m:mo><m:msub><m:mi>C</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mn>1</m:mn></m:mrow></m:mstyle></m:msub></m:mrow><m:mo stretchy="false">&lt;</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } f \( x \) /g \( x \) =C rSub { size 8{1} } &lt; infinity } {}</m:annotation></m:semantics></m:math>. </para>
+        <para id="id46730539">By the definition of limit this means that </para>
+        <para id="id46730543">∀ε&gt; 0, ∃n0 such that   |f(x)/g(x) – C1| &lt; ε whenever x &gt; n0</para>
+        <para id="id46730849">Hence –ε &lt; f(x)/g(x) – C1 &lt; ε</para>
+        <para id="id46730901">Hence –ε +C1 &lt; f(x)/g(x) &lt; ε +C1</para>
+        <para id="id46731018">In particular f(x)/g(x) &lt; ε +C1</para>
+        <para id="id46983788">Hence f(x) &lt; (ε +C1)g(x)</para>
+        <para id="id46983888">Let C = ε +C1 , then f(x) &lt; Cg(x) whenever x &gt; n0 .</para>
+        <para id="id46984114">Since we are interested in non-negative functions f and g, this means that   |f(x) | ≤C | g(x) | </para>
+        <para id="id46984309">Hence   f(x) = O( g(x) ) .</para>
+        <section id="id-68342300321">
+          <title>L'Hospital (L'Hôpital)'s Rule</title>
+          <para id="id46984381"><m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f(x)/g(x) is not always easy to calculate. For example take 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>x2/3x. Since both x2 and 3x go to ∞ as x goes to ∞ and there is no apparent factor common to both, the calculation of the limit is not immediate. One tool we may be able to use in such cases is L'Hospital's Rule, which is given as a theorem below. </para>
+          <section id="id-652740058471">
+            <title>Theorem 5 ( L'Hospital ):</title>
+            <para id="id46984841"> If  
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f(x)  = ∞ and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>g(x)  = ∞, and  f(x)  and  g(x)  have the first derivatives,   f '(x)   and   g'(x) ,  respectively,  then 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f(x)/g(x)  = f '(x)/g'(x) . </para>
+            <para id="id47482390">This also holds when 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f(x)  = 0 and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>g(x)  = 0 ,   instead of 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f(x)  = ∞ and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>g(x)  = ∞. </para>
+            <para id="id46712003">For example, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>x/ex   = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>1/ex   = 0,   because (ex)' = ex,   where e is the base for the natural logarithm. </para>
+            <para id="id47054885">Similarly 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>ln x/x   = ( 1/x )/1   = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>1/x   = 0 . </para>
+            <para id="id47055616"/>
+            <para id="id47055621">Note that this rule can be applied repeatedly as long as the conditions are satisfied. </para>
+            <para id="id47055626">So, for example, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>x2/ex = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>2x/ex = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>2/ex = 0. </para>
+          </section>
+        </section>
+      </section>
+      <section id="id-519810054627">
+        <title>Summary of Big – Oh</title>
+        <para id="id47056515">Sometimes, it is very necessary to compare the order of some common used functions including the following:</para>
+        <table id="id47056521" summary="">
+          <tgroup cols="8">
+            <colspec colnum="1" colname="c1"/>
+            <colspec colnum="2" colname="c2"/>
+            <colspec colnum="3" colname="c3"/>
+            <colspec colnum="4" colname="c4"/>
+            <colspec colnum="5" colname="c5"/>
+            <colspec colnum="6" colname="c6"/>
+            <colspec colnum="7" colname="c7"/>
+            <colspec colnum="8" colname="c8"/>
+            <tbody>
+              <row>
+                <entry>1</entry>
+                <entry>logn</entry>
+                <entry>n</entry>
+                <entry>nlogn</entry>
+                <entry>n2</entry>
+                <entry>2n</entry>
+                <entry>n!</entry>
+                <entry>nn</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para id="id47057301">Now, we can use what we've learned above about the concept of big-Oh and the calculation methods to calculate the order of these functions. The result shows that each function in the above list is big-oh of the functions following them. Figure 2 displays the graphs of these functions, using a scale for the values of the functions that doubles for each successive marking on the graph. </para>
+        <para id="id47057332">
+        ***SORRY, THIS MEDIA TYPE IS NOT SUPPORTED.***
+      </para>
+      </section>
+      <section id="id-791677429145">
+        <title>Questions and Exercises</title>
+        <para id="id47414916">1. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id47414921">a. The range of a function is a subset of the co-domain.</para>
+        <para id="id47414926">b. The cardinality of the domain of a function is not less than that of its range.</para>
+        <para id="id47414932">c. The range of a function is the image of its domain.</para>
+        <para id="id47414937">d. Max {f,g} is the function that takes as its value at x the larger of f(x) and g(x).</para>
+        <para id="id47414943">2. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id47414949">a. 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>(n2 + 3n + 5)/(4n2 + 10n + 6) = 1/4.</para>
+        <para id="id47191011">b. 2n is big-theta of 3n.</para>
+        <para id="id47374540">c. 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>(10n3 + 3n2 + 500n + 100)/(2n4 + 3n3) = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>(6n + 6)/(24n2 + 18n)</para>
+        <para id="id47376528">d. 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f’/g’ = 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f’’/g’’. if f’’ and g’’ exist, and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>f’ and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:munder><m:mtext>lim</m:mtext><m:mstyle fontsize="8pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">→</m:mo><m:mo stretchy="false">∞</m:mo></m:mrow></m:mrow></m:mstyle></m:munder></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ {"lim"}  cSub { size 8{x rightarrow  infinity } } } {}</m:annotation></m:semantics></m:math>g’ are both equal to infinity or 0.</para>
+        <para id="id47377805">3. Which <emphasis>f</emphasis> is not a function from R to R in the following equations, where R is the set of real numbers? Explain why they are not a function. </para>
+        <para id="id46692351">
+          <emphasis/>
+        </para>
+        <para id="id46692357">
+          <emphasis>a. f(x) = 1/x</emphasis>
+        </para>
+        <para id="id46692693">
+          <emphasis/>
+        </para>
+        <para id="id46692699"><emphasis>b. f(x) = y</emphasis>  such that   <emphasis>y </emphasis>2<emphasis> = x</emphasis></para>
+        <para id="id46692723">
+          <emphasis/>
+        </para>
+        <para id="id46692729"><emphasis>c. f(x) = x </emphasis>2<emphasis> – 1</emphasis></para>
+        <para id="id46695425">4. Find the domain and range of the following functions.</para>
+        <para id="id46695431">a. the function that assigns to each bit string (of various lengths) the number of zeros in it.</para>
+        <para id="id46695436">b. the function that assigns the number of bits left over when a bit string (of various lengths) is split into bytes (which are blocks of 8 bits)</para>
+        <para id="id46695443">5. Determine whether each of the following functions from Z to Z is one-to-one, where Z is the set of integers.</para>
+        <para id="id46695113">
+          <emphasis/>
+        </para>
+        <para id="id46695119">
+          <emphasis>a. f(n) = n + 2</emphasis>
+        </para>
+        <para id="id46695127">
+          <emphasis/>
+        </para>
+        <para id="id46695134">
+          <emphasis>b. f(n) = n² + n + 1</emphasis>
+        </para>
+        <para id="id46693326">
+          <emphasis/>
+        </para>
+        <para id="id46693333">
+          <emphasis>c. f(n) = n³ - 1</emphasis>
+        </para>
+        <para id="id46693341">6. Determine whether each of the following functions from Z to Z is onto.</para>
+        <para id="id46693358">
+          <emphasis/>
+        </para>
+        <para id="id46693378">
+          <emphasis>a. f(n) = n + 2</emphasis>
+        </para>
+        <para id="id46693385">
+          <emphasis/>
+        </para>
+        <para id="id46693391">
+          <emphasis>b. f(n) = n² + n + 1</emphasis>
+        </para>
+        <para id="id46693400">
+          <emphasis/>
+        </para>
+        <para id="id46693406">
+          <emphasis>c. f(n) = n³ - 1</emphasis>
+        </para>
+        <para id="id46695048">7. Determine whether each of the following functions is a bijection from R to R.</para>
+        <para id="id46695064">
+          <emphasis>a. f(x) = 2x + 3</emphasis>
+        </para>
+        <para id="id46695072">
+          <emphasis/>
+        </para>
+        <para id="id46695079">
+          <emphasis>b. f(x) = x² + 2</emphasis>
+        </para>
+        <para id="id46695309">8. Determine whether each of the following functions from R to R is <emphasis>O(x)</emphasis>. </para>
+        <para id="id46695332">
+          <emphasis/>
+        </para>
+        <para id="id46695338"><emphasis>a. f(x) = </emphasis>10 </para>
+        <para id="id46695675">
+          <emphasis/>
+        </para>
+        <para id="id46695681"><emphasis>b. f(x) = </emphasis>3<emphasis>x</emphasis> + 7 </para>
+        <para id="id46695696">
+          <emphasis/>
+        </para>
+        <para id="id46695702"><emphasis>c. f(x) = x</emphasis>² + <emphasis>x</emphasis> + 1 </para>
+        <para id="id46695939">
+          <emphasis/>
+        </para>
+        <para id="id46695945"><emphasis>d. f(x) = </emphasis>5<emphasis>ln x</emphasis></para>
+        <para id="id46695959">9. Use the definition of big-oh to show that <emphasis>x</emphasis>4 + 5<emphasis>x</emphasis>3 + 3<emphasis>x</emphasis>2 + 4<emphasis>x</emphasis> + 6 is  <emphasis>O(x</emphasis>4<emphasis>)</emphasis>.</para>
+        <para id="id47187298">10. Show that (<emphasis>x²</emphasis> + 2<emphasis>x</emphasis> + 3) / (<emphasis>x</emphasis> + 1) is <emphasis>O(x)</emphasis>.</para>
+        <para id="id47187326">11. Show that 5<emphasis>x</emphasis>4 + <emphasis>x²</emphasis> + 1 is <emphasis>O(x</emphasis>4<emphasis>/2)</emphasis> and <emphasis>x</emphasis>4<emphasis>/2</emphasis> is <emphasis>O</emphasis>(5<emphasis>x</emphasis>4 + <emphasis>x²</emphasis> + 1).</para>
+        <para id="id46823460">12. Show that 2n is <emphasis>O</emphasis>(3n)  but that  3n is  not  <emphasis>O</emphasis>(2n).</para>
+        <para id="id46823511">13. Explain what it means for a function to be <emphasis>O</emphasis>(1).</para>
+        <para id="id46823522">14. Give as good (i.e. small) a big-<emphasis>O</emphasis> estimate as possible for each of the following functions.</para>
+        <para id="id46823807">a. (<emphasis>n²</emphasis> + 3<emphasis>n</emphasis> + 8)(<emphasis>n</emphasis> + 1)</para>
+        <para id="id46823829">b. (3log<emphasis>n</emphasis> + 5<emphasis>n²</emphasis>)(<emphasis>n³</emphasis> + 3<emphasis>n</emphasis> + 2)</para>
+      </section>
+    </section>
+  </content>
+</document>

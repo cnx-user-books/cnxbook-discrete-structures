@@ -1,0 +1,176 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Discrete Structures Problem Solving</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>b6285025-a794-476f-9517-881821cf7bd4</md:uuid>
+</metadata>
+  <content>
+    <section id="id-77382381181">
+      <title>Problem Solving</title>
+      <section id="id-493866367541">
+        <title>Introduction </title>
+        <para id="id13690645">Everyone must have felt at least once in his or her life how wonderful it would be if we could solve a problem at hand preferably without much difficulty or even with some difficulties. Unfortunately the problem solving is an art at this point and there are no universal approaches one can take to solving problems. Basically one must explore possible avenues to a solution one by one until one comes across a right path to a solution. Thus generally speaking, there is guessing and hence an element of luck involved in problem solving. However, in general, as one gains experience in solving problems, one develops one's own techniques and strategies, though they are often intangible. Thus the guessing is not an arbitrary guessing but an educated one. In this chapter we are going to learn a framework for problem solving and get a glimpse of strategies that are often used by experts. They are based on the work of Polya. For further study, his book, and others such as Larson are recommended (but not required).</para>
+      </section>
+      <section id="id-839222549018">
+        <title>A Framework for Problem Solving </title>
+        <para id="id13746132">The following four phases can be identified in the process of solving problems: (1) Understanding the problem</para>
+        <para id="id13498307">(2) Making a plan of solution</para>
+        <para id="id12714078">(3) Carrying out the plan</para>
+        <para id="id14607449">(4) Looking back i.e. verifying</para>
+        <para id="id13023168">Each of the first two phases is going to be explained below a little more in detail. Phases (3) and (4) should be self-explanatory. </para>
+      </section>
+      <section id="id-145900459939">
+        <title>Understanding the Problem </title>
+        <para id="id14823687">Needless to say that if you do not understand the problem you can never solve it. It is also often true that if you really understand the problem, you can see a solution. Below are some of the things that can help us understand a problem. (1) Extract the principal parts of the problem.</para>
+        <para id="id12045561">The principal parts are: </para>
+        <para id="id14066431">For "find" type problems, such as "find the principal and return for a given investment", UNKNOWNS, DATA and CONDITIONS, and for "proof" type problems HYPOTHESIS and CONCLUSION. For examples that illustrate these, see examples below. Be careful about hidden assumptions, data and conditions. </para>
+        <para id="id13997388">(2) Consult definitions for unfamiliar (often even familiar) terminologies. </para>
+        <para id="id14083005">(3) Construct one or two simple example to illustrate what the problem says. </para>
+      </section>
+      <section id="id-403795203048">
+        <title>Devising a Solution Plan </title>
+        <para id="id13845216">Where to start? </para>
+        <para id="id13874877">Start with the consideration of the principal parts: unknowns, data, and conditions for "find" problems, and hypothesis, and conclusion for "prove" problems.</para>
+        <para id="id13829395">What can I do? </para>
+        <para id="id11147876">Once you identify the principal parts and understand them, the next thing you can do is to consider the problem from various angles and seek contacts with previously acquired knowledge. The first thing you should do is to try to find facts that are related to the problem at hand. Relevant facts usually involve words that are the same as or similar to those in the given problem. It is also a good idea to try to recall previously solved similar problems. </para>
+        <para id="id13025548">What should I look for? </para>
+        <para id="id13944650">Look for a helpful idea that shows you the way to the end. Even an incomplete idea should be considered. Go along with it to a new situation, and repeat this process. </para>
+        <para id="id10617370">Some helpful tips </para>
+        <para id="id11995890">There is no single method that works for all problems. However, there is a wealth of heuristics we can try. Following are some of the often used heuristics. Add your own heuristics as you gain experience.</para>
+        <para id="id13951530">(1) Have I seen it before? </para>
+        <para id="id12505726">That is, do I know similar or related problems? Similar/related problems are ones with the same or a similar unknown or unknown may be different but the settings are the same or similar.</para>
+        <para id="id12834807">(2) Do a little analysis on relationships among data, conditions and unknowns, or between hypothesis and conclusion.</para>
+        <para id="id13939287">(3) What facts do I know related to the problem on hand?</para>
+        <para id="id13940703">These are facts on the subjects appearing in the problem. They often involve the same or similar words. It is very important that we know inference rules.</para>
+        <para id="id13152495">(4) Definitions: Make sure that you know the meaning of technical terms. This is obviously crucial to problem solving at any level. But especially at this level, if you know their meaning and understand the concepts, you can see a solution to most of the problems without much difficulty. </para>
+        <para id="id9849783">(5) Compose a wish list of intermediate goals and try to reach them.</para>
+        <para id="id14432398">(6) Have you used all the conditions/hypotheses? When you are looking for paths to a solution or trying to verify your solution, it is often a good idea to check whether or not you have used all the data/hypotheses. If you haven't, something is often amiss.</para>
+        <para id="id14023198">(7) Divide into cases: Sometimes if you divide your problem into a number of separate cases based on a property of objects appearing in the problem, it simplifies the problem and clear your mind. For example if the problem concerns integers, then you may want to divide it into two cases: one for even numbers and the other for odd numbers as. (8) Proof by contradiction: If you make an assumption, and that assumption produces a statement that does not make sense, then you must conclude that your assumption is wrong. For example, suppose that your car does not start. A number of things could be wrong. Let us assume for simplicity's sake that either the battery is dead or the starter is defective. So you first assume that the battery is dead and try to jump start it. If it doesn't start, you have a situation that does not make sense under your assumption of dead battery. That is, a good battery should start the car but it doesn't. So you conclude that your assumption is wrong. That is the battery is not the cause. Proof by contradiction follows that logic.</para>
+        <para id="id11292150">In this method we first assume that the assertion to be proven is not true and try to draw a contradiction i.e. something that is always false. If we produce a contradiction, then our assumption is wrong and therefore the assertion we are trying to prove is true.When you are stuck trying to justify some assertion, proof by contradiction is always a good thing to try.</para>
+        <para id="id13968827">(9) Transform/Restate the problem, then try (1) - (3) above.</para>
+        <para id="id14394781">(10) Working backward: In this approach, we start from what is required, such as conclusion or final (desired) form of an equation etc., and assume what is sought has been found. Then we ask from what antecedent the desired result could be derived. If the antecedent is found, then we ask from what antecedent that antecedent could be obtained. ... We repeat this process until either the data/hypotheses are reached or some easy to solve problem is reached. </para>
+        <para id="id12648601">(11) Simplify the problem if possible. Take advantage of symmetries which often exist. </para>
+        <para id="id10472636">Keep in mind that your first try may not work. But don't get discouraged. If one approach doesn't work, try another. You have to keep trying different approaches, different ideas. As you gain experience, your problem solving skills improve and you tend to find the right approach sooner.</para>
+        <para id="id13375788">Let us now look at some examples to illustrate the topics discussed above.</para>
+      </section>
+      <section id="id-842160270979">
+        <title>Examples</title>
+        <para id="id14861272">Example 1</para>
+        <para id="id13151750">This is an example in which you can find a solution once you analyze and understand the unknowns and data.</para>
+        <para id="id13465984">Problem: A survey of TV viewers shows the following results: </para>
+        <para id="id8968499">To the question "Do you watch comedies?", 352 answered "Yes".,</para>
+        <para id="id13598454">To the question "Do you watch sports ?", 277 answered "Yes", and</para>
+        <para id="id14608673">To the question "Do you watch both comedies and sports ?", 129 answered "Yes".</para>
+        <para id="id10439005">Given these data, find, among people who watch at least one of comedies and sports, percentages of people who watch at least one of comedies and sports watch only comedies, only sports, and both comedies and sports.</para>
+        <para id="id5054101">Let us try to solve this problem following the framework presented above.</para>
+        <para id="id13329412">Understanding the Problem: This is a "find" type problem. So we try to identify unknowns, data and conditions.</para>
+        <para id="id12431829">The unknowns are the percentage of people who watch only comedies, the percentage of people who watch only sports, and the percentage of people who watch both comedies and sports.</para>
+        <para id="id12466640">The data are the three numbers: 352, 277 and 129, representing the number of people who watch comedies, sports, and both comedies and sports, respectively. Note that 352 includes people who watch both comedies and sports as well as people who watch only comedies. Similarly for 277.</para>
+        <para id="id14133548">The conditions are not explicitly given in the problem statement. But one can see that the percentages must add up to 100, and they must be nonnegative.</para>
+        <para id="id13937236">Devising a Solution Plan: Here we first examine the principal parts in detail.</para>
+        <para id="id14809660">First let us consider the unknowns in more detail. To calculate the percentage of the people who watch only comedies, for example, we need the number of people who watch at least one of comedies and sports, and the number of people who watch only comedies. Thus actually two unknowns are involved in each of the required percentages, and the real unknowns are the number of people in each of the categories, and the number of people who watch at least one of comedies and sports.</para>
+        <para id="id13462073">Next let us look at the data. First the number 352 is the number of people who watch comedies. But that is not necessarily that of the people who watch only comedies. It includes that and the number of people who watch both comedies and sports. Similarly for the second number 277.</para>
+        <para id="id12546052">Let us use symbols to represent each of the unknowns: Let C represent the number of people who watch only comedies, S that of the people who watch only sports, and T that of the people who watch at least one of those programs.</para>
+        <para id="id13968197">Then we have the following relationships among the unknowns:</para>
+        <para id="id14852454">C + 129 = 352</para>
+        <para id="id14062999">S + 129 = 277</para>
+        <para id="id13992152">C + S + 129 = T</para>
+        <para id="id13258489">From these equations we can easily obtain C = 223, S = 148, and T = 500. Thus the required percentages are 44.6%, 29.6%, and 25.8%, respectively.</para>
+        <para id="id13923904">All we had to do to solve this problem is to analyze relationships between the data and the unknowns, that is, nothing much beyond "understanding the problem".</para>
+        <para id="id14620631">Example 2</para>
+        <para id="id14794482">This is a problem which you can solve using similar known results.</para>
+        <para id="id14062113">Problem: Find the (length of) diagonal of a rectangular parallelepiped given its length, width and height.</para>
+        <para id="id13447316">Again let us try to solve this problem following the framework presented above.</para>
+        <para id="id13051525">Understanding the Problem: This is a "find" type problem. So we try to identify unknowns, data and conditions.</para>
+        <para id="id12946286">The unknown is the diagonal of a rectangular parallelepiped, and the data are its length, width and height. Again there are no explicitly stated conditions. But the unknown and data must all be a positive number.</para>
+        <para id="id14807031">Before proceeding to the next phase, let us make sure that we understand the terminologies. First a rectangular parallelepiped is a box with rectangular faces like a cube except that the faces are not necessarily a square but a rectangle as shown in Figure 1. <figure id="id14364041"><media id="idp3732800" alt=""><image src="../../media/graphics1-7611.png" mime-type="image/png" height="177" width="265"/></media></figure>Next a diagonal of a rectangular parallelepiped is the line that connects its two vertices (corner points) that are not on the same plane. It is shown in Figure 2. <figure id="id14338173"><media id="idm1081920" alt=""><image src="../../media/graphics2-01c6.png" mime-type="image/png" height="242" width="401"/></media></figure>Devising a Solution Plan: Here we first try to find relevant facts. Relevant facts often involve the same or similar words or concepts. Since the unknown is a diagonal, we look for facts concerning diagonal. Note that drawing figures here is quite helpful. One of the facts that immediately comes to our mind in this problem is Pythagoras' theorem. It has to do with right triangles and is shown in Figure 3.</para>
+        <para id="id14024116"><figure id="id13532279"><media id="idm2024800" alt=""><image src="../../media/graphics3-211a.png" mime-type="image/png" height="142" width="392"/></media></figure>Let us try to see whether or not this theorem helps. To use this theorem, we need a right triangle involving a diagonal of a parallelepiped. As we can see in Figure 4, there is a right triangle with a diagonal x as its hypotenuse.</para>
+        <para id="id14863443"><figure id="id13170658"><media id="idm3359104" alt=""><image src="../../media/graphics4-fe1c.png" mime-type="image/png" height="125" width="297"/></media></figure>However, the triangle here involves two unknowns: x and y. Since x is what we are looking for, we need to find the value of y. To find y, we note another right triangle shown in Figure 5.</para>
+        <para id="id13035501"><figure id="id12830583"><media id="idp4476080" alt=""><image src="../../media/graphics5-e1b3.png" mime-type="image/png" height="139" width="297"/></media></figure>Applying Pythagoras' theorem again, we can obtain the value of   y.</para>
+        <para id="id13680221">Thus   y2 = a2 + b2 </para>
+        <para id="id12503141">is obtained from the second triangle, and</para>
+        <para id="id13790361">x2 = c2 + y2</para>
+        <para id="id13993375">is derived from the first triangle.</para>
+        <para id="id13174054">From these two equations, we can find that x is equal to the positive square root of   a2 + b2 + c2. </para>
+        <para id="id7300568">Example 3</para>
+        <para id="id14860473">This is a proof type problem and "proof by contradiction" is used.</para>
+        <para id="id14061963">Problem: Given that a, b, and c are odd integers, prove that equation ax2 + bx + c = 0 can not have a rational root.</para>
+        <para id="id13859690">Understanding the Problem: This is a "prove" type problem. </para>
+        <para id="id9384340">The hypothesis is that a, b, and c are odd integers, and the conclusion is that equation ax2 + bx + c = 0 can not have a rational root.</para>
+        <para id="id13922530">The hypothesis is straightforward. In the conclusion, "rational root" means a root, that is, the value of x that satisfies the equation, and that can be expressed as m/n, where m and n are integers. So the conclusion means that there is no number of the form m/n that satisfies the equation under the hypothesis.</para>
+        <para id="id14127921">Devising a Solution Plan: For this problem, let us try "proof by contradiction". When you are asked to prove the impossibility of an event or non-existence of certain things, this approach often is quite helpful.</para>
+        <para id="id13462671">Following the "proof by contradiction", let us assume that the conclusion is false, that is the equation ax2 + bx + c = 0 has a rational root m/n, where m and n are integers, when a, b, and c are odd integers. We can assume without loss of generality that m and n do not have any factors in common. Then</para>
+        <para id="id14168639">a(m/n)2 + b(m/n) + c = 0 . ------------------------ (1) </para>
+        <para id="id13572911">Let us try to derive a contradiction from this. First let us make this equation simpler, that is, let us get rid of fractions.</para>
+        <para id="id13652204">Since n is not equal to 0, multiplying the both sides of (1) by n2, we get</para>
+        <para id="id11103532">am2 + bmn + cn2 = 0. ------------------------ (2) </para>
+        <para id="id13804697">Since m is an integer, it is either even or odd. We are going to consider those cases one by one. That is "divide into cases".</para>
+        <para id="id14357653">Let us first consider the case when m is even. Then n is odd, since otherwise m and n have a common factor 2. Now am2 + bmn is even, and cn2 is odd. Hence am2 + bmn + cn2 can not be 0.</para>
+        <para id="id14048802">Next let us consider the case when m is odd. By an argument similar to the previous case, we can see that n is also odd. If m and n are odd, then am2, bmn, and cn2 are all odd, since a, b, and c are odd integers. However, the sum of three odd numbers can not be equal to 0.</para>
+        <para id="id11979108">Thus by assuming that the conclusion is false, we have arrived at a contradiction, that is m/n does not satisfy the equation. Hence our assumption must be wrong, and therefore the conclusion is correct.</para>
+        <para id="id9153948">Example 4</para>
+        <para id="id13197132">This is another proof type problem and "working backward" technique is used.</para>
+        <para id="id12060777">Problem: Prove that ( a + b + c )2 ≤ 4(ab + bc + ca) , if a, b, c are three sides of a triangle. Understanding the Problem: This is a "prove" type problem.</para>
+        <para id="id14860781">The hypothesis is that a, b, and c are three sides of a triangle, and the conclusion is that inequality ( a + b + c )2 ≤4( ab + bc + ca ) holds.</para>
+        <para id="id12586950">Devising a Solution Plan: Here we try "Working Backward" heuristic. That is manipulate the conclusion possibly using the hypothesis and reduce it into something that is obviously true.</para>
+        <para id="id11027697">First by multiplying out the left hand side of the inequality, ( a + b + c )2 = a2 + b2 + c2 + 2(ab + bc + ca).</para>
+        <para id="id11661580">Hence if a2 + b2 + c2 ≤ 2(ab + bc + ca) , then the conclusion holds.</para>
+        <para id="id13218560">Next, to see what we can try, note that we have not used the hypothesis yet, and see if it can help here.</para>
+        <para id="id13331306">It is well known that the sum of two sides of a triangle is greater than the third side. Hence a + b &gt; c , b + c &gt; a , and c + a &gt; b hold.</para>
+        <para id="id14023804">From these we can obtain c(a + b) &gt; c2 , a(b + c) &gt; a2 , and b(c + a) &gt; b2. </para>
+        <para id="id14136994">By adding these three inequalities, we get </para>
+        <para id="id14134562">a2 + b2 + c2 &lt; a(b + c) + b(c + a) + c(a + b) = 2(ab + bc + ca). </para>
+        <para id="id14060095">Hence a2 + b2 + c2 &lt; 2(ab + bc + ca). </para>
+        <para id="id14122612">Hence a2 + b2 + c2 ≤ 2(ab + bc + ca). </para>
+        <para id="id13790975">Hence ( a + b + c )2 ≤4(ab + bc + ca) holds. </para>
+        <para id="id14871392">Example 5</para>
+        <para id="id14607895">This is a find type problem and "working backward" technique is used.</para>
+        <para id="id13631385">Problem: Given a 4 quart pail and a 9 quart pail, obtain 6 quarts of water in the 9 quart pail using these two pails. You can fill or empty the pails and you can have as much water as you want.</para>
+        <para id="id14359282">Understanding the Problem: This is a "find" type problem.</para>
+        <para id="id14168868">The problem is to obtain 6 quarts of water in the 9 quart pail using 4 quart and 9 quart pails as measures. You can fill either pail from the water source or from the other pail, and you can empty the pails any time. </para>
+        <para id="id14853659">Devising a Solution Plan: You can solve this in a number of different ways. Here we try "Working Backward" heuristic. It starts with the desired solution and work backward step by step. At each step we try to find a state that immediately precedes the current state such that we can reach the current state from that state with one simple operation such as filling a pail or emptying a pail in this problem. We repeat this process until we reach some easily reachable state such as empty pails, full pails, one pail full and the other empty, etc. </para>
+        <para id="id14581175">Our solution to the original problem is obtained by traversing this process backward to the desired state. </para>
+        <para id="id13231872">Let us denote the 9 quart pail by A and the 4 quart pail by B for simplicity. In this problem, the desired state is to have 6 qts in A (Figure 6). </para>
+        <para id="id7797084"><figure id="id5693578"><media id="idp9485712" alt=""><image src="../../media/graphics6-0eea.png" mime-type="image/png" height="266" width="286"/></media></figure>Thus in the first step of "working backward", we ask how we could get to the desired state with one operation. </para>
+        <para id="id14606746">As one can easily see if we could dump 3 qts from 9 qts in A, then we would have 6 qts in A. To be able to dump 3 qts from A we need 1 qt in B. Thus the state immediately preceding the current state is the one where A is full and B has 1 qt in it (Figure 7).</para>
+        <para id="id13013365"><figure id="id13013369"><media id="idp2592528" alt=""><image src="../../media/graphics7-7450.png" mime-type="image/png" height="266" width="286"/></media></figure>In the second step, the question we ask is how to get 1 qt in B. It does not look easy to get 1 qt in B. So let us see whether or not we can get 1 qt in A. If we have 1 qt in A, then we can certainly get 1 qt in B without any trouble. thus we might say that the third state is to have 1 qt in A (Figure 8). </para>
+        <para id="id13841074"><figure id="id13351380"><media id="idp686336" alt=""><image src="../../media/graphics8-f32e.png" mime-type="image/png" height="266" width="286"/></media></figure>In the third step, the question we ask is how to get 1 qt in A. This is relatively easy to accomplish because all you have to do is to get rid of 8 qts from a full A, which can be done by emptying A twice into B. </para>
+        <para id="id12782399"><figure id="id12782402"><media id="idm56752" alt=""><image src="../../media/graphics9-1e10.png" mime-type="image/png" height="266" width="286"/></media></figure><figure id="id11065808"><media id="idp10494448" alt=""><image src="../../media/graphics10-71cb.png" mime-type="image/png" height="265" width="286"/></media></figure>Since this state can be easily reached (all you have to do to get to this state is to fill A with water), we stop here. Our solution to the original problem is now obtained by going this process backward. </para>
+        <para id="id14034961">Thus first we fill up A. Then dump A into B leaving 5 qts in A (Figure 9). Then dump A into B again. This gives us 1 qt in A. Pour that into B. Then fill A and empty it into B. We now have 6 qts in A, which is what is required. </para>
+        <para id="id12681995">Example 6</para>
+        <para id="id13965888">Problem: A survey of TV viewers shows the following results: </para>
+        <para id="id13923790">To the question "Do you watch comedies?", 374 replied "Yes".</para>
+        <para id="id13683815">To the question "Do you watch sports?", 360 replied "Yes".</para>
+        <para id="id14143802">To the question "Do you watch detective stories?", 350 replied "Yes".</para>
+        <para id="id13327382">To the question "Do you watch comedies and sports?", 134 replied "Yes".</para>
+        <para id="id13387672">To the question "Do you watch comedies and detectives?", 96 replied "Yes".</para>
+        <para id="id12973180">To the question "Do you watch detectives and sports?", 241 replied "Yes".</para>
+        <para id="id11103256">To the question "Do you watch all three?", 37 replied "Yes".</para>
+        <para id="id13086751">Find the percentages of people who watch only comedies, only sports, only detective stories, comedies and sports, comedies and detectives, sports and detectives, and all three. By doing the same kind of analyses on the unknowns and data, one can find these percentages. The total number of people who watch at least one of these programs is</para>
+        <para id="id13501216">    374 + 360 + 350 - 134 - 96 - 241 + 37 = 650,</para>
+        <para id="id12558117">because each of 134, 96 and 241 is counted twice into 374 + 360 + 350, and 37 is counted in three times and subtracted out three times in 374 + 360 + 350 - 134 - 96 - 241.</para>
+        <para id="id14313567">Similarly the number of those watching only comedies is</para>
+        <para id="id13829472">    374 - 134 - 96 + 37 = 181, </para>
+        <para id="id14821984">the number of those watching only detectives is </para>
+        <para id="id14809403">    350 - 241 - 96 + 37 = 50,</para>
+        <para id="id13652408">the number of those watching only sports is</para>
+        <para id="id13652412">    360 - 134 - 241 + 37 = 22, </para>
+        <para id="id14336463">the number of those watching only comedies and detectives is </para>
+        <para id="id12597261">    96 - 37 = 59, </para>
+        <para id="id14074959">the number of those watching only comedies and sports is </para>
+        <para id="id13649209">    350 - 37 = 313, </para>
+        <para id="id13411009">the number of those watching only detectives and sports is </para>
+        <para id="id13633959">    241 - 37 = 204. </para>
+        <para id="id12335923">The calculation of the percentages is omitted. </para>
+        <para id="id14793094">Example 7</para>
+        <para id="id8704599">300 people were surveyed on TV programs they watch and all 300 responded. 75 of them say they watch a regular sports program, 210 say they watch a regular comedy program, and 36 say they watch both. There is a special detective story program which conflicts with the regular sports and comedy programs. If those who watch regular programs do not want to miss them, how many people can watch the special?</para>
+        <para id="id9538613">To answer the question, all you have to do is to find the total number of people who watch at least one of the regular sports and comedy programs. Then 300 minus that number is the answer. Thus this problem is essentially the same as Example 1, and the answer is 300 - (75 + 210 - 36) = 51.</para>
+        <para id="id13922235">Example 8</para>
+        <para id="id12200622">300 people were surveyed. 50 of them watch sports, 140 watch comedies, and 134 do not watch either of them. Then how many of them watch both comedies and sports? The relationships among various groups of people in this problem are the same as those of Example 1 or 7. Only the data are slightly different.</para>
+        <para id="id14133490">Since 300 were surveyed and 134 do not watch either sports or comedies, 166 watch at least one. Hence 50 + 140 - 166 = 24 watch both. Thus 50 - 24 = 26 watch only sports, and 140 - 24 = 116 watch only comedies. </para>
+        <section id="id-172319804279">
+          <title>Reference </title>
+          <para id="id13058759">Polya: G. Polya, How to Solve It, <emphasis>A New Aspect of Mathematical Method</emphasis>, Second Ed., Princeton University Press, Princeton, NJ, 1985. Larson: L. C. Larson, Problem-Solving Through Problems, Springer-Verlag, New York, NY, 1983. </para>
+        </section>
+      </section>
+    </section>
+  </content>
+</document>

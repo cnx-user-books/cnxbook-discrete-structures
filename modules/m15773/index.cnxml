@@ -1,0 +1,1320 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Discrete Structures Logic</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>2e10670c-cc12-4b03-97a2-b65f62438bcd</md:uuid>
+</metadata>
+  <content>
+    <section id="id-411537024939">
+      <title>Introduction to Logic</title>
+      <section id="id-914653984989">
+        <title>Logic</title>
+        <para id="id7214351">Logic is a language for reasoning. It is a collection of rules we use when doing logical reasoning. Human reasoning has been observed over centuries from at least the times of Greeks, and patterns appearing in reasoning have been extracted, abstracted, and streamlined. The foundation of the logic we are going to learn here was laid down by a British mathematician George Boole in the middle of the 19th century, and it was further developed and used in an attempt to derive all of mathematics by Gottlob Frege, a German mathematician, towards the end of the 19th century. A British philosopher/mathematician, Bertrand Russell, found a flaw in basic assumptions in Frege's attempt but he, together with Alfred Whitehead, developed Frege's work further and repaired the damage. The logic we study today is more or less along this line.</para>
+        <para id="id7214369">In logic we are interested in true or false of statements, and how the truth/falsehood of a statement can be determined from other statements. However, instead of dealing with individual specific statements, we are going to use symbols to represent arbitrary statements so that the results can be used in many similar but different cases. The formalization also promotes the clarity of thought and eliminates mistakes. </para>
+        <para id="id7214380">There are various types of logic such as logic of sentences (propositional logic), logic of objects (predicate logic), logic involving uncertainties, logic dealing with fuzziness, temporal logic etc. Here we are going to be concerned with propositional logic and predicate logic, which are fundamental to all types of logic. </para>
+      </section>
+      <section id="id-735046022471">
+        <title>Introduction to Propositional Logic</title>
+        <para id="id8819695">Propositional logic is a logic at the sentential level. The smallest unit we deal with in propositional logic is a sentence. We do not go inside individual sentences and analyze or discuss their meanings. We are going to be interested only in true or false of sentences, and major concern is whether or not the truth or falsehood of a certain sentence follows from those of a set of sentences, and if so, how. Thus sentences considered in this logic are not arbitrary sentences but are the ones that are true or false. This kind of sentences are called propositions.</para>
+        <section id="id-418221207556">
+          <title>Proposition</title>
+          <section id="id-790781529281">
+            <title>What Is Proposition?</title>
+            <para id="id8819728">Sentences considered in propositional logic are not arbitrary sentences but are the ones that are either true or false, but not both. This kind of sentences are called propositions. If a proposition is true, then we say it has a truth value of "true"; if a proposition is false, its truth value is "false". </para>
+            <para id="id8819766">For example, "Grass is green", and "2 + 5 = 5" are propositions. The first proposition has the truth value of "true" and the second "false".</para>
+            <para id="id8819779">But "Close the door", and "Is it hot outside?" are not propositions. Also "x is greater than 2", where x is a variable representing a number, is not a proposition, because unless a specific value is given to x we can not say whether it is true or false, nor do we know what x represents.</para>
+            <para id="id8819788">Similarly "x = x" is not a proposition because we don't know what "x" represents hence what "=" means. For example, while we understand what "3 = 3" means, what does "Air is equal to air" or "Water is equal to water" mean? Does it mean a mass of air is equal to another mass or the concept of air is equal to the concept of air? We don't quite know what "x = x" mean. Thus we can not say whether it is true or not. Hence it is not a proposition.</para>
+          </section>
+          <section id="id-471004902021">
+            <title>Elements of Propositional Logic</title>
+            <para id="id8819809">Simple sentences which are true or false are basic propositions. Larger and more complex sentences are constructed from basic propositions by combining them with connectives. Thus propositions and connectives are the basic elements of propositional logic. Though there are many connectives, we are going to use the following five basic connectives here: </para>
+            <para id="id8819841">      </para>
+            <para id="id7986695">  NOT,  AND,  OR,  IF_THEN (or IMPLY),  IF_AND_ONLY_IF. </para>
+            <para id="id7986701">They are also denoted by the symbols:          ¬,  ⋀,⋁,→,↔ , </para>
+            <para id="id7986720">respectively. </para>
+          </section>
+          <section id="id-805789024908">
+            <title>Truth Table</title>
+            <para id="id7986733">Often we want to discuss properties/relations common to all propositions. In such a case rather than stating them for each individual proposition we use variables representing an arbitrary proposition and state properties/relations in terms of those variables. Those variables are called a propositional variable. Propositional variables are also considered a proposition and called a proposition since they represent a proposition hence they behave the same way as propositions. A proposition in general contains a number of variables. For example (P ⋁Q) contains variables P and Q each of which represents an arbitrary proposition. Thus a proposition takes different values depending on the values of the constituent variables. This relationship of the value of a proposition and those of its constituent variables can be represented by a table. It tabulates the value of a proposition for all possible values of its variables and it is called a truth table. </para>
+            <para id="id7986781">For example the following table shows the relationship between the values of P, Q and P⋁Q: </para>
+            <para id="id7986793"><table id="id7986814" summary=""><tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry namest="c1" nameend="c3">OR</entry></row><row><entry>P </entry><entry>Q</entry><entry>(P ⋁Q) </entry></row><row><entry>F </entry><entry>F</entry><entry>F </entry></row><row><entry>F </entry><entry>T</entry><entry>T </entry></row><row><entry>T </entry><entry>F</entry><entry>T </entry></row><row><entry>T </entry><entry>T</entry><entry>T </entry></row></tbody></tgroup></table>In the table, F represents truth value false and T true. This table shows that P⋁Q is false if P and Q are both false, and it is true in all the other cases.</para>
+          </section>
+          <section id="id-319552583622">
+            <title>Meaning of the Connectives</title>
+            <para id="id9532813">Let us define the meaning of the five connectives by showing the relationship between the truth value (i.e. true or false) of composite propositions and those of their component propositions. They are going to be shown using truth table. In the tables P and Q represent arbitrary propositions, and true and false are represented by T and F, respectively. </para>
+            <para id="id9532828"><table id="id9532850" summary=""><tgroup cols="2"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><tbody><row><entry namest="c1" nameend="c2">NOT</entry></row><row><entry>P </entry><entry>¬P</entry></row><row><entry>T </entry><entry>F</entry></row><row><entry>F </entry><entry>T</entry></row></tbody></tgroup></table>This table shows that if P is true, then (¬P) is false, and that if P is false, then (¬P) is true.</para>
+            <para id="id9494705"><table id="id9494726" summary=""><tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry namest="c1" nameend="c3">AND</entry></row><row><entry>P </entry><entry>Q</entry><entry>(P ⋀Q) </entry></row><row><entry>F </entry><entry>F</entry><entry>F </entry></row><row><entry>F </entry><entry>T</entry><entry>F </entry></row><row><entry>T </entry><entry>F</entry><entry>F </entry></row><row><entry>T </entry><entry>T</entry><entry>T </entry></row></tbody></tgroup></table>This table shows that (P⋀Q) is true if both P and Q are true, and that it is false in any other case. Similarly for the rest of the tables.</para>
+            <para id="id7236718">
+              <table id="id7236740" summary="">
+                <tgroup cols="3">
+                  <colspec colnum="1" colname="c1"/>
+                  <colspec colnum="2" colname="c2"/>
+                  <colspec colnum="3" colname="c3"/>
+                  <tbody>
+                    <row>
+                      <entry namest="c1" nameend="c3">OR</entry>
+                    </row>
+                    <row>
+                      <entry>P </entry>
+                      <entry>Q</entry>
+                      <entry>(P ⋁Q) </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>F</entry>
+                      <entry>F </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>F</entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+            </para>
+            <para id="id9253283"><table id="id9253305" summary=""><tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry namest="c1" nameend="c3">IMPLIES</entry></row><row><entry>P </entry><entry>Q</entry><entry>(P→Q) </entry></row><row><entry>F </entry><entry>F</entry><entry>T </entry></row><row><entry>F </entry><entry>T</entry><entry>T </entry></row><row><entry>T </entry><entry>F</entry><entry>F </entry></row><row><entry>T </entry><entry>T</entry><entry>T </entry></row></tbody></tgroup></table>When P→Q is always true, we express that by P ⇒Q. That is P ⇒Q is used when proposition P always implies proposition Q regardless of the value of the variables in them.</para>
+            <para id="id8167407"><table id="id8167429" summary=""><tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry namest="c1" nameend="c3">IF AND ONLY IF</entry></row><row><entry>  P </entry><entry>  Q </entry><entry>  ( P ↔Q ) </entry></row><row><entry>  F </entry><entry>  F</entry><entry>T </entry></row><row><entry>  F </entry><entry>  T</entry><entry>F </entry></row><row><entry>  T </entry><entry>  F</entry><entry>F </entry></row><row><entry>  T </entry><entry>  T</entry><entry>T </entry></row></tbody></tgroup></table>When P ↔Q is always true, we express that by P ⇔Q. That is ⇔is used when two propositions always take the same value regardless of the value of the variables in them.</para>
+          </section>
+          <section id="id-794054020948">
+            <title>Construction of Complex Propositions</title>
+            <para id="id9370552">First it is informally shown how complex propositions are constructed from simple ones. Then more general way of constructing propositions is given.</para>
+            <para id="id9559143">In everyday life we often combine propositions to form more complex propositions without paying much attention to them. For example combining "Grass is green", and "The sun is red" we say something like "Grass is green and the sun is red", "If the sun is red, grass is green", "The sun is red and the grass is not green" etc. Here "Grass is green", and "The sun is red" are propositions, and form them using connectives "and", "if... then ..." and "not" a little more complex propositions are formed. These new propositions can in turn be combined with other propositions to construct more complex propositions. They then can be combined to form even more complex propositions. This process of obtaining more and more complex propositions can be described more generally as follows:</para>
+            <para id="id9559160">Let X and Y represent arbitrary propositions. Then [¬X],   [X⋀Y],  [X⋁Y],   [X→Y],   and   [X↔Y] are propositions. </para>
+            <para id="id9559222">Note that X and Y here represent an arbitrary proposition. This is actually a part of more rigorous definition of proposition which we see later.</para>
+            <para id="id9559236">Example : [ P → [Q ⋁ R] ] is a proposition and it is obtained by first constructing [Q ⋁ R] by applying [X ⋁ Y] to propositions Q and R considering them as X and Y, respectively, then by applying [ X→Y ] to the two propositions P and [Q ⋁ R] considering them as X and Y, respectively.</para>
+            <para id="id9559282">Note: Rigorously speaking X and Y above are place holders for propositions, and so they are not exactly a proposition. They are called a propositional variable, and propositions formed from them using connectives are called a propositional form. However, we are not going to distinguish them here, and both specific propositions such as "2 is greater than 1" and propositional forms such as (P ⋁Q) are going to be called a proposition.</para>
+          </section>
+          <section id="id-459987215591">
+            <title>Converse and Contrapositive</title>
+            <para id="id9514549">For the proposition P→Q,  the proposition Q→P is called its converse,  and the proposition ¬ Q→ ¬ P is called its contrapositive.</para>
+            <para id="id9514610">For example for the proposition "If it rains,  then I get wet", </para>
+            <para id="id9514616">Converse: If I get wet,  then it rains. </para>
+            <para id="id9514626">Contrapositive: If I don't get wet,  then it does not rain. </para>
+            <para id="id9514636">The converse of a proposition is not necessarily logically equivalent to it, that is they may or may not take the same truth value at the same time.</para>
+            <para id="id9514643">On the other hand, the contrapositive of a proposition is always logically equivalent to the proposition. That is, they take the same truth value regardless of the values of their constituent variables. Therefore, "If it rains,  then I get wet." and "If I don't get wet,  then it does not rain." are logically equivalent. If one is true then the other is also true, and vice versa. </para>
+          </section>
+        </section>
+        <section id="id-358861092146">
+          <title>From English to Proposition</title>
+          <section id="id-615709575809">
+            <title>If_Then Variations</title>
+            <para id="id9514680">If-then statements appear in various forms in practice. The following list presents some of the variations. These are all logically equivalent, that is as far as true or false of statement is concerned there is no difference between them. Thus if one is true then all the others are also true, and if one is false all the others are false. </para>
+            <list list-type="bulleted" id="id8702848">
+              <item>If p, then q. </item>
+              <item>p implies q. </item>
+              <item>If p,   q. </item>
+              <item>p only if q. </item>
+              <item>p is sufficient for q. </item>
+              <item>q if p. </item>
+              <item>q whenever p. </item>
+              <item>q is necessary for p. </item>
+              <item>It is necessary for p that q. </item>
+            </list>
+            <para id="id8702900">For instance, instead of saying "If she smiles then she is happy", we can say "If she smiles, she is happy", "She is happy whenever she smiles", "She smiles only if she is happy" etc. without changing their truth values. </para>
+            <para id="id8702908">"Only if" can be translated as "then". For example, "She smiles only if she is happy" is equivalent to "If she smiles, then she is happy".</para>
+            <para id="id8702918">Note that "She smiles only if she is happy" means "If she is not happy, she does not smile", which is the contrapositive of "If she smiles, she is happy". You can also look at it this way: "She smiles only if she is happy" means "She smiles only when she is happy". So any time you see her smile you know she is happy. Hence "If she smiles, then she is happy". Thus they are logically equivalent. </para>
+            <para id="id8702929">Also "If she smiles, she is happy" is equivalent to "It is necessary for her to smile that she is happy". For "If she smiles, she is happy" means "If she smiles, she is always happy". That is, she never fails to be happy when she smiles. "Being happy" is inevitable consequence/necessity of "smile". Thus if "being happy" is missing, then "smile" can not be there either. "Being happy" is necessary "for her to smile" or equivalently "It is necessary for her to smile that she is happy".</para>
+          </section>
+          <section id="id-459761898877">
+            <title>From English to Proposition </title>
+            <para id="id8702960">As we are going to see in the next section, reasoning is done on propositions using inference rules. For example, if the two propositions "if it snows, then the school is closed", and "it snows" are true, then we can conclude that "the school is closed" is true. In everyday life, that is how we reason.</para>
+            <para id="id8702970">To check the correctness of reasoning, we must check whether or not rules of inference have been followed to draw the conclusion from the premises. However, for reasoning in English or in general for reasoning in a natural language, that is not necessarily straightforward and it often encounters some difficulties. Firstly, connectives are not necessarily easily identified as we can get a flavor of that from the previous topic on variations of if_then statements. Secondly, if the argument becomes complicated involving many statements in a number of different forms twisted and tangled up, it can easily get out of hand unless it is simplified in some way.</para>
+            <para id="id8702985">One solution for that is to use symbols (and mechanize it). Each sentence is represented by symbols representing building block sentences, and connectives. For example, if P represents "it snows" and Q represents "the school is closed", then the previous argument can be expressed as</para>
+            <para id="id8013028">[ [ P → Q ] ⋀ P ] → Q, </para>
+            <para id="id8013090">or </para>
+            <para id="id8013099">P → Q </para>
+            <para id="id8013127">P </para>
+            <para id="id8013137">----------------------------- </para>
+            <para id="id8013145">Q This representation is concise, much simpler and much easier to deal with. In addition today there are a number of automatic reasoning systems and we can verify our arguments in symbolic form using them. One such system called TPS is used for reasoning exercises in this course. For example, we can check the correctness of our argument using it.</para>
+            <para id="id8013168">To convert English statements into a symbolic form, we restate the given statements using the building block sentences, those for which symbols are given, and the connectives of propositional logic (not, and, or, if_then, if_and_only_if), and then substitute the symbols for the building blocks and the connectives. For example, let P be the proposition "It is snowing", Q be the proposition "I will go the beach", and R be the proposition "I have time". </para>
+            <para id="id8897981">Then first "I will go to the beach if it is not snowing" is restated as "If it is not snowing, I will go to the beach". Then symbols P and Q are substituted for the respective sentences to obtain ~P → Q.</para>
+            <para id="id8898026">Similarly, "It is not snowing and I have time only if I will go to the beach" is restated as "If it is not snowing and I have time, then I will go to the beach", and it is translated as (~P ⋀ R ) → Q.</para>
+          </section>
+        </section>
+        <section id="id-346627499054">
+          <title>Reasoning with Propositions</title>
+          <section id="id-0823310271337">
+            <title>Introduction to Reasoning </title>
+            <para id="id8898093">Logical reasoning is the process of drawing conclusions from premises using rules of inference. Here we are going to study reasoning with propositions. Later we are going to see reasoning with predicate logic, which allows us to reason about individual objects. However, inference rules of propositional logic are also applicable to predicate logic and reasoning with propositions is fundamental to reasoning with predicate logic. </para>
+            <para id="id9032664">These inference rules are results of observations of human reasoning over centuries. Though there is nothing absolute about them, they have contributed significantly in the scientific and engineering progress the mankind have made. Today they are universally accepted as the rules of logical reasoning and they should be followed in our reasoning. </para>
+            <para id="id9032674">Since inference rules are based on identities and implications, we are going to study them first. We start with three types of proposition which are used to define the meaning of "identity" and "implication". </para>
+            <para id="id9032682">Some propositions are always true regardless of the truth value of its component propositions. For example (P ⋁¬P) is always true regardless of the value of the proposition P.</para>
+            <para id="id9032699">A proposition that is always true called a tautology. </para>
+            <para id="id9032716">There are also propositions that are always false such as (P ⋀¬P). Such a proposition is called a contradiction. </para>
+            <para id="id9032744">A proposition that is neither a tautology nor a contradiction is called a contingency. For example (P ⋁Q) is a contingency. </para>
+            <para id="id9032768">These types of propositions play a crucial role in reasoning. In particular every inference rule is a tautology as we see in identities and implications. </para>
+          </section>
+        </section>
+        <section id="id-884381730636">
+          <title>Identities</title>
+          <para id="id9032794">From the definitions (meaning) of connectives, a number of relations between propositions which are useful in reasoning can be derived. Below some of the often encountered pairs of logically equivalent propositions, also called identities, are listed. </para>
+          <para id="id9032808">These identities are used in logical reasoning. In fact we use them in our daily life, often more than one at a time, without realizing it.</para>
+          <para id="id9032815">If two propositions are logically equivalent, one can be substituted for the other in any proposition in which they occur without changing the logical value of the proposition. </para>
+          <para id="id9116814">Below ⇔ corresponds to ↔ and it means that the equivalence is always true (a tautology), while ↔ means the equivalence may be false in some cases, that is in general a contingency.</para>
+          <para id="id9116838">That these equivalences hold can be verified by constructing truth tables for them. </para>
+          <para id="id9116844">First the identities are listed, then examples are given to illustrate them. </para>
+          <para id="id9116848">List of Identities: </para>
+          <para id="id9116856">1. P ⇔(P ⋁P) ----- idempotence of ⋁</para>
+          <para id="id9116877">2. P ⇔(P ⋀P) ----- idempotence of ⋀</para>
+          <para id="id9116897">3. (P ⋁Q) ⇔(Q ⋁P) ----- commutativity of ⋁</para>
+          <para id="id9116923">4. (P ⋀Q) ⇔(Q ⋀P) ----- commutativity of ⋀</para>
+          <para id="id9116948">5. [(P ⋁Q) ⋁R] ⇔[P ⋁(Q ⋁R)] ----- associativity of ⋁</para>
+          <para id="id8518562">6. [(P ⋀Q) ⋀R] ⇔[P ⋀(Q ⋀R)] ----- associativity of ⋀</para>
+          <para id="id8518599">7. ¬(P ⋁Q) ⇔(¬ P ⋀ ¬Q) ----- DeMorgan's Law </para>
+          <para id="id8518634">8. ¬(P ⋀Q) ⇔(¬ P ⋁ ¬Q) ----- DeMorgan's Law </para>
+          <para id="id8518670">9. [P ⋀(Q ⋁R] ⇔[(P ⋀Q) ⋁(P ⋀R)] ----- distributivity of ⋀over ⋁</para>
+          <para id="id8518718">10. [P ⋁(Q ⋀R] ⇔[(P ⋁Q) ⋀(P ⋁R)] ----- distributivity of ⋁over ⋀</para>
+          <para id="id8130444">11. (P ⋁True) ⇔True </para>
+          <para id="id8130460">12. (P ⋀False) ⇔False </para>
+          <para id="id8130476">13. (P ⋁False) ⇔P</para>
+          <para id="id8130492">14. (P ⋀True) ⇔P </para>
+          <para id="id8130508">15. (P ⋁¬P) ⇔True </para>
+          <para id="id8130528">16. (P ⋀¬P) ⇔False </para>
+          <para id="id8130548">17. P ⇔¬(¬ P) ----- double negation </para>
+          <para id="id8130568">18. (P →Q) ⇔(¬ P ⋁Q) ----- implication </para>
+          <para id="id7215818">19. (P ↔Q) ⇔[(P →Q) ⋀(Q →P)]----- equivalence </para>
+          <para id="id7215851">20. [(P ⋀Q) →R] ⇔[P →(Q→R)] ----- exportation </para>
+          <para id="id7215883">21. [(P →Q) ⋀(P→¬Q)] ⇔¬P ----- absurdity </para>
+          <para id="id7215919">22. (P →Q) ⇔(¬Q →¬P) ----- contrapositive </para>
+          <para id="id7215950">Let us see some example statements in English that illustrate these identities.</para>
+          <para id="id7215956">Examples: 1. P ⇔(P ⋁P) ----- idempotence of ⋁</para>
+          <para id="id9501537">What this says is, for example, that "Tom is happy." is equivalent to "Tom is happy or Tom is happy". This and the next identity are rarely used, if ever, in everyday life. However, these are useful when manipulating propositions in reasoning in symbolic form. </para>
+          <para id="id9501545">2. P ⇔(P ⋀P) ----- idempotence of ⋀</para>
+          <para id="id9501566">Similar to 1. above.</para>
+          <para id="id9501570">3. (P ⋁Q) ⇔(Q ⋁P) ----- commutativity of ⋁</para>
+          <para id="id9501598">What this says is, for example, that "Tom is rich or (Tom is) famous." is equivalent to "Tom is famous or (Tom is) rich". </para>
+          <para id="id9501604">4. (P ⋀Q) ⇔(Q ⋀P) ----- commutativity of ⋀</para>
+          <para id="id9501630">What this says is, for example, that "Tom is rich and (Tom is) famous." is equivalent to "Tom is famous and (Tom is) rich". </para>
+          <para id="id9501636">5. [(P ⋁Q) ⋁R] ⇔[P ⋁(Q ⋁R)] ----- associativity of ⋁</para>
+          <para id="id9501673">What this says is, for example, that "Tom is rich or (Tom is) famous, or he is also happy." is equivalent to "Tom is rich, or he is also famous or (he is) happy". </para>
+          <para id="id9501680">6. [(P ⋀Q) ⋀R] ⇔[P ⋀(Q ⋀R)] ----- associativity of ⋀</para>
+          <para id="id9492395">Similar to 5. above. </para>
+          <para id="id9492400">7. ¬(P ⋁Q) ⇔(¬ P ⋀¬Q) ----- DeMorgan's Law </para>
+          <para id="id9492436">For example, "It is not the case that Tom is rich or famous." is true if and only if "Tom is not rich and he is not famous." </para>
+          <para id="id9492443">8. ¬(P ⋀Q) ⇔(¬ P ⋁¬Q) ----- DeMorgan's Law </para>
+          <para id="id9492479">For example, "It is not the case that Tom is rich and famous." is true if and only if "Tom is not rich or he is not famous." </para>
+          <para id="id9492485">9. [P ⋀(Q ⋁R] ⇔[(P ⋀Q) ⋁(P ⋀R)] ----- distributivity of ⋀ over ⋁</para>
+          <para id="id9492534">What this says is, for example, that "Tom is rich, and he is famous or (he is) happy." is equivalent to "Tom is rich and (he is) famous, or Tom is rich and (he is) happy". </para>
+          <para id="id9492541">10. [P ⋁(Q ⋀R] ⇔[(P ⋁Q) ⋀(P ⋁R)] ----- distributivity of ⋁over ⋀</para>
+          <para id="id8440339">Similarly to 9. above, what this says is, for example, that "Tom is rich, or he is famous and (he is) happy." is equivalent to "Tom is rich or (he is) famous, and Tom is rich or (he is) happy". </para>
+          <para id="id8440347">11. (P ⋁True) ⇔ True.   Here True is a proposition that is always true. Thus the proposition (P ⋁True) is always true regardless of what P is. </para>
+          <para id="id8440372">This and the next three identities, like identities 1 and 2, are rarely used, if ever, in everyday life. However, these are useful when manipulating propositions in reasoning in symbolic form. </para>
+          <para id="id8440379">12. (P ⋀False) ⇔False </para>
+          <para id="id8440395">13. (P ⋁False) ⇔P </para>
+          <para id="id8440410">14. (P ⋀True) ⇔P </para>
+          <para id="id8440426">15. (P ⋁¬P) ⇔True </para>
+          <para id="id8440446">What this says is that a statement such as "Tom is 6 foot tall or he is not 6 foot tall." is always true. </para>
+          <para id="id8440452">16. (P ⋀¬P) ⇔False </para>
+          <para id="id8440472">What this says is that a statement such as "Tom is 6 foot tall and he is not 6 foot tall." is always false. </para>
+          <para id="id8440478">17. P ⇔¬(¬ P) ----- double negation </para>
+          <para id="id8730272">What this says is, for example, that "It is not the case that Tom is not 6 foot tall." is equivalent to "Tom is 6 foot tall." </para>
+          <para id="id8730279">18. (P →Q) ⇔(¬ P ⋁Q) ----- implication </para>
+          <para id="id8730306">For example, the statement "If I win the lottery, I will give you a million dollars." is not true, that is, I am lying, if I win the lottery and don't give you a million dollars. It is true in all the other cases. Similarly, the statement "I don't win the lottery or I give you a million dollars." is false, if I win the lottery and don't give you a million dollars. It is true in all the other cases. Thus these two statements are logically equivalent. </para>
+          <para id="id8730318">19. (P ↔Q) ⇔[(P →Q) ⋀(Q →P)]----- equivalence </para>
+          <para id="id8730350">What this says is, for example, that "Tom is happy if and only if he is healthy." is logically equivalent to ""if Tom is happy then he is healthy, and if Tom is healthy he is happy." </para>
+          <para id="id8730357">20. [(P ⋀Q) →R] ⇔[P →(Q →R)] ----- exportation </para>
+          <para id="id8730390">For example, "If Tom is healthy, then if he is rich, then he is happy." is logically equivalent to "If Tom is healthy and rich, then he is happy." </para>
+          <para id="id8730396">21. [(P →Q) ⋀(P→¬Q)] ⇔¬P ----- absurdity </para>
+          <para id="id8730432">For example, if "If Tom is guilty then he must have been in that room." and "If Tom is guilty then he could not have been in that room." are both true, then there must be something wrong about the assumption that Tom is guilty. </para>
+          <para id="id8730440">22. (P →Q) ⇔(¬Q →¬P) ----- contrapositive </para>
+          <para id="id9531387">For example, "If Tom is healthy, then he is happy." is logically equivalent to "If Tom is not happy, he is not healthy." </para>
+          <para id="id9531394">The identities 1 ~ 16 listed above can be paired by duality relation, which is defined below, as 1 and 2, 3 and 4, ..., 15 and 16. That is 1 and 2 are dual to each other, 3 and 4 are dual to each other, .... Thus if you know one of a pair, you can obtain the other of the pair by using the duality.</para>
+          <section id="id-742462040855">
+            <title>Dual of Proposition </title>
+            <para id="id9531411">Let X be a proposition involving only ¬, ⋀, and ⋁ as a connective. Let X* be the proposition obtained from X by replacing ⋀ with ⋁, ⋁with ⋀, T with F, and F with T. Then X* is called the dual of X. </para>
+            <para id="id9531525">For example, the dual of [P ⋀Q ] ⋁P is [P ⋁Q ] ⋀P, and the dual of [¬ P ⋀Q] ⋁¬[ T ⋀¬R] is [¬ P ⋁Q] ⋀¬[ F ⋁¬R] . </para>
+            <para id="id9495330">Property of Dual: If two propositions P and Q involving only ¬, ⋀, and ⋁ as connectives are equivalent, then their duals P* and Q* are also equivalent. </para>
+          </section>
+          <section id="id-467203987606">
+            <title>Examples of Use of Identities</title>
+            <para id="id9495395">Here a few examples are presented to show how the identities in section Identities can be used to prove some useful results.</para>
+            <para id="id9495402">1. ¬( P →Q ) ⇔( P ⋀¬Q ) </para>
+            <para id="id9495451">What this means is that the negation of "if P then Q" is "P but not Q". For example, if you said to someone "If I win a lottery, I will give you $100,000." and later that person says "You lied to me." Then what that person means is that you won the lottery but you did not give that person $100,000 you promised. </para>
+            <para id="id7293931">To prove this, first let us get rid of → using one of the identities: (P→Q ) ⇔( ¬P ⋁Q). </para>
+            <para id="id7293980">That is, ¬( P →Q ) ⇔¬( ¬P ⋁Q ). </para>
+            <para id="id7294033">Then by De Morgan, it is equivalent to ¬¬P ⋀¬Q , which is equivalent to P ⋀¬Q, since the double negation of a proposition is equivalent to the original proposition as seen in the identities. </para>
+            <para id="id7294081">2. P ⋁( P ⋀Q ) ⇔P --- Absorption </para>
+            <para id="id9558845">What this tells us is that P ⋁( P ⋀Q ) can be simplified to P, or if necessary P can be expanded into P ⋁( P ⋀Q ) . </para>
+            <para id="id9558906">To prove this, first note that P ⇔( P ⋀T ). </para>
+            <para id="id9558934">Hence </para>
+            <para id="id9558939">P ⋁( P ⋀Q ) </para>
+            <para id="id9558964">⇔( P ⋀T ) ⋁( P ⋀Q ) </para>
+            <para id="id9559002">⇔P ⋀( T ⋁Q ) ,   by the distributive law. </para>
+            <para id="id9271430">⇔( P ⋀T ) ,   since ( T ⋁Q ) ⇔T. </para>
+            <para id="id9271474">⇔P ,   since ( P ⋀T ) ⇔P. </para>
+            <para id="id9271505"/>
+            <para id="id9271510">Note that by the duality </para>
+            <para id="id9271515">P ⋀( P ⋁Q ) ⇔P also holds. </para>
+          </section>
+          <section id="id-80187265495">
+            <title>Implications</title>
+            <para id="id9271557">The following implications are some of the relationships between propositions that can be derived from the definitions (meaning) of connectives. ⇒ below corresponds to → and it means that the implication always holds. That is it is a tautology. </para>
+            <para id="id9271576">These implications are used in logical reasoning. When the right hand side of these implications is substituted for the left hand side appearing in a proposition, the resulting proposition is implied by the original proposition, that is, one can deduce the new proposition from the original one.</para>
+            <para id="id9271585">First the implications are listed, then examples to illustrate them are given. List of Implications: </para>
+            <para id="id9528406">1. P ⇒(P ⋁Q) ----- addition </para>
+            <para id="id9528421">2. (P ⋀Q) ⇒P ----- simplification </para>
+            <para id="id9528436">3. [P ⋀(P →Q] ⇒Q ----- modus ponens </para>
+            <para id="id9528458">4. [(P →Q) ⋀¬Q] ⇒¬P ----- modus tollens </para>
+            <para id="id9528488">5. [ ¬P ⋀(P ⋁Q] ⇒Q ----- disjunctive syllogism </para>
+            <para id="id9528515">6. [(P →Q) ⋀(Q→R)] ⇒(P→R) ----- hypothetical syllogism </para>
+            <para id="id9528548">7. (P→Q) ⇒[(Q→R)→(P→R)] </para>
+            <para id="id9528580">8. [(P→Q) ⋀(R→S)] ⇒[(P ⋀R)→(Q ⋀S)] </para>
+            <para id="id9494843">9. [(P ↔Q) ⋀(Q ↔R)] ⇒(P ↔R) </para>
+            <para id="id9494875">Examples: </para>
+            <para id="id9494886">1. P ⇒(P ⋁Q) ----- addition</para>
+            <para id="id9494901">For example, if the sun is shining, then certainly the sun is shining or it is snowing. Thus</para>
+            <para id="id9494907">"if the sun is shining, then the sun is shining or it is snowing." "If 0 &lt; 1, then 0 ≤1 or a similar statement is also often seen.</para>
+            <para id="id9494933">2. (P ⋀Q) ⇒P ----- simplification </para>
+            <para id="id9494949">For example, if it is freezing and (it is) snowing, then certainly it is freezing. Thus "If it is freezing and (it is) snowing, then it is freezing." </para>
+            <para id="id9494956">3. [P ⋀(P →Q] ⇒Q ----- modus ponens </para>
+            <para id="id9494977">For example, if the statement "If it snows, the schools are closed" is true and it actually snows, then the schools are closed. </para>
+            <para id="id9494983">This implication is the basis of all reasoning. Theoretically, this is all that is necessary for reasoning. But reasoning using only this becomes very tedious. </para>
+            <para id="id9494990">4. [(P →Q) ⋀¬Q] ⇒¬P ----- modus tollens </para>
+            <para id="id8753466">For example, if the statement "If it snows, the schools are closed" is true and the schools are not closed, then one can conclude that it is not snowing. Note that this can also be looked at as the application of the contrapositive and modus ponens. That is, (P→Q) is equivalent to ( ¬Q )→( ¬P ). Thus if in addition ¬Q holds, then by the modus ponens, ¬P is concluded. </para>
+            <para id="id8753511">5. [ ¬P ⋀(P ⋁Q] ⇒Q ----- disjunctive syllogism</para>
+            <para id="id8753538">For example, if the statement "It snows or (it) rains." is true and it does not snow, then one can conclude that it rains. </para>
+            <para id="id8753544">6. [(P→Q) ⋀(Q→R)] ⇒(P→R) ----- hypothetical syllogism </para>
+            <para id="id8753577">For example, if the statements "If the streets are slippery, the school buses can not be operated." and "If the school buses can not be operated, the schools are closed." are true, then the statement "If the streets are slippery, the schools are closed." is also true. </para>
+            <para id="id8753586">7. (P→Q) ⇒[(Q→R)→(P→R)] </para>
+            <para id="id8753618">This is actually the hypothetical syllogism in another form. For by considering (P→Q) as a proposition S, (Q→R) as a proposition T, and (P→R) as a proposition U in the hypothetical syllogism above, and then by applying the "exportation" from the identities, this is obtained. </para>
+            <para id="id8175473">8. [(P→Q) ⋀(R→S)] ⇒[(P ⋀R)→(Q ⋀S)] </para>
+            <para id="id8175515">For example, if the statements "If the wind blows hard, the beach erodes." and "If it rains heavily, the streets get flooded." are true, then the statement "If the wind blows hard and it rains heavily, then the beach erodes and the streets get flooded." is also true. </para>
+            <para id="id8175524">9. [(P ↔Q) ⋀(Q ↔R)] ⇒(P ↔R) </para>
+            <para id="id8175556">This just says that the logical equivalence is transitive, that is, if P and Q are equivalent, and if Q and R are also equivalent, then P and R are equivalent.</para>
+          </section>
+          <section id="id-125456258555">
+            <title>Reasoning with Propositions</title>
+            <para id="id8175571">Logical reasoning is the process of drawing conclusions from premises using rules of inference. The basic inference rule is modus ponens. It states that if both P→Q and P hold, then Q can be concluded, and it is written as </para>
+            <para id="id8175590">P</para>
+            <para id="id8175594">P →Q </para>
+            <para id="id8175604">-----------------</para>
+            <para id="id8175609">Q </para>
+            <para id="id8175613">Here the lines above the dotted line are premises and the line below it is the conclusion drawn from the premises. </para>
+            <para id="id8175629">For example if "if it rains, then the game is not played" and "it rains" are both true, then we can conclude that the game is not played. </para>
+            <para id="id8175636">In addition to modus ponens, one can also reason by using identities and implications.</para>
+            <para id="id8175641">If the left (right) hand side of an identity appearing in a proposition is replaced by the right(left) hand side of the identity, then the resulting proposition is logically equivalent to the original proposition. Thus the new proposition is deduced from the original proposition. For example in the proposition P ⋀(Q→R), (Q→R) can be replaced with (¬Q ⋁R) to conclude P ⋀(¬Q ⋁R), since (Q→R) ⇔(¬Q ⋁R) </para>
+            <para id="id9242889">Similarly if the left (right) hand side of an implication appearing in a proposition is replaced by the right(left) hand side of the implication, then the resulting proposition is logically implied by the original proposition. Thus the new proposition is deduced from the original proposition. </para>
+            <para id="id9242898">The tautologies listed as "implications" can also be considered inference rules as shown below. </para>
+            <table id="id9242915" summary="">
+              <tgroup cols="3">
+                <colspec colnum="1" colname="c1"/>
+                <colspec colnum="2" colname="c2"/>
+                <colspec colnum="3" colname="c3"/>
+                <tbody>
+                  <row>
+                    <entry>Rules of Inference</entry>
+                    <entry>Tautological Form</entry>
+                    <entry>Name</entry>
+                  </row>
+                  <row>
+                    <entry>P -----------------P ⋁Q </entry>
+                    <entry>P ⇒(P ⋁Q)</entry>
+                    <entry>addition</entry>
+                  </row>
+                  <row>
+                    <entry>P ⋀Q -----------------P</entry>
+                    <entry>(P ⋀Q) ⇒P</entry>
+                    <entry>simplification</entry>
+                  </row>
+                  <row>
+                    <entry>P P→Q -----------------Q</entry>
+                    <entry>[P ⋀(P→Q)] ⇒Q</entry>
+                    <entry>modus ponens</entry>
+                  </row>
+                  <row>
+                    <entry>¬Q P→Q -----------------¬P</entry>
+                    <entry>[¬Q ⋀(P→Q)] ⇒¬P </entry>
+                    <entry>modus tollens</entry>
+                  </row>
+                  <row>
+                    <entry>P ⋁Q ¬P -----------------Q</entry>
+                    <entry>[(P ⋁Q) ⋀¬P] ⇒Q</entry>
+                    <entry>disjunctive syllogism</entry>
+                  </row>
+                  <row>
+                    <entry>P →Q Q→R -----------------P →R</entry>
+                    <entry>[(P →Q) ⋀(Q →R)] ⇒[P→R]</entry>
+                    <entry>hypothetical syllogism</entry>
+                  </row>
+                  <row>
+                    <entry>P Q -----------------P ⋀Q </entry>
+                    <entry/>
+                    <entry>conjunction</entry>
+                  </row>
+                  <row>
+                    <entry>(P→Q) ⋀(R→S) P ⋁R -----------------Q ⋁S</entry>
+                    <entry>[(P→Q) ⋀(R→S) ⋀(P ⋁R)] ⇒[Q ⋁S]</entry>
+                    <entry>constructive dilemma</entry>
+                  </row>
+                  <row>
+                    <entry>(P→Q) ⋀(R→S) ¬Q ⋁¬S -----------------¬P ⋁¬R</entry>
+                    <entry>[(P→Q) ⋀(R→S) ⋀( ¬Q ⋁¬S)] ⇒[ ¬P ⋁¬R]</entry>
+                    <entry>destructive dilemma</entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </section>
+          <section id="id-0221930245816">
+            <title>Example of Inferencing </title>
+            <para id="id9496423">Consider the following argument: </para>
+            <para id="id9496432">1. Today is Tuesday or Wednesday. </para>
+            <para id="id9496441">2. But it can't be Wednesday, since the doctor's office is open today, and that office is always closed on Wednesdays. </para>
+            <para id="id9496452">3. Therefore today must be Tuesday. </para>
+            <para id="id9496461">This sequence of reasoning (inferencing) can be represented as a series of application of modus ponens to the corresponding propositions as follows. </para>
+            <para id="id9496468">The modus ponens is an inference rule which deduces  Q  from  P → Q  and  P. </para>
+            <para id="id9301202">T: Today is Tuesday. </para>
+            <para id="id9301210">W: Today is Wednesday. </para>
+            <para id="id9301219">D: The doctor's office is open today. </para>
+            <para id="id9301228">C: The doctor's office is always closed on Wednesdays. </para>
+            <para id="id9301237">The above reasoning can be represented by propositions as follows. </para>
+            <para id="id9301242">1. T ⋁ W </para>
+            <para id="id9301266">2. D </para>
+            <para id="id9301283">    C </para>
+            <para id="id9301297">------------ </para>
+            <para id="id9301306">   ~W </para>
+            <para id="id9301320">------------ </para>
+            <para id="id9301329">3. T </para>
+            <para id="id9301344">To see if this conclusion T is correct, let us first find the relationship among C, D, and W: </para>
+            <para id="id9301371">C can be expressed using D and W. That is, restate C first as the doctor's office is always closed if it is Wednesday. Then C ↔ (W → ~D) Thus substituting (W → ~D) for C, we can proceed as follows. </para>
+            <para id="id8353318">D </para>
+            <para id="id8353327">W → ~D</para>
+            <para id="id8353352">------------ </para>
+            <para id="id8353358">~W</para>
+            <para id="id8353371">which is correct by modus tollens. </para>
+            <para id="id8353378">From this  ~W  combined with  T V W  of 1. above, </para>
+            <para id="id8353411">~W</para>
+            <para id="id8353423">T ⋁ W </para>
+            <para id="id8353446">------------ </para>
+            <para id="id9243301">T </para>
+            <para id="id9243312">which is correct by disjunctive syllogism. </para>
+            <para id="id9243317">Thus we can conclude that the given argument is correct. </para>
+            <para id="id9243324">To save space we also write this process as follows eliminating one of the ~W's: </para>
+            <para id="id9243339">D </para>
+            <para id="id9243349">W → ~D</para>
+            <para id="id9243374">------------ </para>
+            <para id="id9243379">~W</para>
+            <para id="id9243392">T ⋁ W </para>
+            <para id="id9243415">------------ </para>
+            <para id="id9243420">T</para>
+          </section>
+          <section id="id-936731899238">
+            <title>Proof of Identities</title>
+            <para id="id9243434">All the identities in Section Identities can be proven to hold using truth tables as follows. In general two propositions are logically equivalent if they take the same value for each set of values of their variables. Thus to see whether or not two propositions are equivalent, we construct truth tables for them and compare to see whether or not they take the same value for each set of values of their variables. </para>
+            <para id="id9243445">For example consider the commutativity of ⋁:</para>
+            <para id="id9243460">(P ⋁Q) ⇔(Q ⋁P). </para>
+            <para id="id9243481">To prove that this equivalence holds, let us construct a truth table for each of the proposition (P ⋁Q) and (Q ⋁P).</para>
+            <para id="id9243498">A truth table for (P ⋁Q) is, by the definition of ⋁, </para>
+            <para id="id9243514">
+              <table id="id8897036" summary="">
+                <tgroup cols="3">
+                  <colspec colnum="1" colname="c1"/>
+                  <colspec colnum="2" colname="c2"/>
+                  <colspec colnum="3" colname="c3"/>
+                  <tbody>
+                    <row>
+                      <entry>P </entry>
+                      <entry>Q</entry>
+                      <entry>(P ⋁Q) </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>F</entry>
+                      <entry>F </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>F</entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+            </para>
+            <para id="id8897235">A truth table for (Q ⋁P) is, by the definition of ⋁, </para>
+            <para id="id8897250">
+              <table id="id8819868" summary="">
+                <tgroup cols="3">
+                  <colspec colnum="1" colname="c1"/>
+                  <colspec colnum="2" colname="c2"/>
+                  <colspec colnum="3" colname="c3"/>
+                  <tbody>
+                    <row>
+                      <entry>P </entry>
+                      <entry>Q</entry>
+                      <entry>(Q ⋁P) </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>F</entry>
+                      <entry>F </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>F</entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+            </para>
+            <para id="id8820065">As we can see from these tables (P ⋁Q) and (Q ⋁P) take the same value for the same set of value of P and Q. Thus they are (logically) equivalent. </para>
+            <para id="id8820083">We can also put these two tables into one as follows: </para>
+            <para id="id8820088">
+              <table id="id8820110" summary="">
+                <tgroup cols="4">
+                  <colspec colnum="1" colname="c1"/>
+                  <colspec colnum="2" colname="c2"/>
+                  <colspec colnum="3" colname="c3"/>
+                  <colspec colnum="4" colname="c4"/>
+                  <tbody>
+                    <row>
+                      <entry>P </entry>
+                      <entry>Q</entry>
+                      <entry>(P ⋁Q) </entry>
+                      <entry>(Q ⋁P) </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>F</entry>
+                      <entry>F </entry>
+                      <entry>F </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>F</entry>
+                      <entry>T </entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>T</entry>
+                      <entry>T </entry>
+                      <entry>T </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+            </para>
+            <para id="id8132791">Using this convention for truth table we can show that the first of De Morgan's Laws also holds. </para>
+            <para id="id8132802">
+              <table id="id8132823" summary="">
+                <tgroup cols="4">
+                  <colspec colnum="1" colname="c1"/>
+                  <colspec colnum="2" colname="c2"/>
+                  <colspec colnum="3" colname="c3"/>
+                  <colspec colnum="4" colname="c4"/>
+                  <tbody>
+                    <row>
+                      <entry>P </entry>
+                      <entry>Q</entry>
+                      <entry>¬(P ⋁Q) </entry>
+                      <entry>¬P ⋀¬Q </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>F</entry>
+                      <entry>T </entry>
+                      <entry>T </entry>
+                    </row>
+                    <row>
+                      <entry>F </entry>
+                      <entry>T</entry>
+                      <entry>F </entry>
+                      <entry>F </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>F</entry>
+                      <entry>F </entry>
+                      <entry>F </entry>
+                    </row>
+                    <row>
+                      <entry>T </entry>
+                      <entry>T</entry>
+                      <entry>F </entry>
+                      <entry>F </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </table>
+            </para>
+            <para id="id9493636">By comparing the two right columns we can see that ¬(P ⋁Q) and ¬P ⋀¬Q are equivalent. </para>
+          </section>
+          <section id="id-97644938006">
+            <title>Proof of Implications</title>
+            <para id="id9512533">1. All the implications in Section Implications can be proven to hold by constructing truth tables and showing that they are always true. </para>
+            <para id="id9512546">For example consider the first implication "addition":  P ⇒ (P ⋁ Q).</para>
+            <para id="id9512564">To prove that this implication holds,  let us first construct a truth table for the proposition P ⋁ Q. </para>
+            <para id="id9512577"><table id="id9512599" summary=""><tgroup cols="3"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><tbody><row><entry>P </entry><entry>Q</entry><entry>(P ⋁ Q) </entry></row><row><entry>F </entry><entry>F</entry><entry>F </entry></row><row><entry>F </entry><entry>T</entry><entry>T </entry></row><row><entry>T </entry><entry>F</entry><entry>T </entry></row><row><entry>T </entry><entry>T</entry><entry>T </entry></row></tbody></tgroup></table>                </para>
+            <para id="id8754828">Then by the definition of →,   we can add a column for P → (P ⋁ Q) to obtain the following truth table. </para>
+            <para id="id8754851"><table id="id8754872" summary=""><tgroup cols="4"><colspec colnum="1" colname="c1"/><colspec colnum="2" colname="c2"/><colspec colnum="3" colname="c3"/><colspec colnum="4" colname="c4"/><tbody><row><entry>P </entry><entry>Q</entry><entry>(P ⋁ Q) </entry><entry>P →(P ⋁ Q)</entry></row><row><entry>F </entry><entry>F</entry><entry>F </entry><entry>T </entry></row><row><entry>F </entry><entry>T</entry><entry>T </entry><entry>T </entry></row><row><entry>T </entry><entry>F</entry><entry>T </entry><entry>T </entry></row><row><entry>T </entry><entry>T</entry><entry>T </entry><entry>T </entry></row></tbody></tgroup></table>                </para>
+            <para id="id8010805">The first row in the rightmost column results since P is false,  and the others in that column follow since (P ⋁ Q) is true. </para>
+            <para id="id8010819">The rightmost column shows that P → (P ⋁ Q) is always true. </para>
+            <para id="id8010836">2. Some of the implications can also be proven by using identities and implications that have already been proven. </para>
+            <para id="id8010847">For example suppose that the identity "exportation": </para>
+            <para id="id8010852">      [(X ⋀Y) →Z] ⇔[X →(Y→Z)] , </para>
+            <para id="id8010903">and the implication "hypothetical syllogism": </para>
+            <para id="id8010908">      [(P→Q) ⋀(Q→R)] ⇒(P→R) </para>
+            <para id="id8010958">have been proven. Then the implication No. 7: </para>
+            <para id="id8010963">      (P→Q) ⇒[(Q→R)→(P→R)] </para>
+            <para id="id8011014">can be proven by applying the "exportation" to the "hypothetical syllogism" as follows: </para>
+            <para id="id8011025">Consider   (P→Q) ,  (Q→R)  , and   (P→R)   in the "hypothetical syllogism" as X,   Y  and   Z  of the "exportation", respectively. </para>
+            <para id="id9510360">Then since   [ (X ⋀Y )→Z ] ⇔[ X→( Y→Z ) ]   implies   [ ( X ⋀Y )→Z ] ⇒[ X→(Y→Z ) ] ,   the implication of No. 7 follows. </para>
+            <para id="id9510463">Similarly the modus ponens (implication No. 3) can be proven as follows: </para>
+            <para id="id9510479">Noting that ( P→Q ) ⇔( ¬P ⋁Q ) , </para>
+            <para id="id9510524">    </para>
+            <para id="id9510530">P ⋀( P→Q ) </para>
+            <para id="id9510555">    ⇔P ⋀( ¬P ⋁Q ) </para>
+            <para id="id9510599">    ⇔( P ⋀¬P ) ⋁( P ⋀Q )     ---   by the distributive law </para>
+            <para id="id9271094">    ⇔F ⋁( P ⋀Q ) </para>
+            <para id="id9271128">    ⇔( P ⋀Q ) </para>
+            <para id="id9271154">    ⇒Q </para>
+            <para id="id9271172">Also the exportation (identity No. 20),   ( P→( Q→R ) )   ⇔  ( P ⋀Q )→R )   can be proven using identities as follows: </para>
+            <para id="id9271238">    ( P→( Q→R ) )   ⇔  ¬P ⋁( Q→R ) </para>
+            <para id="id9271297">    ⇔  ¬P ⋁( ¬Q ⋁R ) </para>
+            <para id="id9271348">    ⇔  ( ¬P ⋁¬Q ) ⋁R </para>
+            <para id="id8131875">    ⇔  ¬( P ⋀Q ) ⋁R </para>
+            <para id="id8131917">    ⇔ ( P ⋀Q )→R </para>
+            <para id="id8131950">3. Some of them can be proven by noting that a proposition in an implication can be replaced by an equivalent proposition without affecting its value. </para>
+            <para id="id8131961">For example by substituting ( ¬Q→¬P ) for ( P→Q ) , since they are equivalent being contrapositive to each other, modus tollens (the implication No. 4): [ ( P→Q ) ⋀¬Q ] ⇒  ¬P , reduces to the modus ponens: [ X ⋀( X→Y ) ] ⇒Y.   Hence if the modus ponens and the "contrapositive" in the "Identities" have been proven, then the modus tollens follows from them. </para>
+          </section>
+        </section>
+      </section>
+      <section id="id-0366644384785">
+        <title>Predicate Logic</title>
+        <section id="id-70670677843">
+          <title>Introduction to Predicate Logic</title>
+          <para id="id8132116">The propositional logic is not powerful enough to represent all types of assertions that are used in computer science and mathematics, or to express certain types of relationship between propositions such as equivalence. </para>
+          <para id="id8132124">For example, the assertion "x is greater than 1", where x is a variable, is not a proposition because you can not tell whether it is true or false unless you know the value of x. Thus the propositional logic can not deal with such sentences. However, such assertions appear quite often in mathematics and we want to do inferencing on those assertions. </para>
+          <para id="id8132140">Also the pattern involved in the following logical equivalences can not be captured by the propositional logic: </para>
+          <para id="id8132151">"Not all birds fly" is equivalent to "Some birds don't fly".</para>
+          <para id="id8132156">"Not all integers are even" is equivalent to "Some integers are not even". </para>
+          <para id="id8132162">"Not all cars are expensive" is equivalent to "Some cars are not expensive", </para>
+          <para id="id8132167">... . </para>
+          <para id="id7500663">Each of those propositions is treated independently of the others in propositional logic. For example, if P represents "Not all birds fly" and Q represents "Some integers are not even", then there is no mechanism in propositional logic to find out tha P is equivalent to Q. Hence to be used in inferencing, each of these equivalences must be listed individually rather than dealing with a general formula that covers all these equivalences collectively and instantiating it as they become necessary, if only propositional logic is used. </para>
+          <para id="id7500676">Thus we need more powerful logic to deal with these and other problems. The predicate logic is one of such logic and it addresses these issues among others.</para>
+        </section>
+        <section id="id-868612570129">
+          <title>Well Formed Formula (Wff) of Predicate Logic</title>
+          <section id="id-0234422600427">
+            <title>Predicate</title>
+            <para id="id7500700">To cope with deficiencies of propositional logic we introduce two new features: predicates and quantifiers. </para>
+            <para id="id7500706">A predicate is a verb phrase template that describes a property of objects, or a relationship among objects represented by the variables. </para>
+            <para id="id7500712">For example, the sentences "The car Tom is driving is blue", "The sky is blue", and "The cover of this book is blue" come from the template "is blue" by placing an appropriate noun/noun phrase in front of it. The phrase "is blue" is a predicate and it describes the property of being blue. Predicates are often given a name. For example any of "is_blue", "Blue" or "B" can be used to represent the predicate "is blue" among others. If we adopt B as the name for the predicate "is_blue", sentences that assert an object is blue can be represented as "B(x)", where x represents an arbitrary object. B(x) reads as "x is blue". </para>
+            <para id="id7500727">Similarly the sentences "John gives the book to Mary", "Jim gives a loaf of bread to Tom", and "Jane gives a lecture to Mary" are obtained by substituting an appropriate object for variables x, y, and z in the sentence "x gives y to z". The template "... gives ... to ..." is a predicate and it describes a relationship among three objects. This predicate can be represented by Give( x, y, z ) or G( x, y, z ), for example. </para>
+            <para id="id7500738">Note: The sentence "John gives the book to Mary" can also be represented by another predicate such as "gives a book to". Thus if we use B( x, y ) to denote this predicate, "John gives the book to Mary" becomes B( John, Mary ). In that case, the other sentences, "Jim gives a loaf of bread to Tom", and "Jane gives a lecture to Mary", must be expressed with other predicates. </para>
+          </section>
+          <section id="id-308139718939">
+            <title>Quantification --- Forming Propositions from Predicates</title>
+            <para id="id7500758">A predicate with variables is not a proposition. For example, the statement x &gt; 1 with variable x over the universe of real numbers is neither true nor false since we don't know what x is. It can be true or false depending on the value of x. </para>
+            <para id="id7500787">For x &gt; 1 to be a proposition either we substitute a specific number for x or change it to something like "There is a number x for which x &gt; 1 holds", or "For every number x, x &gt; 1 holds". </para>
+            <para id="id7500827">More generally, a predicate with variables (called an atomic formula) can be made a proposition by applying one of the following two operations to each of its variables: </para>
+            <para id="id7500845">1. assign a value to the variable </para>
+            <para id="id7500850">2. quantify the variable using a quantifier (see below). </para>
+            <para id="id7500860">For example, x &gt; 1 becomes 3 &gt; 1 if 3 is assigned to x, and it becomes a true statement, hence a proposition. </para>
+            <para id="id7500888">In general, a quantification is performed on formulas of predicate logic (called wff), such as x &gt; 1 or P(x), by using quantifiers on variables. There are two types of quantifiers: universal quantifier and existential quantifier. </para>
+            <para id="id7500920">The universal quantifier turns, for example, the statement x &gt; 1 to "for every object x in the universe, x &gt; 1", which is expressed as "∀x x &gt; 1". This new statement is true or false in the universe of discourse. Hence it is a proposition once the universe is specified. </para>
+            <para id="id7500965">Similarly the existential quantifier turns, for example, the statement x &gt; 1 to "for some object x in the universe, x &gt; 1", which is expressed as "∃x x &gt; 1." Again, it is true or false in the universe of discourse, and hence it is a proposition once the universe is specified. </para>
+            <section id="id-256663155603">
+              <title>Universe of Discourse</title>
+              <para id="id8518836">The universe of discourse, also called universe, is the set of objects of interest. The propositions in the predicate logic are statements on objects of a universe. The universe is thus the domain of the (individual) variables. It can be the set of real numbers, the set of integers, the set of all cars on a parking lot, the set of all students in a classroom etc. The universe is often left implicit in practice. But it should be obvious from the context. </para>
+            </section>
+            <section id="id-0105984906039">
+              <title>The Universal Quantifier</title>
+              <para id="id8518867">The expression: ∀x P(x), denotes the universal quantification of the atomic formula P(x). Translated into the English language, the expression is understood as: "For all x, P(x) holds", "for each x, P(x) holds" or "for every x, P(x) holds". ∀is called the universal quantifier, and ∀x means all the objects x in the universe. If this is followed by P(x) then the meaning is that P(x) is true for every object x in the universe. For example, "All cars have wheels" could be transformed into the propositional form, ∀x P(x), where: </para>
+              <list list-type="bulleted" id="id8518972">
+                <item>P(x) is the predicate denoting: x has wheels, and </item>
+              </list>
+              <list list-type="bulleted" id="id8518996">
+                <item>the universe of discourse is only populated by cars. </item>
+              </list>
+            </section>
+            <section id="id-370943314717">
+              <title>Universal Quantifier and Connective AND</title>
+              <para id="id8519013">If all the elements in the universe of discourse can be listed then the universal quantification ∀x P(x) is equivalent to the conjunction: P(x1)) ⋀P(x2) ⋀P(x3) ⋀... ⋀P(xn) . For example, in the above example of ∀x P(x), if we knew that there were only 4 cars in our universe of discourse (c1, c2, c3 and c4) then we could also translate the statement as: P(c1) ⋀P(c2) ⋀P(c3) ⋀P(c4) .</para>
+            </section>
+            <section id="id-904355678468">
+              <title>The Existential Quantifier</title>
+              <para id="id9529402">The expression: ∃xP(x), denotes the existential quantification of P(x). Translated into the English language, the expression could also be understood as: "There exists an x such that P(x)" or "There is at least one x such that P(x)" ∃ is called the existential quantifier, and ∃x means at least one object x in the universe. If this is followed by P(x) then the meaning is that P(x) is true for at least one object x of the universe. For example, "Someone loves you" could be transformed into the propositional form, ∃x P(x), where: </para>
+              <list list-type="bulleted" id="id9529528">
+                <item>P(x) is the predicate meaning: x loves you, </item>
+              </list>
+              <list list-type="bulleted" id="id9529551">
+                <item>The universe of discourse contains (but is not limited to) all living creatures. </item>
+              </list>
+            </section>
+            <section id="id-241287221645">
+              <title>Existential Quantifier and Connective OR </title>
+              <para id="id9529569">If all the elements in the universe of discourse can be listed, then the existential quantification ∃xP(x) is equivalent to the disjunction: P(x1) ⋁P(x2) ⋁P(x3) ⋁... ⋁P(xn). </para>
+              <para id="id9532482">For example, in the above example of ∃x P(x), if we knew that there were only 5 living creatures in our universe of discourse (say: me, he, she, rex and fluff), then we could also write the statement as: P(me)⋁P(he) ⋁P(she) ⋁P(rex) ⋁P(fluff) </para>
+              <para id="id9532545">An appearance of a variable in a wff is said to be bound if either a specific value is assigned to it or it is quantified. If an appearance of a variable is not bound, it is called free. The extent of the application (effect) of a quantifier, called the scope of the quantifier, is indicated by square brackets [ ]. If there are no square brackets, then the scope is understood to be the smallest wff following the quantification. </para>
+              <para id="id9532610">For example, in  ∃x P(x, y),  the variable x is bound while y is free. In  ∀x [ ∃y P(x, y) ⋁Q(x, y) ],   x and the y in P(x, y) are bound, while y in Q(x, y) is free, because the scope of ∃y is P(x, y). The scope of ∀x is [ ∃y P(x, y) ⋁Q(x, y) ] . </para>
+            </section>
+            <section id="id-873450669999">
+              <title>How to read quantified formulas</title>
+              <para id="id8013881">When reading quantified formulas in English, read them from left to right. ∀x can be read as "for every object x in the universe the following holds" and ∃x can be read as "there exists an object x in the universe which satisfies the following" or "for some object x in the universe the following holds". Those do not necessarily give us good English expressions. But they are where we can start. Get the correct reading first then polish your English without changing the truth values. </para>
+              <para id="id8013932">For example, let the universe be the set of airplanes and let F(x, y) denote "x flies faster than y". Then</para>
+              <para id="id8013967">∀x∀y F(x, y) can be translated initially as "For every airplane x the following holds: x is faster than every (any) airplane y". In simpler English it means "Every airplane is faster than every airplane (including itself !)".</para>
+              <para id="id8014028">∀x∃ y F(x, y) can be read initially as "For every airplane x the following holds: for some airplane y, x is faster than y". In simpler English it means "Every airplane is faster than some airplane". </para>
+              <para id="id8014095">∃x∀y F(x, y) represents "There exist an airplane x which satisfies the following: (or such that) for every airplane y, x is faster than y". In simpler English it says "There is an airplane which is faster than every airplane" or "Some airplane is faster than every airplane". </para>
+              <para id="id9033109">∃x∃ y F(x, y) reads "For some airplane x there exists an airplane y such that x is faster than y", which means "Some airplane is faster than some airplane". </para>
+            </section>
+            <section id="id-0636823627767">
+              <title>Order of Application of Quantifiers</title>
+              <para id="id9033185">When more than one variables are quantified in a wff such as ∃y ∀x P( x, y ), they are applied from the inside, that is, the one closest to the atomic formula is applied first. Thus ∃y ∀x P( x, y ) reads ∃y [ ∀x P( x, y ) ] , and we say "there exists an y such that for every x, P( x, y ) holds" or "for some y, P( x, y ) holds for every x". </para>
+              <para id="id9033356">The positions of the same type of quantifiers can be switched without affecting the truth value as long as there are no quantifiers of the other type between the ones to be interchanged. </para>
+              <para id="id8352735">For example ∃x ∃y ∃z P(x, y , z) is equivalent to ∃y ∃x ∃z P(x, y , z),   ∃z ∃y ∃x P(x, y,z), etc. It is the same for the universal quantifier. </para>
+              <para id="id8352847">However, the positions of different types of quantifiers can not be switched. </para>
+              <para id="id8352858">For example ∀x ∃y P( x, y ) is not equivalent to ∃y ∀x P( x, y ).  For let P( x, y ) represent x &lt; y for the set of numbers as the universe, for example. Then ∀x ∃y P( x, y ) reads "for every number x, there is a number y that is greater than x", which is true, while ∃y ∀x P( x, y ) reads "there is a number that is greater than every (any) number", which is not true. </para>
+            </section>
+          </section>
+          <section id="id-152062898702">
+            <title>Well-Formed Formula for First Order Predicate Logic </title>
+            <para id="id8353021">Not all strings can represent propositions of the predicate logic. Those which produce a proposition when their symbols are interpreted must follow the rules given below, and they are called wffs (well-formed formulas) of the first order predicate logic. </para>
+            <section id="id-697319352033">
+              <title>Rules for constructing Wffs </title>
+              <para id="id8353052">A predicate name followed by a list of variables such as P(x, y), where P is a predicate name, and x and y are variables, is called an atomic formula. </para>
+              <para id="id8754448">Wffs are constructed using the following rules: </para>
+              <para id="id8754459">1. True and False are wffs. </para>
+              <para id="id8754473">2. Each propositional constant (i.e. specific proposition), and each propositional variable (i.e. a variable representing propositions) are wffs. </para>
+              <para id="id8754480">3. Each atomic formula (i.e. a specific predicate with variables) is a wff. </para>
+              <para id="id8754486">4. If A, B, and C are wffs, then so are ¬A, (A ⋀B), (A ⋁ B), (A→B), and (A ↔B). </para>
+              <para id="id8754568">5. If x is a variable (representing objects of the universe of discourse), and A is a wff, then so are ∀x A and ∃x A. </para>
+              <para id="id8754604">(Note: More generally, arguments of predicates are something called a term. Also variables representing predicate names (called predicate variables) with a list of variables can form atomic formulas. But we do not get into that here. )</para>
+              <para id="id8754621">For example, "The capital of Virginia is Richmond." is a specific proposition. Hence it is a wff by Rule 2. </para>
+              <para id="id8754628">Let B be a predicate name representing "being blue" and let x be a variable. Then B(x) is an atomic formula meaning "x is blue". Thus it is a wff by Rule 3. above. By applying Rule 5. to B(x), ∀xB(x) is a wff and so is ∃xB(x). Then by applying Rule 4. to them ∀x B(x) ⋀∃x B(x) is seen to be a wff. Similarly if R is a predicate name representing "being round". Then R(x) is an atomic formula. Hence it is a wff. By applying Rule 4 to B(x) and R(x), a wff B(x) ⋀R(x) is obtained. </para>
+              <para id="id9554393"/>
+              <para id="id9554397">In this manner, larger and more complex wffs can be constructed following the rules given above. </para>
+              <para id="id9554403"/>
+              <para id="id9554407">Note, however, that strings that can not be constructed by using those rules are not wffs. For example, ∀xB(x)R(x), and B( ∃x ) are NOT wffs, NOR are B( R(x) ), and B( ∃x R(x) ) .</para>
+              <para id="id9554549"/>
+              <para id="id9554553">One way to check whether or not an expression is a wff is to try to state it in English. </para>
+              <para id="id9554563">If you can translate it into a correct English sentence, then it is a wff. </para>
+              <para id="id9554569">More examples: To express the fact that Tom is taller than John, we can use the atomic formula taller(Tom, John), which is a wff. This wff can also be part of some compound statement such as taller(Tom, John) ⋀ ¬taller(John, Tom), which is also a wff.</para>
+              <para id="id7976202">If x is a variable representing people in the world, then taller(x,Tom), ∀x taller(x,Tom), ∃x taller(x,Tom), ∃x ∀y taller(x,y) are all wffs among others. </para>
+              <para id="id7976267">However, taller(∃ x,John) and taller(Tom ⋀ Mary, Jim), for example, are NOT wffs. </para>
+            </section>
+          </section>
+        </section>
+        <section id="id-0452821661942">
+          <title>From Wff to Proposition</title>
+          <section id="id-850525998228">
+            <title>Interpretation</title>
+            <para id="id7976320">A wff is, in general, not a proposition. For example, consider the wff ∀x P(x). Assume that P(x) means that x is non-negative (greater than or equal to 0). This wff is true if the universe is the set {1, 3, 5}, the set {2, 4, 6} or the set of natural numbers, for example, but it is not true if the universe is the set {-1, 3, 5}, or the set of integers, for example. Further more the wff ∀x Q(x, y), where Q(x, y) means x is greater than y, for the universe {1, 3, 5} may be true or false depending on the value of y. </para>
+            <para id="id7976491">As one can see from these examples, the truth value of a wff is determined by the universe, specific predicates assigned to the predicate variables such as P and Q, and the values assigned to the free variables. The specification of the universe and predicates, and an assignment of a value to each free variable in a wff is called an interpretation for the wff. </para>
+            <para id="id8131425">For example, specifying the set {1, 3, 5} as the universe and assigning 0 to the variable y, for example, is an interpretation for the wff ∀x Q(x, y), where Q(x, y) means x is greater than y. ∀x Q(x, y) with that interpretation reads, for example, "Every number in the set {1, 3, 5} is greater than 0". </para>
+            <para id="id8131551"/>
+            <para id="id8131556">As can be seen from the above example, a wff becomes a proposition when it is given an interpretation. </para>
+            <para id="id8131566"/>
+            <para id="id8131570">There are, however, wffs which are always true or always false under any interpretation. Those and related concepts are discussed below. </para>
+          </section>
+          <section id="id-384648903416">
+            <title>Satisfiable, Unsatisfiable and Valid Wffs</title>
+            <para id="id8131584">A wff is said to be satisfiable if there exists an interpretation that makes it true, that is if there are a universe, specific predicates assigned to the predicate variables, and an assignment of values to the free variables that make the wff true. </para>
+            <para id="id8131605"/>
+            <para id="id8131609">For example, ∀x N(x), where N(x) means that x is non-negative, is satisfiable. For if the universe is the set of natural numbers, the assertion ∀x N(x) is true, because all natural numbers are non-negative. Similarly ∃x N(x) is also satisfiable. </para>
+            <para id="id8131658"/>
+            <para id="id8131662">However, ∀x [N(x) ⋀¬N(x)] is not satisfiable because it can never be true. A wff is called invalid or unsatisfiable, if there is no interpretation that makes it true.</para>
+            <para id="id8131729"/>
+            <para id="id8131734">A wff is valid if it is true for every interpretation*. For example, the wff ∀x P(x) ⋁∃x ¬P(x) is valid for any predicate name P , because ∃x ¬P(x) is the negation of ∀x P(x). However, the wff ∀x N(x) is satisfiable but not valid. </para>
+            <para id="id9535084"/>
+            <para id="id9535088">Note that a wff is not valid iff it is unsatisfiable for a valid wff is equivalent to true. Hence its negation is false.</para>
+          </section>
+          <section id="id-831681976676">
+            <title>Equivalence</title>
+            <para id="id9535108">Two wffs W1 and W2 are equivalent if and only if W1 ↔W2 is valid, that is if and only if W1 ↔W2 is true for all interpretations. </para>
+            <para id="id9535198">For example ∀x P(x) and ¬∃x ¬P(x) are equivalent for any predicate name P. So are ∀x [ P(x) ⋀Q(x) ] and [ ∀x P(x) ⋀∀x Q(x) ] for any predicate names P and Q .</para>
+          </section>
+        </section>
+        <section id="id-296221225088">
+          <title>Transcribing English to Predicate Logic wffs</title>
+          <para id="id9560322">English sentences appearing in logical reasoning can be expressed as a wff. This makes the expressions compact and precise. It thus eliminates possibilities of misinterpretation of sentences. The use of symbolic logic also makes reasoning formal and mechanical, contributing to the simplification of the reasoning and making it less prone to errors. </para>
+          <para id="id9560332">Transcribing English sentences into wffs is sometimes a non-trivial task. In this course we are concerned with the transcription using given predicate symbols and the universe. To transcribe a proposition stated in English using a given set of predicate symbols, first restate in English the proposition using the predicates, connectives, and quantifiers. Then replace the English phrases with the corresponding symbols. </para>
+          <para id="id9560349">Example: Given the sentence "Not every integer is even", the predicate "E(x)" meaning x is even, and that the universe is the set of integers, first restate it as "It is not the case that every integer is even" or "It is not the case that for every object x in the universe, x is even." </para>
+          <para id="id9560386">Then "it is not the case" can be represented by the connective "¬", "every object x in the universe" by "∀ x", and "x is even" by E(x). </para>
+          <para id="id9560418">Thus altogether wff becomes ¬∀x E(x). </para>
+          <para id="id9560438">This given sentence can also be interpreted as "Some integers are not even". Then it can be restated as "For some object x in the universe, x is not integer". Then it becomes ∃x ¬E(x).</para>
+          <para id="id9560474">More examples: A few more sentences with corresponding wffs are given below. The universe is assumed to be the set of integers, E(x) represents x is even, and O(x), x is odd. </para>
+          <para id="id9560502">"Some integers are even and some are odd" can be translated as </para>
+          <para id="id9560509">∃x E(x) ⋀∃x O(x) </para>
+          <para id="id9560534">"No integer is even" can go to </para>
+          <para id="id9560539">∀x ¬E(x) </para>
+          <para id="id9560560">"If an integer is not even, then it is odd" becomes </para>
+          <para id="id9560565">∀x [ ¬E(x) →O(x)] </para>
+          <para id="id9560595">"2 is even" is </para>
+          <para id="id9560599">E(2) </para>
+          <para id="id9560609">More difficult translation: In these translations, properties and relationships are mentioned for certain type of elements in the universe such as relationships between integers in the universe of numbers rather than the universe of integers. In such a case the element type is specified as a precondition using if_then construct. </para>
+          <para id="id9560624">Examples: In the examples that follow the universe is the set of numbers including real numbers, and complex numbers. I(x), E(x) and O(x) representing "x is an integer", "x is even", and "x is odd", respectively. </para>
+          <para id="id9480468">"All integers are even" is transcribed as </para>
+          <para id="id9480472">∀x [ I(x) →E(x)] </para>
+          <para id="id9480493">It is first restated as "For every object in the universe (meaning for every numnber in this case) if it is integer, then it is even". Here we are interested in not any arbitrary object(number) but a specific type of objects, that is integers. But if we write ∀x it means "for any object in the universe". So we must say "For any object, if it is integer .." to narrow it down to integers. </para>
+          <para id="id9480513">"Some integers are odd" can be restated as "There are objects that are integers and odd", which is expressed as</para>
+          <para id="id9480519">∃x [ I(x) ⋀E(x)] </para>
+          <para id="id9480540">"A number is even only if it is integer" becomes</para>
+          <para id="id9480545">∀x [ E(x)→I(x)] </para>
+          <para id="id9480566">"Only integers are even" is equivalent to "If it is even, then it is integer". Thus it is translated to</para>
+          <para id="id9480572">∀x [ E(x)→I(x)] </para>
+        </section>
+        <section id="id-7020948509">
+          <title>Reasoning with Predicate Logic</title>
+          <section id="id-573850563055">
+            <title>Reasoning</title>
+            <para id="id9480608">Predicate logic is more powerful than propositional logic. It allows one to reason about properties and relationships of individual objects. In predicate logic, one can use some additional inference rules, which are discussed below, as well as those for propositional logic such as the equivalences, implications and inference rules. </para>
+            <para id="id9480635">The following four rules describe when and how the universal and existential quantifiers can be added to or deleted from an assertion. </para>
+            <para id="id9480643">1. Universal Instantiation: ∀x P(x) </para>
+            <para id="id9480662">-----------------</para>
+            <para id="id9480667">P(c) </para>
+            <para id="id9480678">where c is some arbitrary element of the universe. </para>
+            <para id="id9480688">2. Universal Generalization: </para>
+            <para id="id9480699">P(c) </para>
+            <para id="id9480708">--------------</para>
+            <para id="id9480712">∀x P(x) </para>
+            <para id="id9480726">where P(c) holds for every element c of the universe of discourse.  </para>
+            <para id="id9480739">3. Existential Instantiation: </para>
+            <para id="id9480750">∃x P(x) </para>
+            <para id="id9480763">---------------</para>
+            <para id="id9480772">P(c) </para>
+            <para id="id9480776">where c is some element of the universe of discourse. It is not arbitrary but must be one for which P(c) is true.</para>
+            <para id="id9480788">4. Existential Generalization: </para>
+            <para id="id9480799">P(c) </para>
+            <para id="id8725451">----------------</para>
+            <para id="id8725455">∃x P(x) </para>
+            <para id="id8725467">where c is an element of the universe. </para>
+            <section id="id-137089422331">
+              <title>Negation of Quantified Statement </title>
+              <para id="id8725487">Another important inference rule is the following: </para>
+              <para id="id8725492">    ¬∃x P(x) ⇔∀x ¬P(x) </para>
+              <para id="id8725522">This, for example, shows that if P(x) represents x is happy and the universe is the set of people, then "There does not exist a person who is happy" is equivalent to "Everyone is not happy". </para>
+              <para id="id8725529">Thus the left side can be substituted for the right side whenever necessary in reasoning and vice versa. </para>
+            </section>
+            <section id="id-494694343035">
+              <title>Example</title>
+              <para id="id8725544">As an example of inference using these rules, let us consider the following reasoning:</para>
+              <para id="id8725550"/>
+              <para id="id8725554">A check is void if it has not been cashed for 30 days. This check has not been cashed for 30 days. Therefore this check is void. You can not cash a check which is void. Therefore you can not cash this check. We now have a check which can not be cashed.</para>
+              <para id="id8725563"/>
+              <para id="id8725567">This can be put into symbolic form using the following predicates assuming the universe is the set of all objects:</para>
+              <para id="id8725573">C(x):  x is a check. </para>
+              <para id="id8725599">T(x):  x has been cashed within 30 days. </para>
+              <para id="id8725624">V(x):  x is void. </para>
+              <para id="id8725650">S(x):  x can be cashed. </para>
+              <para id="id8725675">This_check represents a specific object in the universe which corresponds to "this check". </para>
+              <para id="id8725686">∀x [ [ C(x)   ⋀  ¬T(x) ] →V(x) ] </para>
+              <para id="id8725770">¬T( This_check ) </para>
+              <para id="id8725794">----------------------------------- </para>
+              <para id="id8725799">V( This_check ) </para>
+              <para id="id7974948"/>
+              <para id="id7974952">∀x [ [ C(x)   ⋀  V(x) ] →¬S(x) ] </para>
+              <para id="id7975036">---------------------------------------------- </para>
+              <para id="id7975042">¬S( This_check ) </para>
+              <para id="id7975066">----------------------------------------------- </para>
+              <para id="id7975072">∃x [ C(x)   ⋀  ¬S(x) ] .</para>
+              <para id="id7975135">Here the reasoning proceeds as follows: </para>
+              <para id="id7975141">From ∀x [ [ C(x)   ⋀  ¬T(x) ] →V(x) ] by Universal Instantiation </para>
+              <para id="id7975229">[ [ C( This_check ) ⋀¬T( This_check ) ] →V( This_check ) ]</para>
+              <para id="id7975301">Since This_check is a check and ¬T( This_check ) , </para>
+              <para id="id8368253">[ C( This_check ) ⋀¬T( This_check ) ] holds. </para>
+              <para id="id8368304">Hence </para>
+              <para id="id8368312">[ [ C( This_check ) ⋀¬T( This_check ) ] →V( This_check ) ] </para>
+              <para id="id8368383">[ C( This_check ) ⋀¬T( This_check ) ] </para>
+              <para id="id8368433">--------------------------------------------------------- </para>
+              <para id="id8368439">V( This_check ) </para>
+              <para id="id8368459">by Modus Ponens. </para>
+              <para id="id8368464">Then from ∀x [ [ C(x) ⋀V(x) ] →¬S(x) ] by Universal Instantiation, </para>
+              <para id="id8368548">[ [ C( This_check ) ⋀V( This_check ) ] →¬S( This_check ) ] </para>
+              <para id="id8368621"/>
+              <para id="id8368625">Since V( This_check ) , and C( This_check ), </para>
+              <para id="id8755405"/>
+              <para id="id8755409">[ [ C( This_check ) ⋀V( This_check ) ] →¬S( This_check ) ] </para>
+              <para id="id8755480">[ C( This_check ) ⋀V( This_check ) ] </para>
+              <para id="id8755526">---------------------------------------------------- </para>
+              <para id="id8755532">¬S( This_check ) </para>
+              <para id="id8755557">by Modus Ponens. </para>
+              <para id="id8755562"/>
+              <para id="id8755566">Since C( This_check ) also holds, </para>
+              <para id="id8755589">¬S( This_check ) </para>
+              <para id="id8755614">C( This_check ) </para>
+              <para id="id8755634">---------------------------------------------------- </para>
+              <para id="id8755640">C( This_check ) ⋀¬S( This_check ) </para>
+              <para id="id8755687">Then by Existential Generalization ∃x [ C( x ) ⋀¬S(x) ] . </para>
+            </section>
+          </section>
+          <section id="id-562135274202">
+            <title>Quantifiers and Connectives</title>
+            <section id="id-139892181373">
+              <title>Quantifiers and Connectives 1</title>
+              <para id="id8731883">There are following four important relationships between quantifiers and connectives. They are used frequently in reasoning. </para>
+              <para id="id8731890">1. ∀x [ P(x) ⋀Q(x) ] ⇔[ ∀x P(x) ⋀∀x Q(x) ] </para>
+              <para id="id8731953">2. [ ∀x P(x) ⋁∀x Q(x) ] ⇒∀x [ P(x) ⋁Q(x) ] </para>
+              <para id="id8732017">3. ∃x [ P(x) ⋁Q(x) ] ⇔[ ∃x P(x) ⋁∃x Q(x) ] </para>
+              <para id="id8732081">4. ∃x [ P(x) ⋀Q(x) ] ⇒[ ∃x P(x) ⋀∃x Q(x) ] </para>
+              <para id="id8732145">Let us see what these mean with examples. </para>
+              <para id="id8732149">Let P(x) represent "x is rich", and Q(x) "x is happy", and let the universe be a set of three people. Also let LHS (RHS) denote the left (right) hand side of the implication or equivalence. Then</para>
+              <para id="id8732188">1. ∀x [ P(x) ⋀Q(x) ] ⇔[ ∀x P(x) ⋀∀x Q(x) ] can be illustrated as in Figure 1: </para>
+              <para id="id8013258"><figure id="id8013263"><media id="idp794144" alt=""><image src="../../media/graphics1-2d33.png" mime-type="image/png" height="101" width="491"/></media></figure>That is, LHS says everyone is rich and happy, and RHS says everyone is rich and everyone is happy. Thus LHS and RHS describe the same situation. That is, LHS is true if and only if RHS is true. </para>
+              <para id="id8013296">2. [ ∀x P(x) ⋁∀x Q(x) ] ⇒∀x [ P(x) ⋁Q(x) ] for the same interpretation as 1. above can be shown in Figure 2: </para>
+              <para id="id8013363">
+                <figure id="id8013367">
+                  <media id="idp2531632" alt=""><image src="../../media/graphics2-838c.png" mime-type="image/png" height="100" width="472"/></media>
+                </figure>
+              </para>
+              <para id="id8013394">That is, LHS says everyone is rich or everyone is happy, and RHS says everyone is rich or happy. Thus if LHS is true, then RHS is certainly true. However on RHS it can happen that two people are rich but the third is not rich but happy. In that case LHS is not true while RHS is true. Thus RHS does not necessarily imply LHS. </para>
+              <para id="id8013404">3. ∃x [ P(x) ⋁Q(x) ] ⇔[ ∃x P(x) ⋁∃x Q(x) ] , again for the same example, can be shown in Figure 3: </para>
+              <para id="id8013475">
+                <figure id="id8013481">
+                  <media id="idp5383408" alt=""><image src="../../media/graphics3-281e.png" mime-type="image/png" height="98" width="483"/></media>
+                </figure>
+              </para>
+              <para id="id8013506">LHS says someone is rich or happy, and RHS says someone is rich or someone is happy. Thus clearly LHS implies RHS. Also if someone is rich then that person is certainly rich or happy. Thus RHS implies LHS.</para>
+              <para id="id8013514">4. ∃x [ P(x) ⋀Q(x) ] ⇒[ ∃x P(x) ⋀∃x Q(x) ] , for the same example, can be shown in Figure 4: </para>
+              <para id="id8013584">
+                <figure id="id8013590">
+                  <media id="idp4983072" alt=""><image src="../../media/graphics4-6e7b.png" mime-type="image/png" height="98" width="488"/></media>
+                </figure>
+              </para>
+              <para id="id8013615">LHS say someone is rich and happy. Hence there is someone who is rich and there is someone who is happy. Hence LHS implies RHS. However, since RHS can be true without anyone being rich and happy at the same time, RHS does not necessarily imply LHS. </para>
+            </section>
+            <section id="id-45504210964">
+              <title>Quantifiers and Connectives 2</title>
+              <para id="id8013635">If a wff (Q below) in the scope of a quantifier does not have the variable (x below) that is quantified by that quantifier, then that wff can be taken out of the scope of that quantifier. That is, </para>
+              <para id="id8013646">1. ∀x [ P(x) ⋀Q ] ⇔[ ∀x P(x) ⋀Q ] </para>
+              <para id="id8730759">2. [ ∀x P(x) ⋁Q ] ⇔∀x [ P(x) ⋁Q ] </para>
+              <para id="id8730814">3. ∃x [ P(x) ⋁Q ] ⇔[ ∃x P(x) ⋁Q ] </para>
+              <para id="id8730870">4. ∃x [ P(x) ⋀Q ] ⇔[ ∃x P(x) ⋀Q ] , </para>
+              <para id="id8730925">where Q in all these formulas DO NOT have the variable x . </para>
+              <para id="id8730945">Note: When implication → and/or equivalence ↔ are involved, you can not necessarily take Q outside the scope. To see what happens, express → and ↔ using ⋁and ⋀, and apply the above formulas. For example ∀x [ P(x)→Q ] is NOT equivalent to ∀x P(x)→Q . Rather it is equivalent to ∃x P(x)→Q. Further details are left as an exercise.</para>
+            </section>
+          </section>
+        </section>
+      </section>
+      <section id="id-900709583959">
+        <title>Questions and Exercises</title>
+        <para id="id8731117">1. Which of the following sentences is a proposition? </para>
+        <para id="id8731123">a. Every one is happy.</para>
+        <para id="id8731127">b. If it snows, then schools are closed in Norfolk, VA.</para>
+        <para id="id9117081">c. x + 2 is positive</para>
+        <para id="id9117086">d. Take an umbrella with you.</para>
+        <para id="id9117090">e. I suggest that you take an umbrella with you</para>
+        <para id="id9117095">2. Which of the following tables is a truth table? </para>
+        <para id="id9117101">Z below represents a proposition involving P and Q.</para>
+        <table id="id9117107" summary="">
+          <tgroup cols="3">
+            <colspec colnum="1" colname="c1"/>
+            <colspec colnum="2" colname="c2"/>
+            <colspec colnum="3" colname="c3"/>
+            <tbody>
+              <row>
+                <entry namest="c1" nameend="c3">Table 1</entry>
+              </row>
+              <row>
+                <entry>P </entry>
+                <entry>Q</entry>
+                <entry>Proposition Z </entry>
+              </row>
+              <row>
+                <entry>F </entry>
+                <entry>F</entry>
+                <entry>F </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>F</entry>
+                <entry>T </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>T</entry>
+                <entry>T </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>F</entry>
+                <entry>T </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <table id="id9117303" summary="">
+          <tgroup cols="3">
+            <colspec colnum="1" colname="c1"/>
+            <colspec colnum="2" colname="c2"/>
+            <colspec colnum="3" colname="c3"/>
+            <tbody>
+              <row>
+                <entry namest="c1" nameend="c3">Table 2</entry>
+              </row>
+              <row>
+                <entry>P </entry>
+                <entry>Q</entry>
+                <entry>Proposition Z </entry>
+              </row>
+              <row>
+                <entry>F </entry>
+                <entry>F</entry>
+                <entry>F </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>F</entry>
+                <entry>T </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>T</entry>
+                <entry>F </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <table id="id9117466" summary="">
+          <tgroup cols="3">
+            <colspec colnum="1" colname="c1"/>
+            <colspec colnum="2" colname="c2"/>
+            <colspec colnum="3" colname="c3"/>
+            <tbody>
+              <row>
+                <entry namest="c1" nameend="c3">Table 3</entry>
+              </row>
+              <row>
+                <entry>P </entry>
+                <entry>Q</entry>
+                <entry>Proposition Z </entry>
+              </row>
+              <row>
+                <entry>F </entry>
+                <entry>F</entry>
+                <entry>F </entry>
+              </row>
+              <row>
+                <entry>F </entry>
+                <entry>T</entry>
+                <entry>T </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>F</entry>
+                <entry>T </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>T</entry>
+                <entry>T </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <table id="id8130770" summary="">
+          <tgroup cols="2">
+            <colspec colnum="1" colname="c1"/>
+            <colspec colnum="2" colname="c2"/>
+            <tbody>
+              <row>
+                <entry namest="c1" nameend="c2">Table 4</entry>
+              </row>
+              <row>
+                <entry>P </entry>
+                <entry>Proposition Z </entry>
+              </row>
+              <row>
+                <entry>F </entry>
+                <entry>F </entry>
+              </row>
+              <row>
+                <entry>F </entry>
+                <entry>T </entry>
+              </row>
+              <row>
+                <entry>T </entry>
+                <entry>F </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para id="id8130890">3. Indicate which of the following statements are correct and which ones are incorrect.</para>
+        <para id="id8130896">a. If P is True and Q is False, then P⋀Q is True.</para>
+        <para id="id8130906">b. If P is False and Q is True, then P → Q is True.</para>
+        <para id="id8130916">c. If P is False and Q is False, then P ↔ Q is False</para>
+        <para id="id8130925">d. If P is True and Q is False, then P ⋁ Q is True.</para>
+        <para id="id8130935">e. If P is True and Q is False, then ¬[P⋀Q] is False</para>
+        <para id="id8130951">4. Indicate which of the following expressions are propositions and which are not.</para>
+        <para id="id8130956">a. P⋀¬Q.</para>
+        <para id="id8130971">b. [[P ⋁ Q] → [Q ⋀ R]]</para>
+        <para id="id8130993">c. [¬[P ↔ ⋀ Q ] ⋁ Q ]</para>
+        <para id="id8131015">d. [¬¬P ⋁ Q]</para>
+        <para id="id8128030">e. [[Q ⋁ R][P ⋀ Q]]</para>
+        <para id="id8128046">5. Indicate which of the following converses and contrapositives are correct and which are not.</para>
+        <para id="id8128053">a. If it snows, the schools will be closed.</para>
+        <para id="id8128057">Converse: If the schools are closed, it snows.</para>
+        <para id="id8128062">Contrapositive: If the schools are not closed, it does not snow.</para>
+        <para id="id8128067">b. If I work all night, I can finish this project.</para>
+        <para id="id8128072">Converse: If I cannot finish this project, I work all night.</para>
+        <para id="id8128078">Contrapositive: If I can finish this project, I don’t work all night.</para>
+        <para id="id8128084">c. I eat spicy food, only if it upsets my stomach.</para>
+        <para id="id8128089">Converse: If I eat spicy food, it upsets my stomach.</para>
+        <para id="id8128094">Contrapositive: If I don’t eat spicy food, it doesn’t upset my stomach.</para>
+        <para id="id8128101">6. Which of the following pairs of propositions are logically equivalent?</para>
+        <para id="id8128107">a. (1) You get promoted only if you have worked hard.</para>
+        <para id="id8128112">(2) If you have worked hard, you get promoted</para>
+        <para id="id8128117">b. (1) To get promoted you must work hard.</para>
+        <para id="id8128121">(2) If you work hard, then you get promoted </para>
+        <para id="id8128126">c. (1) Whenever there is a noreaster, the beach erodes</para>
+        <para id="id8128132">(2) If there is a noreaster, the beach erodes.</para>
+        <para id="id8128137">d. (1) I will stay home, if it snows tonight.</para>
+        <para id="id8128142">(2) If it snows tonight, I stay home.</para>
+        <para id="id8128146">7. Indicate which of the following sentences are translated correctly.</para>
+        <para id="id8128152">Let S represent “It is snowing”, F represent “It is below freezing” and G represent “I go outside”.</para>
+        <para id="id8128160">a. “If it is snowing or below freezing, then I don’t go outside.”</para>
+        <para id="id8128167">translates to (S ⋁ F) → ¬G </para>
+        <para id="id8128187">b. “I go outside only if it is neither snowing nor below freezing.”</para>
+        <para id="id8128194">translates to (¬S ⋀ ¬F) → G</para>
+        <para id="id8128220">c. “Whenever I go outside, it is snowing.”</para>
+        <para id="id8128226">translates to S → G</para>
+        <para id="id8128236">d. “It is either snowing or below freezing.”</para>
+        <para id="id8128242">translates to S ⋁ F</para>
+        <para id="id8128252">8. For each of the following propositions, indicate what they are (Tautology, Contingency or Contraction).</para>
+        <para id="id8128258">a. P → P </para>
+        <para id="id8128268">b. ¬P → P</para>
+        <para id="id8128282">c. [[P → Q] ⋀ P] ⋀ ¬Q</para>
+        <para id="id8128307">d. [P ⋁ [P⋀ Q] → P</para>
+        <para id="id8128328">e. [P ⋀ [P⋁ Q] ↔ ¬P</para>
+        <para id="id8128354">10. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id8128360">a. [R ⋀ ¬S] ↔ [¬S ⋀ R] </para>
+        <para id="id8128390">b. ¬[P ⋁ [Q ⋀ R]] ↔ [¬P ⋀ ¬[Q ⋀ R]] </para>
+        <para id="id8128445">c. [[P ⋀ S] ⋁ R] ↔ [[P ⋀ R] ⋁ S] </para>
+        <para id="id8176606">d. [¬¬P ⋁ Q] ↔ [P → Q]</para>
+        <para id="id8176632">e. [[Q ⋁ R] ⋀ ¬[R ⋀ Q]] ↔ [Q ⋁ R]</para>
+        <para id="id8176669">11. Indicate which of the following statements are correct and which are not. If it is correct, what implications are used?</para>
+        <para id="id8176675">a. If it snows, the schools will be closed. It is snowing.</para>
+        <para id="id8176680">Therefore, the school is closed. </para>
+        <para id="id8176685">b. Tom is healthy and (Tom is) happy.</para>
+        <para id="id8176689">Therefore, Tom is happy</para>
+        <para id="id8176693">c. John will work at a software company this summer.</para>
+        <para id="id8176699">Therefore, this summer John will work at a software company and a grocery store.</para>
+        <para id="id8176704">d. If I work all night, I can finish this project.</para>
+        <para id="id8176709">But I did not work all night. Therefore, I did not finish the project.</para>
+        <para id="id8176715">e. If I eat spicy food, it upsets my stomach. If my stomach is upset, I get a bad a dream.</para>
+        <para id="id8176720">Therefore, if I eat spicy food, I get a bad dream.</para>
+        <para id="id8176726">12. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id8176731">Let G(x,y) represent the predicate x &gt; y.</para>
+        <para id="id8176737">a. G(6, 13) means 13 is greater than 6.</para>
+        <para id="id8176741">b. G(2, 0) is true.</para>
+        <para id="id8176746">c. G(7, 1) means 7 is greater than 1.</para>
+        <para id="id8176750">d. “4 is less than 5) can be represented by G(5,4).</para>
+        <para id="id8176756">13. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id8176762">Let E(x) mean x is even and G(x,y) mean x &gt; y. Let the universe be the set of naturals.</para>
+        <para id="id8176768">a. ∀x ∃y G(y, x) is true, but ∃x ∀y G(y, x) is false.</para>
+        <para id="id8176794">b. ∃y E(x) is true.</para>
+        <para id="id8176803">c. ∀x ∀y G(x, y) is true.</para>
+        <para id="id8176818">d. ∀x G(∃y, x) is a proposition.</para>
+        <para id="id8176832">14. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id8176839">a. ∃x [P(x, y) ∀x ⋀ Q(x,y)] is a wff.</para>
+        <para id="id8176860">b. ∀x [P(x) → ∀y [ Q(y) → ∃z R(z) ]] is a wff.</para>
+        <para id="id8176889">c. 2 &gt; 1 ⋀ 3 &lt; 5 is a wff.</para>
+        <para id="id8176900">15. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id8176906">Let P(x) mean x is happy.</para>
+        <para id="id8176911">a. {Tom} is an interpretation for [∃x P(x) ⋀ P(y)].</para>
+        <para id="id8176927">b. ∀x P(x) is unsatisfiable.</para>
+        <para id="id8176936">c. {P(Tom) ⋁ ∃x ¬P(x)] is valid.</para>
+        <para id="id8176956">d. ∀x P(x) is equivalent to ∀y P(y)</para>
+        <para id="id8176971">16. Indicate which of the following statements are correct and which are not.</para>
+        <para id="id8176977">Let H(x) mean x is happy.</para>
+        <para id="id8176982">Let the universe be the set of people</para>
+        <para id="id8176986">a. “If everyone is happy, then Tom is happy” translates to </para>
+        <para id="id8176993">∀x [H(x) → H(Tom)].</para>
+        <para id="id8491667">b. “There are happy people” translates to</para>
+        <para id="id8491673">∃x H(x)</para>
+        <para id="id8491681">c. “Not everyone is happy” translates to</para>
+        <para id="id8491687">∀x ¬[H(x)]</para>
+        <para id="id8491701">d. ”Some people are happy and some are not happy” translates to</para>
+        <para id="id8491708">∃x [H(x) ⋀¬H(x)]</para>
+        <para id="id8491727">17. Which of the following sentences are propositions?  What are the truth values of those that are propositions? </para>
+        <para id="id8491735">a. Richmond is the capital of Virginia. </para>
+        <para id="id8491739">b. 2 + 3 = 7. </para>
+        <para id="id8491744">c. Open the door. </para>
+        <para id="id8491748">d. 5 + 7 &lt; 10. </para>
+        <para id="id8491753">e. The moon is a satellite of the earth. </para>
+        <para id="id8491757"><emphasis>f. x</emphasis> + 5 = 7. </para>
+        <para id="id8491769"><emphasis>g. x</emphasis> + 5 &gt; 9 for every real number <emphasis>x</emphasis>.</para>
+        <para id="id8491786">18. What is the negation of each of the following propositions? </para>
+        <para id="id8491792">a. Norfolk is the capital of Virginia. </para>
+        <para id="id8491796">b. Food is not expensive in the United States. </para>
+        <para id="id8491801">c. 3 + 5 = 7. </para>
+        <para id="id8491806">d. The summer in Illinois is hot and sunny.</para>
+        <para id="id8491810">19. Let <emphasis>p</emphasis> and <emphasis>q</emphasis> be the propositions</para>
+        <para id="id8491826">  <emphasis>p</emphasis>: Your car is out of gas. </para>
+        <para id="id8491838">        <emphasis>q</emphasis>: You can't drive your car.</para>
+        <para id="id8491849">    Write the following propositions using <emphasis>p</emphasis> and <emphasis>q</emphasis> and logical connectives. </para>
+        <para id="id8491866">a. Your car is not out of gas. </para>
+        <para id="id8491871">b. You can't drive your car if it is out of gas. </para>
+        <para id="id8491876">c. Your car is not out of gas if you can drive it.</para>
+        <para id="id8491881">d. If you can't drive your car then it is out of gas.</para>
+        <para id="id8491886">20. Determine whether each of the following implications is true or false.</para>
+        <para id="id8491892">a. Your car is not out of gas. </para>
+        <para id="id8491897">b. If 0.5 is an integer, then 1 + 0.5 = 3. </para>
+        <para id="id8491901">c. If cars can fly, then 1 + 1 = 3. </para>
+        <para id="id8491905">d. If 5 &gt; 2 then pigs can fly. </para>
+        <para id="id8491911">e. If 3*5 = 15 then 1 + 2 = 3.</para>
+        <para id="id8491916">21. State the converse and contrapositive of each of the following implications. </para>
+        <para id="id8491922">a. If it snows today, I will stay home.</para>
+        <para id="id8491927">b. We play the game if it is sunny. </para>
+        <para id="id8491931">c. If a positive integer is a prime then it has no divisors other than 1 and itself.</para>
+        <para id="id8491937">22. Construct a truth table for each of the following compound propositions.</para>
+        <para id="id8491943"><emphasis>a. p</emphasis> ⋀¬<emphasis>p</emphasis></para>
+        <para id="id8491968"><emphasis>   </emphasis>b. (<emphasis>p</emphasis> ⋁¬<emphasis>q</emphasis>) →<emphasis>q</emphasis></para>
+        <para id="id8492008"><emphasis>   </emphasis>c. (<emphasis>p</emphasis> →<emphasis>q</emphasis>) ↔(¬<emphasis>q</emphasis> →¬<emphasis>p</emphasis>)</para>
+        <para id="id8492063">23. Write each of the following statements in the form "if <emphasis>p</emphasis>, then <emphasis>q</emphasis>" in English. (Hint: Refer to the list of common ways to express implications listed in this section.) </para>
+        <para id="id8492081">a. The newspaper will not come if there is an inch of snow on the street. </para>
+        <para id="id8492086">b. It snows whenever the wind blows from the northeast. </para>
+        <para id="id8492092">c. That prices go up implies that supply will be plentiful. </para>
+        <para id="id8897466">d. It is necessary to read the textbook to understand the materials of this course. </para>
+        <para id="id8897471">e. For a number to be divisible by 3, it is sufficient that it is the sum of three consecutive integers. </para>
+        <para id="id8897477">f. Your guarantee is good only if you bought your TV less than 90 days ago.</para>
+        <para id="id8897484">24. Write each of the following propositions in the form "<emphasis>p</emphasis> if and only if <emphasis>q</emphasis>" in English.</para>
+        <para id="id8897501">a. If it is hot outside you drink a lot of water, and if you drink a lot of water it is hot outside. </para>
+        <para id="id8897507">b. For a program to be readable it is necessary and sufficient that it is well structured. </para>
+        <para id="id8897513">c. I like fruits only if they are fresh, and fruits are fresh only if I like them. </para>
+        <para id="id8897519">d. If you eat too much sweets your teeth will decay, and conversely. </para>
+        <para id="id8897524">e. The store is closed on exactly those days when I want to shop there.</para>
+        <para id="id8897530">25. Use truth table to verify the following equivalences.</para>
+        <para id="id8897535"><emphasis>a. p</emphasis> ⋀ False ⇔ False</para>
+        <para id="id8897563"/>
+        <para id="id8897569"><emphasis>b. p </emphasis>⋁ True ⇔ True</para>
+        <para id="id8897599"/>
+        <para id="id8897605"/>
+        <para id="id8897611"><emphasis>c. p</emphasis> ⋁<emphasis>p</emphasis> ⇔ <emphasis>p</emphasis></para>
+        <para id="id8897639">26. Use truth tables to verify the distributive law <emphasis>p</emphasis> ⋀ (<emphasis>q</emphasis> ⋁<emphasis>r</emphasis>) ⇔ (<emphasis>p</emphasis> ⋀<emphasis>q</emphasis>) ⋁ (<emphasis>p</emphasis> ⋀<emphasis>r</emphasis>).</para>
+        <para id="id8897713">27. Show that each of the following implications is a tautology without using truth tables.</para>
+        <para id="id8897719"><emphasis>a. p</emphasis> →(<emphasis>p</emphasis> ⋁<emphasis>q)</emphasis></para>
+        <para id="id8897749"/>
+        <para id="id8897756">b. (<emphasis>p</emphasis> ⋀<emphasis>q</emphasis>) →(<emphasis>p</emphasis> →<emphasis>q</emphasis>)</para>
+        <para id="id8897796">c. ¬(<emphasis>p</emphasis> →<emphasis>q</emphasis>) →¬<emphasis>q</emphasis></para>
+        <para id="id8897833">28. Verify the following equivalences, which are known as the absorption laws.</para>
+        <para id="id8897839">a. [<emphasis> p</emphasis> ⋁(<emphasis>p</emphasis> ⋀<emphasis>q</emphasis>) ] ⇔ <emphasis>p</emphasis></para>
+        <para id="id8897879"/>
+        <para id="id8897885">b. [<emphasis> p</emphasis> ⋀(<emphasis>p</emphasis> ⋁<emphasis>q</emphasis>) ] ⇔ <emphasis>p</emphasis></para>
+        <para id="id8897925">29. Find the dual of each of the following propositions.</para>
+        <para id="id8897931"><emphasis>a. p </emphasis>⋁¬<emphasis>q</emphasis> ⋁¬<emphasis>r</emphasis></para>
+        <para id="id9500351">b. (<emphasis>p</emphasis> ⋁<emphasis>q</emphasis> ⋁<emphasis>r</emphasis>) ⋀<emphasis>s</emphasis></para>
+        <para id="id9500391">c. (<emphasis>p </emphasis>⋀F) ⋁(<emphasis>q</emphasis> ⋀T)</para>
+        <para id="id9500430">30. Find a compound proposition involving the propositions <emphasis>p</emphasis>, <emphasis>q</emphasis>, and <emphasis>r</emphasis> that is true when exactly one of <emphasis>p</emphasis>, <emphasis>q</emphasis>, and <emphasis>r </emphasis>is true and is false otherwise.  (<emphasis>Hint</emphasis>: Form a disjunction of conjunctions.  Include a conjunction for each combination of values for which the proposition is true.  Each conjunction should include each of the three propositions or their negations).</para>
+        <para id="id9500484">31. What rule of inference is used in each of the following arguments? </para>
+        <para id="id9500490">a. John likes apple pies.  Therefore, John likes apple pies or icecream. </para>
+        <para id="id9500497">b. Mary likes chocolate and icecream.   Therefore, Mary likes chocolate. </para>
+        <para id="id9500504">c. If it snows, then the roads are closed;   it snows.   Therefore, the roads are closed. </para>
+        <para id="id9500511">d. If it snows, then the roads are closed;   the roads are not closed.  Therefore, it does not snow. </para>
+        <para id="id9500519">e. To go to Tahiti, one must fly or take a boat;   there is no seat on any flight to Tahiti this year.  Therefore, one must take a boat to go to Tahiti this year. </para>
+        <para id="id9500529">32. Express the following arguments using the symbols indicated. What rules of inference are used in each of them? </para>
+        <para id="id9500535">a. If the teens like it, then the sales volume will go up; Either the teens like it or the store will close;   The sales volume will not go up.   Therefore, the store will close. </para>
+        <para id="id9500545">Symbols to be used: The teens like it (T). The sales volume will go up (S). The store will close (C). </para>
+        <para id="id9500552">b. It is not the case that if there is not a lot of sun, then there is enough water, nor is it true that either there is a lot of rain or the crop is good. Therefore, there is not enough water and the crop is not good. Symbols to be used: There is not a lot of sun (S). There is enough water (W). There is a lot of rain (R). The crop is good (C). </para>
+        <para id="id9500562">c. If flowers are colored, they are always scented;   I don't like flowers that are not grown in the open air; All flowers grown in the open air are colored.  Therefore, I don't like any flowers that are scentless. Symbols to be used: Flowers are colored (C). Flowers are scented (S). I like flowers (L). Flowers are grown in the open air (O). </para>
+        <para id="id9500578">d. No animals, except giraffes, are 15 feet or higher; There are no animals in this zoo that belong to anyone but me; I have no animals less than 15 feet high. Therefore, all animals in this zoo are giraffes. Symbols to be used: Animals are giraffes (G). Animals are 15 feet or higher (F). Animals are in the zoo (Z). Animals belong to me (M). </para>
+        <para id="id9500588">e. Bees like red flowers, or my hat is red and bees like hats; However, my hat is not red, or bees don't like hats but they like red flowers. Therefore bees like red flowers. Symbols to be used: Bees like red flowers (R). My hat is red (H). Bees like hats (L). </para>
+        <para id="id9500597">33. Let <emphasis>Q(x, y)</emphasis> denote the statement "<emphasis>x</emphasis> is greater than <emphasis>y</emphasis>."  What are the truth values of the following? </para>
+        <para id="id9500621"><emphasis>a. Q</emphasis> (3, 1) </para>
+        <para id="id9500630"><emphasis>b. Q</emphasis> (5, 5) </para>
+        <para id="id9500639"><emphasis>c. Q</emphasis> (6, -6) </para>
+        <para id="id9500648"><emphasis>d. Q</emphasis> (28, 256)</para>
+        <para id="id9500662">34. Let <emphasis>P(x)</emphasis> be the statement "<emphasis>x</emphasis> is happy," where the universe of discourse for <emphasis>x</emphasis> is the set of students.  Express each of the following quantifications in English. </para>
+        <para id="id9500688">a. ∃<emphasis>x P(x)</emphasis></para>
+        <para id="id9500701">b. ∀<emphasis>x </emphasis>¬<emphasis>P(x)</emphasis></para>
+        <para id="id9500723">c. ∃<emphasis>x</emphasis> ¬<emphasis>P(x)</emphasis></para>
+        <para id="id9500746">d. ¬∀<emphasis>x</emphasis> ¬<emphasis>P(x)</emphasis></para>
+        <para id="id9500774">35. Let <emphasis>P(x)</emphasis> be the statement " <emphasis>x</emphasis> &gt; <emphasis>x</emphasis>2."  If the universe of discourse is the set of real numbers, what are the truth values of the following? </para>
+        <para id="id8519233">
+          <emphasis>a. P(0)</emphasis>
+        </para>
+        <para id="id8519242">
+          <emphasis>b. P(1/2)</emphasis>
+        </para>
+        <para id="id8519251">
+          <emphasis>c. P(2)</emphasis>
+        </para>
+        <para id="id8519260">
+          <emphasis>d. P(-1)</emphasis>
+        </para>
+        <para id="id8519268">e. ∃<emphasis>x P(x)</emphasis></para>
+        <para id="id8519282">f. ∀<emphasis>x P(x)</emphasis></para>
+        <para id="id8519294">36. Suppose that the universe of discourse of the atomic formula <emphasis>P(x,y)</emphasis> is {1, 2, 3}.   Write out the following propositions using disjunctions and conjunctions. </para>
+        <para id="id8519308">a. ∃<emphasis>x P(x, 2)</emphasis></para>
+        <para id="id8519322">b. ∀<emphasis>y P(3, y)</emphasis></para>
+        <para id="id8519335">c. ∀<emphasis>x</emphasis> ∀<emphasis>y</emphasis><emphasis>P(x, y)</emphasis></para>
+        <para id="id8519364">d. ∃<emphasis>x</emphasis>∃ <emphasis>y</emphasis><emphasis>P(x, y)</emphasis></para>
+        <para id="id8519392">e. ∃<emphasis>x </emphasis>∀<emphasis>y P(x, y)</emphasis></para>
+        <para id="id8519414">f. ∀<emphasis>y</emphasis> ∃<emphasis>x P(x, y)</emphasis></para>
+        <para id="id8519438">37. Let <emphasis>L(x, y)</emphasis> be the predicate "<emphasis>x</emphasis> likes y," and let the universe of discourse be the set of all people.  Use quantifiers to express each of the following statements.</para>
+        <para id="id8519458">a. Everyone likes everyone.</para>
+        <para id="id8519463">b. Everyone likes someone.</para>
+        <para id="id8519468">c. Someone does not like anyone.</para>
+        <para id="id8519472">d. Everyone likes George.</para>
+        <para id="id8519477">e. There is someone whom everyone likes.</para>
+        <para id="id8519481">f. There is no one whom everyone likes.</para>
+        <para id="id8519485">g. Everyone does not like someone.</para>
+        <para id="id8519490">38. Let <emphasis>S(x)</emphasis> be the predicate "<emphasis>x</emphasis> is a student," <emphasis>B(x)</emphasis> the predicate "<emphasis>x</emphasis> is a book," and <emphasis>H(x,y)</emphasis> the predicate "<emphasis>x</emphasis> has <emphasis>y</emphasis>, " where the universe of discourse is the universe, that is the set of all objects.  Use quantifiers to express each of the following statements.</para>
+        <para id="id8519541">a.   Every student has a book.</para>
+        <para id="id8519546">b. Some student does not have any book.</para>
+        <para id="id8519550">c. Some student has all the books.</para>
+        <para id="id8519555">d. Not every student has a book.</para>
+        <para id="id8519560">e. There is a book which every student has.</para>
+        <para id="id8519564">39. Let <emphasis>B(x)</emphasis>, <emphasis>E(x)</emphasis> and <emphasis>G(x)</emphasis> be the statements "<emphasis>x</emphasis> is a book," "<emphasis>x</emphasis> is expensive, "and "<emphasis>x</emphasis> is good," respectively.  Express each of the following statements using quantifiers; logical connectives; and <emphasis>B(x)</emphasis>, <emphasis>E(x)</emphasis> and <emphasis>G(x)</emphasis>, where the universe of discourse is the set of all objects. </para>
+        <para id="id8519626">a. No books are expensive. </para>
+        <para id="id8519631">b. All expensive books are good. </para>
+        <para id="id8519636">c. No books are good. </para>
+        <para id="id8519640">d. Does (c) follow from (a) and (b)? </para>
+        <para id="id8519645">40. Let <emphasis>G(x)</emphasis>, <emphasis>F(x)</emphasis>, <emphasis>Z(x)</emphasis>, and <emphasis>M(x)</emphasis> be the statements "<emphasis>x</emphasis> is a giraffe," "<emphasis>x</emphasis> is 15 feet or higher, ""<emphasis>x</emphasis> is in this zoo, "and "<emphasis>x</emphasis> belongs to me," respectively.  Suppose that the universe of discourse is the set of animals.  Express each of the following statements using quantifiers; logical connectives; and <emphasis>G(x)</emphasis>, <emphasis>F(x)</emphasis>, <emphasis>Z(x)</emphasis>, and <emphasis>M(x)</emphasis>. </para>
+        <para id="id9496859">a. No animals, except giraffes, are 15 feet or higher; </para>
+        <para id="id9496864">b. There are no animals in this zoo that belong to anyone but me; </para>
+        <para id="id9496869">c. I have no animals less than 15 feet high. </para>
+        <para id="id9496874">d. Therefore, all animals in this zoo are giraffes. </para>
+        <para id="id9496880">e. Does (d) follow from (a), (b), and (c)? If not, is there a correct conclusion?</para>
+        <para id="id9496886">41. Show that the statements ¬∃<emphasis>x</emphasis> ∀<emphasis>y P(x, y)</emphasis> and ∀<emphasis>x</emphasis> ∃<emphasis>y</emphasis> ¬<emphasis>P(x, y)</emphasis> have the same truth value.</para>
+        <para id="id9496946">42. For each of the following arguments, explain which rules of inference are used for each step. The universe is the set of people. </para>
+        <para id="id9496953">a. "John, a student in this class, is 16 years old.  Everyone who is 16 years old can get a driver's license.  Therefore, someone in this class can get a driver's license." </para>
+        <para id="id9496965">b. "Somebody in this class enjoys hiking. Every person who enjoys hiking also likes biking.   Therefore, there is a person in this class who likes biking." </para>
+        <para id="id9496974">c. "Every student in this class owns a personal computer.  Everyone who owns a personal computer can use the Internet.  Therefore, John, a student in this class, can use the Internet." </para>
+        <para id="id9496985">d. "Everyone in this class owns a personal computer.  Someone in this class has never used the Internet.  Therefore, someone who owns a personal computer has never used the Internet."</para>
+        <para id="id9496995">43. Determine whether each of the following arguments is valid.  If an argument is correct, what rule of inference is being used?  If it is not, what fallacy occurs?</para>
+        <para id="id9497006">a. "If <emphasis>n</emphasis> is a real number with <emphasis>n</emphasis> &gt; 1, then <emphasis>n</emphasis>2 &gt; 1.   Suppose that <emphasis>n</emphasis>2 ≤ 1. Then <emphasis>n</emphasis> ≤ 1. </para>
+        <para id="id9497060">b. "If <emphasis>n</emphasis> is a real number with <emphasis>n</emphasis> &gt; 1, then <emphasis>n</emphasis>2 &gt; 1.   Suppose that <emphasis>n</emphasis>2 &gt; 1. Then <emphasis>n</emphasis> &gt; 1. </para>
+        <para id="id9497103">44. Show that ∃<emphasis>x P(x) </emphasis>⋀∃<emphasis>x Q(x)</emphasis> and ∃<emphasis>x(P(x)</emphasis> ⋀<emphasis>Q(x))</emphasis> are not logically equivalent.</para>
+        <para id="id9497153">45. Show that ∀<emphasis>x P(x) </emphasis>⋀∃<emphasis>x Q(x) </emphasis>and ∀<emphasis>x</emphasis> ∃<emphasis>y(P(x) </emphasis>⋀<emphasis>Q(y))</emphasis> are equivalent.</para>
+      </section>
+    </section>
+  </content>
+</document>
