@@ -1,20 +1,3 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
-  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
-    <md:content-id>col10513</md:content-id>
-    <md:title>Discrete Structures</md:title>
-    <md:language>en</md:language>
-    <md:license url="http://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution License</md:license>
-    <md:uuid>47e32589-7cbc-42a8-af41-76950841a976</md:uuid>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Course">  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">  <md:content-id>col10768</md:content-id>  <md:title>Discrete Structures</md:title>      <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>  <md:language>et</md:language>              <md:uuid>21d3238f-4a50-42f8-81fe-039e1b9ad8dc</md:uuid>
 <md:slug>discrete-structures</md:slug>
-</metadata>
-  <col:content>
-    <col:module document="m14585"/>
-    <col:module document="m14586"/>
-    <col:module document="m15771"/>
-    <col:module document="m15773"/>
-    <col:module document="m15772"/>
-    <col:module document="m15774"/>
-    <col:module document="m15775"/>
-    <col:module document="m15776"/>
-  </col:content>
-</col:collection>
+</metadata>  <col:content>          <col:module document="m14585"/>                            <col:module document="m15775"/>                            <col:module document="m14586"/>                            <col:module document="m15773"/>                            <col:module document="m15776"/>                            <col:module document="m15771"/>                            <col:module document="m15774"/>                            <col:module document="m15772"/>                    </col:content></col:collection>
